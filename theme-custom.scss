@@ -1,8 +1,24 @@
+// colors
 $omv-color-more-lighter: #F1375A;
 $omv-color-lighter: #E0B694;
 $omv-color-default: #803d4d;
 $omv-color-darker: #79BAB6;
 $omv-color-more-darker: #4E6E68;
+$dashboard-toolbar: #c13d3d;
+$invalid-error: #cc3300;
+$spinner-border: #4140db;
+$spinner-background: #9fbce9;
+$trigger-border: #dbdbdb;
+$trigger-background: #dbdbdb;
+$black: #000000;
+$sidemenu-bg: #a1ec81;
+$scrollbar-bg: #afedb4;
+$body-mask: rgba(17, 45, 101, 0.5);
+
+//font related
+$font-weight: 600;
+$font-size: 16px;
+$font-color: $black;
 
 #theme-vigil {
   #header {
@@ -22,12 +38,14 @@ $omv-color-more-darker: #4E6E68;
   .x-toolbar-text-default,
   .x-tree-node-text,
   .x-window-body-default {
-    font-weight: 600;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $font-color;
   }
   /******************************************************************************/
   /* Body */
   body > .x-mask {
-    background-color: rgba(17, 45, 101, 0.5);
+    background-color: $body-mask;
   }
   /******************************************************************************/
   /* Form fieldset */
@@ -49,21 +67,21 @@ $omv-color-more-darker: #4E6E68;
     content: "\f0ea";
   }
   .x-form-trigger-default.x-form-trigger-over {
-    border-color: #dbdbdb;
+    border-color: $trigger-border;
     background-image: none;
-    background-color: #ececec;
+    background-color: $trigger-background;
   }
   .x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
     border-color: $omv-color-default;
   }
   .x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
-    border-color: #cc3300;
+    border-color: $invalid-error;
   }
   /******************************************************************************/
   /* Spinner field */
   .x-form-spinner-default.x-form-spinner-over {
-    border-color: #dbdbdb;
-    background-color: #ececec;
+    border-color: $spinner-border;
+    background-color: $spinner-background;
   }
   /******************************************************************************/
   /* Panel */
@@ -129,7 +147,7 @@ $omv-color-more-darker: #4E6E68;
   .x-tree-icon-leaf,
   .x-grid-tree-node-expanded .x-tree-elbow-plus,
   .x-grid-tree-node-expanded .x-tree-elbow-end-plus {
-    color: #000000;
+    color: $black;
   }
   .x-grid-cell-inner-treecolumn {
     padding-top: 5px;
@@ -144,16 +162,16 @@ $omv-color-more-darker: #4E6E68;
   }
   .x-grid-group-hd-collapsed .x-grid-group-title:before,
   .x-grid-group-hd-collapsible .x-grid-group-title:before {
-    color: #000000;
+    color: $black;
   }
   /******************************************************************************/
   /* Workspace node tree */
   .x-workspace-node-tree .x-panel-header-default {
     border: 0px;
-    background-color: #ececec; /* gray */
+    background-color: $sidemenu-bg; /* gray */
   }
   .x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
-    background-color: #ececec; /* gray */
+    background-color: $sidemenu-bg; /* gray */
   }
   .x-workspace-node-tree .x-tool-collapse-left:before {
     color: black;
@@ -181,7 +199,11 @@ $omv-color-more-darker: #4E6E68;
   /******************************************************************************/
   /* Workspace navigation toolbar */
   .x-workspace-navigation-toolbar.x-toolbar-default {
-    background-color: #ececec; /* gray */
+    background-color: $dashboard-toolbar; /* gray */
+  }
+
+  .x-toolbar-default {
+
   }
   /******************************************************************************/
   /* Tabs */
@@ -192,7 +214,7 @@ $omv-color-more-darker: #4E6E68;
     outline: 1px solid $omv-color-default;
   }
   .x-tab-invalid {
-    background-color: #cc3300;
+    background-color: $invalid-error;
   }
   .x-box-scroller-tab-bar-default {
     background-color: $omv-color-darker;
@@ -285,13 +307,13 @@ $omv-color-more-darker: #4E6E68;
     -webkit-appearance: none;
     height: 7px;
     width: 5px;
-    background: #dfe5ed;
+    background: $scrollbar-bg;
     border-radius: 0
   }
 
   .x-tree-view::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: #000
+    background-color: $omv-color-default;
   }
 
 }

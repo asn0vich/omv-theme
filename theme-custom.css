@@ -1,5 +1,42 @@
 @charset "UTF-8";
-#theme-vigil {}
+#theme-vigil {
+    /******************************************************************************/
+    /* Miscellaneous */
+    /******************************************************************************/
+    /* Body */
+    /******************************************************************************/
+    /* Form fieldset */
+    /******************************************************************************/
+    /* Trigger field */
+    /******************************************************************************/
+    /* Spinner field */
+    /******************************************************************************/
+    /* Panel */
+    /******************************************************************************/
+    /* Tree */
+    /******************************************************************************/
+    /* Grid */
+    /******************************************************************************/
+    /* Workspace node tree */
+    /******************************************************************************/
+    /* Workscape dashboard */
+    /******************************************************************************/
+    /* Workspace navigation toolbar */
+    /******************************************************************************/
+    /* Tabs */
+    /******************************************************************************/
+    /* Windows */
+    /******************************************************************************/
+    /* Buttons */
+    /******************************************************************************/
+    /* Checkbox */
+    /******************************************************************************/
+    /* Combobox */
+    /******************************************************************************/
+    /* Menu */
+    /******************************************************************************/
+    /* Other */
+}
 #theme-vigil #header {
     background: #803d4d !important;
 }
@@ -15,6 +52,8 @@
 #theme-vigil .x-tree-node-text,
 #theme-vigil .x-window-body-default {
     font-weight: 600;
+    font-size: 16px;
+    color: #000000;
 }
 #theme-vigil body > .x-mask {
     background-color: rgba(17, 45, 101, 0.5);
@@ -37,7 +76,7 @@
 #theme-vigil .x-form-trigger-default.x-form-trigger-over {
     border-color: #dbdbdb;
     background-image: none;
-    background-color: #ececec;
+    background-color: #dbdbdb;
 }
 #theme-vigil .x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
     border-color: #803d4d;
@@ -46,8 +85,8 @@
     border-color: #cc3300;
 }
 #theme-vigil .x-form-spinner-default.x-form-spinner-over {
-    border-color: #dbdbdb;
-    background-color: #ececec;
+    border-color: #4140db;
+    background-color: #9fbce9;
 }
 #theme-vigil .x-panel-default {
     border-color: #803d4d;
@@ -122,11 +161,11 @@
 }
 #theme-vigil .x-workspace-node-tree .x-panel-header-default {
     border: 0px;
-    background-color: #ececec;
+    background-color: #a1ec81;
     /* gray */
 }
 #theme-vigil .x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
-    background-color: #ececec;
+    background-color: #a1ec81;
     /* gray */
 }
 #theme-vigil .x-workspace-node-tree .x-tool-collapse-left:before {
@@ -149,7 +188,7 @@
     visibility: hidden;
 }
 #theme-vigil .x-workspace-navigation-toolbar.x-toolbar-default {
-    background-color: #ececec;
+    background-color: #c13d3d;
     /* gray */
 }
 #theme-vigil .x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
@@ -237,10 +276,10 @@
     -webkit-appearance: none;
     height: 7px;
     width: 5px;
-    background: #dfe5ed;
+    background: #afedb4;
     border-radius: 0;
 }
 #theme-vigil .x-tree-view::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: #000;
+    background-color: #803d4d;
 }
