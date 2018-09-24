@@ -335,7 +335,6 @@ $font-color: $black;
     border-color: $button-border;
     background-color: $button-background;
     border-radius: $button-radius;
-    color: $button-color;
   }
 
   .x-btn-over.x-btn-default-toolbar-small{
@@ -343,6 +342,14 @@ $font-color: $black;
     background-color: $button-background-hover;
     border-radius: $button-radius-hover;
     color: $button-color-hover;
+  }
+
+  a + span + span + span:before{
+    color: $button-color;
+  }
+
+  span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small::before {
+    color: $button-color;
   }
 
   ::-webkit-scrollbar {
