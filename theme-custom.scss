@@ -344,8 +344,8 @@ $font-color: $black;
     color: $button-color-hover;
   }
 
-  a > span::before{
-    color: $button-color !important;
+  span::before{
+    color: $button-color;
   }
   .x-btn-inner-default-toolbar-small{
     color: $button-color;
