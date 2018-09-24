@@ -1,8 +1,8 @@
-$omv-color-more-lighter: #EAF0CE;
-$omv-color-lighter: #C0C5C1;
-$omv-color-default: #7D8491;
-$omv-color-darker: #574B60;
-$omv-color-more-darker: #3F334D;
+$omv-color-more-lighter: #F1375A;
+$omv-color-lighter: #E0B694;
+$omv-color-default: #ECEDDC;
+$omv-color-darker: #79BAB6;
+$omv-color-more-darker: #4E6E68;
 
 #theme-vigil {
   #header {
@@ -199,7 +199,7 @@ $omv-color-more-darker: #3F334D;
   }
 
   .x-tab-bar-default {
-    background-color: $omv-color-default;
+    background-color: $omv-color-default !important;
   }
   /******************************************************************************/
   /* Windows */
@@ -281,7 +281,7 @@ $omv-color-more-darker: #3F334D;
   /******************************************************************************/
   /* Other */
 
-  .div[role="treegrid"]::-webkit-scrollbar {
+  .x-tree-view::-webkit-scrollbar {
     -webkit-appearance: none;
     height: 7px;
     width: 5px;
@@ -289,7 +289,7 @@ $omv-color-more-darker: #3F334D;
     border-radius: 0
   }
 
-  .div[role="treegrid"]::-webkit-scrollbar-thumb {
+  .x-tree-view::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: #000
   }
