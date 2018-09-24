@@ -1,7 +1,6 @@
 #!/bin/sh
-# omv-theme https://github.com/Wolf2000Pi
-# Version 1.0.2
-# by Wolf2000
+# Project forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000
+# Attempting bootstrap implementation
 
 INTERACTIVE=True
 ASK_TO_REBOOT=0
