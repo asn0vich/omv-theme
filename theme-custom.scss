@@ -4,14 +4,14 @@ $omv-color-lighter: #E0B694;
 $omv-color-default: #803d4d;
 $omv-color-darker: #79BAB6;
 $omv-color-more-darker: #4E6E68;
-$dashboard-toolbar: #c13d3d;
+$dashboard-toolbar-bg: #d0b6bc;
 $invalid-error: #cc3300;
 $spinner-border: #4140db;
 $spinner-background: #9fbce9;
 $trigger-border: #dbdbdb;
 $trigger-background: #dbdbdb;
 $black: #000000;
-$sidemenu-bg: #a1ec81;
+$sidemenu-bg: #d0b6bc;
 $scrollbar-bg: #afedb4;
 $body-mask: rgba(17, 45, 101, 0.5);
 
@@ -199,7 +199,7 @@ $font-color: $black;
   /******************************************************************************/
   /* Workspace navigation toolbar */
   .x-workspace-navigation-toolbar.x-toolbar-default {
-    background-color: $dashboard-toolbar; /* gray */
+    background-color: $dashboard-toolbar-bg; /* gray */
   }
 
   .x-toolbar-default {
