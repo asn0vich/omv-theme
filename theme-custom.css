@@ -281,8 +281,17 @@
 #theme-vigil .x-menu-item-default-menubar.x-menu-item-active {
     background-color: #E0B694;
 }
-#theme-vigil .x-grid-body > * {
-    background-color: #d04131;
+#theme-vigil .x-btn-default-toolbar-small {
+    border-color: #a8ff62;
+    background-color: #bce5b6;
+    border-radius: 5px !important;
+    color: red;
+}
+#theme-vigil .x-btn-over.x-btn-default-toolbar-small {
+    border-color: #72dfff;
+    background-color: #25e539;
+    border-radius: 5px !important;
+    color: #ff2e2c;
 }
 #theme-vigil ::-webkit-scrollbar {
     -webkit-appearance: none;
