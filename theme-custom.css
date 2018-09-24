@@ -14,7 +14,7 @@
 #theme-vigil .x-toolbar-text-default,
 #theme-vigil .x-tree-node-text,
 #theme-vigil .x-window-body-default {
-    font-weight: 500;
+    font-weight: 600;
 }
 #theme-vigil body > .x-mask {
     background-color: rgba(17, 45, 101, 0.5);
