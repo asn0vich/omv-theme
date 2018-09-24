@@ -168,10 +168,10 @@ $font-color: $black;
   /* Workspace node tree */
   .x-workspace-node-tree .x-panel-header-default {
     border: 0px;
-    background-color: $sidemenu-bg; /* gray */
+    background-color: $dashboard-toolbar-bg; /* gray */
   }
   .x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
-    background-color: $sidemenu-bg; /* gray */
+    background-color: $dashboard-toolbar-bg; /* gray */
   }
   .x-workspace-node-tree .x-tool-collapse-left:before {
     color: black;
@@ -191,6 +191,10 @@ $font-color: $black;
   .x-workspace-node-tree .x-tree-elbow-end {
     width: 0px;
     visibility: hidden;
+  }
+
+  .x-collapse-el, .x-splitter-vertical {
+    background-color: $dashboard-toolbar-bg;
   }
   /******************************************************************************/
   /* Workscape dashboard */
