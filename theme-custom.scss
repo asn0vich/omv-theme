@@ -197,6 +197,10 @@ $omv-color-more-darker: #3F334D;
   .x-box-scroller-tab-bar-default {
     background-color: $omv-color-darker;
   }
+
+  .x-tab-bar-default {
+    background-color: $omv-color-default;
+  }
   /******************************************************************************/
   /* Windows */
   .x-window-default {
@@ -273,4 +277,21 @@ $omv-color-more-darker: #3F334D;
   .x-menu-item-default-menubar.x-menu-item-active {
     background-color: $omv-color-lighter;
   }
+
+  /******************************************************************************/
+  /* Other */
+
+  .div[role="treegrid"]::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 7px;
+    width: 5px;
+    background: #dfe5ed;
+    border-radius: 0
+  }
+
+  .div[role="treegrid"]::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #000
+  }
+
 }

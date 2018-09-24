@@ -1,5 +1,6 @@
 @charset "UTF-8";
 #theme-vigil {}
+
 #theme-vigil #header {
     background: #7D8491 !important;
 }
@@ -164,6 +165,9 @@
 #theme-vigil .x-box-scroller-tab-bar-default {
     background-color: #574B60;
 }
+#theme-vigil .x-tab-bar-default {
+    background-color: #7D8491;
+}
 #theme-vigil .x-window-default {
     border-color: #3F334D;
     border-width: 1px;
@@ -229,4 +233,15 @@
 #theme-vigil .x-menu-item-default-menubar.x-menu-item-focus,
 #theme-vigil .x-menu-item-default-menubar.x-menu-item-active {
     background-color: #C0C5C1;
+}
+#theme-vigil .div[role=treegrid]::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 7px;
+    width: 5px;
+    background: #dfe5ed;
+    border-radius: 0;
+}
+#theme-vigil .div[role=treegrid]::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #000;
 }
