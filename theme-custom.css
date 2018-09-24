@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #theme-vigil {}
 #theme-vigil #header {
-    background: #ECEDDC !important;
+    background: #803d4d !important;
 }
 #theme-vigil .x-body,
 #theme-vigil .x-form-item-label-default,
@@ -40,7 +40,7 @@
     background-color: #ececec;
 }
 #theme-vigil .x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
-    border-color: #ECEDDC;
+    border-color: #803d4d;
 }
 #theme-vigil .x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
     border-color: #cc3300;
@@ -50,51 +50,51 @@
     background-color: #ececec;
 }
 #theme-vigil .x-panel-default {
-    border-color: #ECEDDC;
+    border-color: #803d4d;
 }
 #theme-vigil .x-panel-default-outer-border-l {
-    border-left-color: #ECEDDC !important;
+    border-left-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-b {
-    border-bottom-color: #ECEDDC !important;
+    border-bottom-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-trbl {
-    border-color: #ECEDDC !important;
+    border-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-bl {
-    border-bottom-color: #ECEDDC !important;
-    border-left-color: #ECEDDC !important;
+    border-bottom-color: #803d4d !important;
+    border-left-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-r {
-    border-right-color: #ECEDDC !important;
+    border-right-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-rl {
-    border-right-color: #ECEDDC !important;
-    border-left-color: #ECEDDC !important;
+    border-right-color: #803d4d !important;
+    border-left-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-rb {
-    border-right-color: #ECEDDC !important;
-    border-bottom-color: #ECEDDC !important;
+    border-right-color: #803d4d !important;
+    border-bottom-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-trl {
-    border-top-color: #ECEDDC !important;
-    border-right-color: #ECEDDC !important;
-    border-left-color: #ECEDDC !important;
+    border-top-color: #803d4d !important;
+    border-right-color: #803d4d !important;
+    border-left-color: #803d4d !important;
 }
 #theme-vigil .x-panel-default-outer-border-rbl {
-    border-right-color: #ECEDDC !important;
-    border-bottom-color: #ECEDDC !important;
-    border-left-color: #ECEDDC !important;
+    border-right-color: #803d4d !important;
+    border-bottom-color: #803d4d !important;
+    border-left-color: #803d4d !important;
 }
 #theme-vigil .x-panel-header-default-vertical {
-    background-color: #ECEDDC;
+    background-color: #803d4d;
 }
 #theme-vigil .x-panel-header-default .x-tool-tool-el {
-    background-color: #ECEDDC;
+    background-color: #803d4d;
 }
 #theme-vigil .x-panel-header-default {
-    border: 1px solid #ECEDDC;
-    background-color: #ECEDDC;
+    border: 1px solid #803d4d;
+    background-color: #803d4d;
 }
 #theme-vigil .x-tree-icon-custom {
     background-size: 16px 16px;
@@ -114,7 +114,7 @@
     padding-bottom: 4px;
 }
 #theme-vigil .x-grid-item-focused .x-grid-cell-inner:before {
-    border-color: #ECEDDC;
+    border-color: #803d4d;
 }
 #theme-vigil .x-grid-group-hd-collapsed .x-grid-group-title:before,
 #theme-vigil .x-grid-group-hd-collapsible .x-grid-group-title:before {
@@ -153,10 +153,10 @@
     /* gray */
 }
 #theme-vigil .x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
-    color: #ECEDDC;
+    color: #803d4d;
 }
 #theme-vigil .x-tab-focus.x-tab-default {
-    outline: 1px solid #ECEDDC;
+    outline: 1px solid #803d4d;
 }
 #theme-vigil .x-tab-invalid {
     background-color: #cc3300;
@@ -165,7 +165,7 @@
     background-color: #79BAB6;
 }
 #theme-vigil .x-tab-bar-default {
-    background-color: #ECEDDC !important;
+    background-color: #803d4d !important;
 }
 #theme-vigil .x-window-default {
     border-color: #4E6E68;
@@ -186,8 +186,8 @@
     border-radius: 3px;
 }
 #theme-vigil .x-btn-default-small {
-    border-color: #ECEDDC;
-    background-color: #ECEDDC;
+    border-color: #803d4d;
+    background-color: #803d4d;
 }
 #theme-vigil .x-btn-focus.x-btn-default-small {
     border-color: #79BAB6;
@@ -211,7 +211,7 @@
     background-color: #E0B694;
 }
 #theme-vigil .x-form-checkbox-focus.x-form-checkbox-default {
-    color: #ECEDDC;
+    color: #803d4d;
 }
 #theme-vigil .x-form-checkbox-default:before,
 #theme-vigil .x-form-cb-checked .x-form-checkbox-default:before {
@@ -222,8 +222,8 @@
     border-color: #E0B694;
 }
 #theme-vigil .x-boundlist-selected {
-    background: #ECEDDC;
-    border-color: #ECEDDC;
+    background: #803d4d;
+    border-color: #803d4d;
 }
 #theme-vigil .x-menu-item-default.x-menu-item-focus,
 #theme-vigil .x-menu-item-default.x-menu-item-active {
