@@ -314,7 +314,7 @@ $font-color: $black;
   /******************************************************************************/
   /* Other */
 
-  .x-tree-view .x-grid-td{
+  .x-grid-item-container > .x-grid-td{
     background-color: $sidemenu-bg;
   }
 

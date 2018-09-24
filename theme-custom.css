@@ -278,7 +278,7 @@
 #theme-vigil .x-menu-item-default-menubar.x-menu-item-active {
     background-color: #E0B694;
 }
-#theme-vigil .x-tree-view .x-grid-td {
+#theme-vigil .x-grid-item-container > .x-grid-td {
     background-color: #d0b6bc;
 }
 #theme-vigil .x-tree-view::-webkit-scrollbar {
