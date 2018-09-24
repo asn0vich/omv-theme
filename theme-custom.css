@@ -292,7 +292,7 @@
     border-radius: 5px !important;
     color: #ff2e2c;
 }
-#theme-vigil a + span + span + span:before {
+#theme-vigil a > span::before {
     color: red !important;
 }
 #theme-vigil .x-btn-inner-default-toolbar-small {
