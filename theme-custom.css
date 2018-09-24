@@ -1,5 +1,8 @@
 @charset "UTF-8";
 #theme-vigil {}
+#theme-vigil #header {
+    background: #7D8491;
+}
 #theme-vigil .x-body,
 #theme-vigil .x-form-item-label-default,
 #theme-vigil .x-form-cb-label-default,
