@@ -11,7 +11,8 @@ $spinner-background: #9fbce9;
 $trigger-border: #dbdbdb;
 $trigger-background: #dbdbdb;
 $black: #000000;
-$sidemenu-bg: #d0b6bc;
+$x-panel-body-bg: #fff;
+$sidemenu-bg: #d04131;
 $scrollbar-bg: rgba(79, 81, 78, 0.26);
 $body-mask: rgba(17, 45, 101, 0.5);
 $node-tree-arrow-bg: #ffffff;
@@ -132,6 +133,10 @@ $font-color: $black;
   .x-panel-header-default {
     border: 1px solid $omv-color-default;
     background-color: $omv-color-default;
+  }
+
+  .x-panel-body-default {
+    background: $x-panel-body-bg;
   }
   /******************************************************************************/
   /* Tree */
@@ -314,11 +319,11 @@ $font-color: $black;
   /******************************************************************************/
   /* Other */
 
-  .x-grid-item-container > .x-grid-td{
+  .x-grid-body > *{
     background-color: $sidemenu-bg;
   }
 
-  .x-tree-view::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     -webkit-appearance: none;
     height: 7px;
     width: 5px;
@@ -326,7 +331,7 @@ $font-color: $black;
     border-radius: 0
   }
 
-  .x-tree-view::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: $omv-color-default;
   }

@@ -135,6 +135,9 @@
     border: 1px solid #803d4d;
     background-color: #803d4d;
 }
+#theme-vigil .x-panel-body-default {
+    background: #fff;
+}
 #theme-vigil .x-tree-icon-custom {
     background-size: 16px 16px;
 }
@@ -278,17 +281,17 @@
 #theme-vigil .x-menu-item-default-menubar.x-menu-item-active {
     background-color: #E0B694;
 }
-#theme-vigil .x-grid-item-container > .x-grid-td {
-    background-color: #d0b6bc;
+#theme-vigil .x-grid-body > * {
+    background-color: #d04131;
 }
-#theme-vigil .x-tree-view::-webkit-scrollbar {
+#theme-vigil ::-webkit-scrollbar {
     -webkit-appearance: none;
     height: 7px;
     width: 5px;
     background: rgba(79, 81, 78, 0.26);
     border-radius: 0;
 }
-#theme-vigil .x-tree-view::-webkit-scrollbar-thumb {
+#theme-vigil ::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: #803d4d;
 }
