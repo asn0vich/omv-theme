@@ -169,7 +169,7 @@
     /* gray */
 }
 #theme-vigil .x-workspace-node-tree .x-tool-collapse-left:before {
-    color: black;
+    color: #ffffff;
 }
 #theme-vigil .x-workspace-node-tree .x-grid-row-over .x-grid-td {
     cursor: pointer;
@@ -189,6 +189,9 @@
 }
 #theme-vigil .x-collapse-el, #theme-vigil .x-splitter-vertical {
     background-color: #d0b6bc;
+}
+#theme-vigil .x-layout-split-left:before {
+    color: #ffffff;
 }
 #theme-vigil .x-workspace-navigation-toolbar.x-toolbar-default {
     background-color: #d0b6bc;
@@ -275,11 +278,14 @@
 #theme-vigil .x-menu-item-default-menubar.x-menu-item-active {
     background-color: #E0B694;
 }
+#theme-vigil .x-tree-view .x-grid-td {
+    background-color: #d0b6bc;
+}
 #theme-vigil .x-tree-view::-webkit-scrollbar {
     -webkit-appearance: none;
     height: 7px;
     width: 5px;
-    background: #afedb4;
+    background: rgba(79, 81, 78, 0.26);
     border-radius: 0;
 }
 #theme-vigil .x-tree-view::-webkit-scrollbar-thumb {

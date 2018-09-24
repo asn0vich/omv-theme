@@ -12,8 +12,9 @@ $trigger-border: #dbdbdb;
 $trigger-background: #dbdbdb;
 $black: #000000;
 $sidemenu-bg: #d0b6bc;
-$scrollbar-bg: #afedb4;
+$scrollbar-bg: rgba(79, 81, 78, 0.26);
 $body-mask: rgba(17, 45, 101, 0.5);
+$node-tree-arrow-bg: #ffffff;
 
 //font related
 $font-weight: 600;
@@ -174,7 +175,7 @@ $font-color: $black;
     background-color: $dashboard-toolbar-bg; /* gray */
   }
   .x-workspace-node-tree .x-tool-collapse-left:before {
-    color: black;
+    color: $node-tree-arrow-bg;
   }
   .x-workspace-node-tree .x-grid-row-over .x-grid-td {
     cursor: pointer;
@@ -196,6 +197,12 @@ $font-color: $black;
   .x-collapse-el, .x-splitter-vertical {
     background-color: $dashboard-toolbar-bg;
   }
+
+  .x-layout-split-left:before{
+    color: $node-tree-arrow-bg;
+  }
+
+
   /******************************************************************************/
   /* Workscape dashboard */
   .x-workspace-dashboard-widget-icon {
@@ -306,6 +313,10 @@ $font-color: $black;
 
   /******************************************************************************/
   /* Other */
+
+  .x-tree-view .x-grid-td{
+    background-color: $sidemenu-bg;
+  }
 
   .x-tree-view::-webkit-scrollbar {
     -webkit-appearance: none;
