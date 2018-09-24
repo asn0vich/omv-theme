@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #theme-vigil {}
 #theme-vigil #header {
-    background: #7D8491;
+    background: #7D8491 !important;
 }
 #theme-vigil .x-body,
 #theme-vigil .x-form-item-label-default,
