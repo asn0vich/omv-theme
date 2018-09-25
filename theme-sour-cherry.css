@@ -323,6 +323,10 @@ body > .x-mask {
     background: linear-gradient(#46b8da, #31b0d5);
 }
 
+.x-btn-pressed, .x-btn-focus {
+    background: #5bc0de !important;
+}
+
 .x-btn-inner-default-small {
     color: #fff;
 }

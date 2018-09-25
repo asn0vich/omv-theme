@@ -365,6 +365,10 @@ body > .x-mask {
 
 .x-btn { @include btn($btn-background-color);}
 
+.x-btn-pressed, .x-btn-focus{
+  background: $btn-background-color!important;
+}
+
 .x-btn-inner-default-small{
   color: $button-color;
 }
