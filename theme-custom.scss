@@ -344,12 +344,12 @@ $font-color: $black;
     color: $button-color-hover;
   }
 
-  span::before{
+  a + span + span + span::before{
     color: $button-color;
   }
-  .x-btn-inner-default-toolbar-small{
-    color: $button-color;
-  }
+  //.x-btn-inner-default-toolbar-small{
+  //  color: $button-color;
+  //}
 
 
   ::-webkit-scrollbar {
