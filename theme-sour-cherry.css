@@ -189,7 +189,7 @@ body > .x-mask {
 }
 
 .x-workspace-node-tree .x-tool-collapse-left:before {
-    color: #000000;
+    color: #FFFFFF;
 }
 
 .x-workspace-node-tree .x-grid-row-over .x-grid-td {
@@ -217,7 +217,7 @@ body > .x-mask {
 }
 
 .x-layout-split-left:before {
-    color: #000000;
+    color: #FFFFFF;
 }
 
 /******************************************************************************/
@@ -309,28 +309,24 @@ body > .x-mask {
     background-color: #a81739;
 }
 
-.x-btn {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    border: none;
-    border-bottom: 1px solid #d9d9d9;
-    border-radius: 3px;
-    background-image: linear-gradient(#ffffff, #f2f2f2);
+.btn-default {
+    border-color: #28a1c5;
+    background-image: linear-gradient(#5bc0de, #46b8da);
+    color: #fff;
 }
-
-.x-btn:hover {
-    background: linear-gradient(#f2f2f2, #e6e6e6);
+.btn-default:hover {
+    background: linear-gradient(#46b8da, #31b0d5);
 }
 
 .x-btn-inner-default-small {
-    color: #000000;
+    color: #fff;
 }
 
 span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small:before,
 .x-btn-arrow-right:after,
 .x-btn-split-right:after,
 .x-btn-inner-default-toolbar-small {
-    color: #000000 !important;
+    color: #fff !important;
 }
 
 /******************************************************************************/

@@ -96,10 +96,17 @@ cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/theme-custom.css
 exec omv-theme
 }
 
-do_omv_random() {
+do_omv_cherry() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
 rm -r /var/www/openmediavault/css/theme-custom.css
 cp /root/omv-theme/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.css
+exec omv-theme
+}
+
+do_omv_green() {
+echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+rm -r /var/www/openmediavault/css/theme-custom.css
+cp /root/omv-theme/theme-green-peace.css /var/www/openmediavault/css/theme-custom.css
 exec omv-theme
 }
 
@@ -135,7 +142,7 @@ while true; do
     case "$FUN" in
       1\ *) do_omv_triton ;;
       2\ *) do_omv_black ;;
-      3\ *) do_omv_random ;;
+      3\ *) do_omv_cherry ;;
 	  4\ *) do_about ;;
 	  5\ *) do_update_omv_theme ;;
 	  6\ *) do_uninstall ;;

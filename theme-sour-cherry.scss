@@ -15,14 +15,11 @@ $black: #000000;
 $x-panel-body-bg: #fff;
 $scrollbar-bg: rgba(79, 81, 78, 0.26);
 $body-mask: rgba(17, 45, 101, 0.5);
-$node-tree-arrow-bg: #000000;
+$node-tree-arrow-bg: #FFFFFF;
 
 //buttons
-$btn-grad1: #ffffff;
-$btn-grad2: #f2f2f2;
-$btn-grad1-hover: #f2f2f2;
-$btn-grad2-hover: #e6e6e6;
-$button-color: #000000; //affects text and icons on buttons
+$btn-background-color: #5bc0de;
+$button-color: #fff; //affects text and icons on buttons
 
 //icons
 $dashboard-icon-bg: #fff;
@@ -352,18 +349,17 @@ body > .x-mask {
   background-color: $omv-color-lighter;
 }
 
-.x-btn {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  border: none;
-  border-bottom: 1px solid #d9d9d9;
-  border-radius: 3px;
-  background-image: linear-gradient($btn-grad1,$btn-grad2);
+@mixin btn($btncolor){
+  border-color: darken($btncolor,15%);
+  background-image: linear-gradient($btncolor, darken($btncolor,5%));
+  color: $button-color;
+  &:hover {
+    background: linear-gradient(darken($btncolor,5%), darken($btncolor,10%));
+  }
 }
 
-.x-btn:hover {
-  background: linear-gradient($btn-grad1-hover,$btn-grad2-hover);
-}
+.btn-default { @include btn($btn-background-color);}
+
 .x-btn-inner-default-small{
   color: $button-color;
 }
