@@ -26,6 +26,8 @@ or
 - create a new `theme-your-theme-name.scss`
 - you can copy one of the previous themes or start from base `theme-triton.scss`
 - all the custom themes are based on triton with almost all colors as variables
+- all variables should be at the top, change them to your liking, if you add more even better
+- did not ope around in the javascript as time was short, will poke around soon enough
 - poke around and change things, I got some really ugly things until I got some decent ones
 - compile the sass file to css you can use `https://www.sassmeister.com/` or google sass to css
 
