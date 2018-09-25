@@ -1,6 +1,5 @@
 #!/bin/sh
 # Project forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000
-# Attempting bootstrap implementation
 
 INTERACTIVE=True
 ASK_TO_REBOOT=0
@@ -25,13 +24,10 @@ calc_wt_size() {
 
 do_about() {
   whiptail --msgbox "\
-Ich hoffe ihr seid zufrieden?
-Für Schäden übernehme ich Keine Haftung!
-@Wolf2000.\
-Ich möchte mich für die mithilfe auch Bedanken bei 
-@DeepB für [CSS] Black OMV GUI v5, @The Master
-V1.0.2
-
+Project forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
+Removed original black theme and replaced with my own attempt.
+If you want to add more themes, see the github page https://github.com/virgil-av/omv-theme.git
+guide on how to make a new one (use the sass file and also compile it to css more on github)
 " 20 70 1
 }
 
@@ -89,21 +85,35 @@ do_finish() {
 
 do_omv_triton() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
 cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
 rm -r /var/www/openmediavault/css/theme-custom.css
+rm -r /var/www/openmediavault/css/theme-random.css
 exec omv-theme
 }
 
 do_omv_gray() {
 echo 'OMV_WEBUI_THEME=gray' >> /etc/default/openmediavault
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
 cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
 rm -r /var/www/openmediavault/css/theme-custom.css
+rm -r /var/www/openmediavault/css/theme-random.css
 exec omv-theme
 }
 
 do_omv_black() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
 cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
+rm -r /var/www/openmediavault/css/theme-random.css
+exec omv-theme
+}
+
+do_omv_random() {
+echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
+cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
+rm -r /var/www/openmediavault/css/theme-custom.css
 exec omv-theme
 }
 
@@ -129,8 +139,9 @@ while true; do
     "1 Gray" "" \
     "2 Triton" "" \
     "3 Black" "" \
-	"4 About" ""\
-	"5 Update" ""\
+    "4 Random" "" \
+	"5 About" ""\
+	"6 Update" ""\
     3>&1 1>&2 2>&3)
   RET=$?
   if [ $RET -eq 1 ]; then
@@ -140,8 +151,9 @@ while true; do
       1\ *) do_omv_gray ;;
       2\ *) do_omv_triton ;;
       3\ *) do_omv_black ;;
-	  4\ *) do_about ;;
-	  5\ *) do_update_omv_theme ;;
+      4\ *) do_omv_random ;;
+	  5\ *) do_about ;;
+	  6\ *) do_update_omv_theme ;;
       *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
     esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
   else
