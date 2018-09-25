@@ -363,7 +363,7 @@ body > .x-mask {
   }
 }
 
-.btn-default { @include btn($btn-background-color);}
+.x-btn { @include btn($btn-background-color);}
 
 .x-btn-inner-default-small{
   color: $button-color;

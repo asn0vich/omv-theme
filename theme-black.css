@@ -309,7 +309,7 @@ body > .x-mask {
     background-color: #a81739;
 }
 
-.btn-default {
+.x-btn {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     border: none;
@@ -319,7 +319,7 @@ body > .x-mask {
     background-image: linear-gradient(#ffffff, #f2f2f2);
     color: #000000;
 }
-.btn-default:hover {
+.x-btn:hover {
     background: linear-gradient(#f2f2f2, #e6e6e6);
 }
 
