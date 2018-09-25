@@ -128,24 +128,27 @@ do_uninstall() {
 calc_wt_size
 while true; do
   FUN=$(whiptail --title "OMV GUI-Theme config" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Finish --ok-button Select \
-    "1 Default" "" \
-    "2 Blackish" "" \
-    "3 Sour Cherry" "" \
-	"4 About" ""\
-	"5 Update" ""\
-	"6 Uninstall" ""\
+    "1 About" "" \
+    "2 Update" "" \
+    "3 Uninstall" ""\
+    "4 Default" "" \
+    "5 Blackish" "" \
+    "6 Sour Cherry" "" \
+    "7 Green Peace" "" \
+     \
     3>&1 1>&2 2>&3)
   RET=$?
   if [ $RET -eq 1 ]; then
     do_finish
   elif [ $RET -eq 0 ]; then
     case "$FUN" in
-      1\ *) do_omv_triton ;;
-      2\ *) do_omv_black ;;
-      3\ *) do_omv_cherry ;;
-	  4\ *) do_about ;;
-	  5\ *) do_update_omv_theme ;;
-	  6\ *) do_uninstall ;;
+      1\ *) do_about ;;
+	  2\ *) do_update_omv_theme ;;
+	  3\ *) do_uninstall ;;
+      4\ *) do_omv_triton ;;
+      5\ *) do_omv_black ;;
+      6\ *) do_omv_cherry ;;
+      7\ *) do_omv_green ;;
       *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
     esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
   else
