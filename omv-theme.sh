@@ -131,10 +131,10 @@ while true; do
     "1 About" "" \
     "2 Update" "" \
     "3 Uninstall" ""\
-    "4 Default" "" \
-    "5 Blackish" "" \
-    "6 Sour Cherry" "" \
-    "7 Green Peace" "" \
+    "4 Theme Default" "" \
+    "5 Theme Blackish" "" \
+    "6 Theme Sour Cherry" "" \
+    "7 Theme Green Peace" "" \
      \
     3>&1 1>&2 2>&3)
   RET=$?
