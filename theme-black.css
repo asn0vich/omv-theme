@@ -179,17 +179,17 @@ body > .x-mask {
 /* Workspace node tree */
 .x-workspace-node-tree .x-panel-header-default {
     border: 0px;
-    background-color: #ffffff;
+    background-color: #484848;
     /* gray */
 }
 
 .x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
-    background-color: #ffffff;
+    background-color: #484848;
     /* gray */
 }
 
 .x-workspace-node-tree .x-tool-collapse-left:before {
-    color: #000000;
+    color: #fffff;
 }
 
 .x-workspace-node-tree .x-grid-row-over .x-grid-td {
@@ -213,11 +213,11 @@ body > .x-mask {
 }
 
 .x-collapse-el, .x-splitter-vertical {
-    background-color: #ffffff;
+    background-color: #484848;
 }
 
 .x-layout-split-left:before {
-    color: #000000;
+    color: #fffff;
 }
 
 /******************************************************************************/
@@ -225,7 +225,7 @@ body > .x-mask {
 /******************************************************************************/
 /* Workspace navigation toolbar */
 .x-workspace-navigation-toolbar.x-toolbar-default {
-    background-color: #ffffff;
+    background-color: #484848;
     /* gray */
 }
 
