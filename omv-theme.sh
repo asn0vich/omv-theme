@@ -86,8 +86,8 @@ do_finish() {
 do_omv_triton() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
 cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
-rm -r /var/www/openmediavault/css/theme-custom.css
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
+rm -r /var/www/openmediavault/css/theme-black.css
 rm -r /var/www/openmediavault/css/theme-random.css
 exec omv-theme
 }
@@ -95,8 +95,8 @@ exec omv-theme
 do_omv_gray() {
 echo 'OMV_WEBUI_THEME=gray' >> /etc/default/openmediavault
 cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
-rm -r /var/www/openmediavault/css/theme-custom.css
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
+rm -r /var/www/openmediavault/css/theme-black.css
 rm -r /var/www/openmediavault/css/theme-random.css
 exec omv-theme
 }
@@ -104,16 +104,16 @@ exec omv-theme
 do_omv_black() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
 cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
+cp /root/omv-theme/theme-random.css /var/www/openmediavault/css/
 rm -r /var/www/openmediavault/css/theme-random.css
 exec omv-theme
 }
 
 do_omv_random() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+cp /root/omv-theme/theme-random.css /var/www/openmediavault/css/
 cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-cp /root/omv-theme/theme-custom.css /var/www/openmediavault/css/
-rm -r /var/www/openmediavault/css/theme-custom.css
+rm -r /var/www/openmediavault/css/theme-black.css
 exec omv-theme
 }
 
