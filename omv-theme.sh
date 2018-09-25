@@ -99,7 +99,7 @@ exec omv-theme
 do_omv_random() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
 rm -r /var/www/openmediavault/css/theme-custom.css
-cp /root/omv-theme/theme-random.css /var/www/openmediavault/css/theme-custom.css
+cp /root/omv-theme/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.css
 exec omv-theme
 }
 
@@ -121,8 +121,8 @@ calc_wt_size
 while true; do
   FUN=$(whiptail --title "OMV GUI-Theme config" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Finish --ok-button Select \
     "1 Default" "" \
-    "2 Black" "" \
-    "3 Random" "" \
+    "2 Blackish" "" \
+    "3 Sour Cherry" "" \
 	"4 About" ""\
 	"5 Update" ""\
 	"6 Uninstall" ""\

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #header {
-    background: #651223 !important;
+    background: #ab1100 !important;
 }
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ body > .x-mask {
 }
 
 .x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
-    border-color: #651223;
+    border-color: #ab1100;
 }
 
 .x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
@@ -75,63 +75,63 @@ body > .x-mask {
 /******************************************************************************/
 /* Panel */
 .x-panel-default {
-    border-color: #651223;
+    border-color: #ab1100;
 }
 
 .x-panel-default-outer-border-l {
-    border-left-color: #651223 !important;
+    border-left-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-b {
-    border-bottom-color: #651223 !important;
+    border-bottom-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-trbl {
-    border-color: #651223 !important;
+    border-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-bl {
-    border-bottom-color: #651223 !important;
-    border-left-color: #651223 !important;
+    border-bottom-color: #ab1100 !important;
+    border-left-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-r {
-    border-right-color: #651223 !important;
+    border-right-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-rl {
-    border-right-color: #651223 !important;
-    border-left-color: #651223 !important;
+    border-right-color: #ab1100 !important;
+    border-left-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-rb {
-    border-right-color: #651223 !important;
-    border-bottom-color: #651223 !important;
+    border-right-color: #ab1100 !important;
+    border-bottom-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-trl {
-    border-top-color: #651223 !important;
-    border-right-color: #651223 !important;
-    border-left-color: #651223 !important;
+    border-top-color: #ab1100 !important;
+    border-right-color: #ab1100 !important;
+    border-left-color: #ab1100 !important;
 }
 
 .x-panel-default-outer-border-rbl {
-    border-right-color: #651223 !important;
-    border-bottom-color: #651223 !important;
-    border-left-color: #651223 !important;
+    border-right-color: #ab1100 !important;
+    border-bottom-color: #ab1100 !important;
+    border-left-color: #ab1100 !important;
 }
 
 .x-panel-header-default-vertical {
-    background-color: #651223;
+    background-color: #ab1100;
 }
 
 .x-panel-header-default .x-tool-tool-el {
-    background-color: #651223;
+    background-color: #ab1100;
 }
 
 .x-panel-header-default {
-    border: 1px solid #651223;
-    background-color: #651223;
+    border: 1px solid #ab1100;
+    background-color: #ab1100;
 }
 
 .x-panel-body-default {
@@ -163,28 +163,28 @@ body > .x-mask {
 /******************************************************************************/
 /* Grid */
 .x-grid-item-focused .x-grid-cell-inner:before {
-    border-color: #651223;
+    border-color: #ab1100;
 }
 
 .x-grid-group-hd-collapsed .x-grid-group-title:before,
 .x-grid-group-hd-collapsible .x-grid-group-title:before {
-    color: #651223;
+    color: #ab1100;
 }
 
 .x-grid-body {
-    border-top-color: #651223;
+    border-top-color: #ab1100;
 }
 
 /******************************************************************************/
 /* Workspace node tree */
 .x-workspace-node-tree .x-panel-header-default {
     border: 0px;
-    background-color: #81ff35;
+    background-color: #030101;
     /* gray */
 }
 
 .x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
-    background-color: #81ff35;
+    background-color: #030101;
     /* gray */
 }
 
@@ -213,7 +213,7 @@ body > .x-mask {
 }
 
 .x-collapse-el, .x-splitter-vertical {
-    background-color: #81ff35;
+    background-color: #030101;
 }
 
 .x-layout-split-left:before {
@@ -225,18 +225,18 @@ body > .x-mask {
 /******************************************************************************/
 /* Workspace navigation toolbar */
 .x-workspace-navigation-toolbar.x-toolbar-default {
-    background-color: #81ff35;
+    background-color: #030101;
     /* gray */
 }
 
 /******************************************************************************/
 /* Tabs */
 .x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
-    color: #651223;
+    color: #ab1100;
 }
 
 .x-tab-focus.x-tab-default {
-    outline: 1px solid #651223;
+    outline: 1px solid #ab1100;
 }
 
 .x-tab-invalid {
@@ -244,11 +244,11 @@ body > .x-mask {
 }
 
 .x-box-scroller-tab-bar-default {
-    background-color: #651223;
+    background-color: #0d5117;
 }
 
 .x-tab-bar-default {
-    background-color: #651223 !important;
+    background-color: #ab1100 !important;
 }
 
 /******************************************************************************/
@@ -259,16 +259,16 @@ body > .x-mask {
 }
 
 .x-window-body-default {
-    border-color: #651223 !important;
+    border-color: #0d5117 !important;
 }
 
 .x-window-header-default {
-    border-color: #651223;
-    background-color: #651223;
+    border-color: #0d5117;
+    background-color: #0d5117;
 }
 
 .x-window-header-default .x-tool-img {
-    background-color: #651223;
+    background-color: #0d5117;
 }
 
 /******************************************************************************/
@@ -279,13 +279,13 @@ body > .x-mask {
 }
 
 .x-btn-default-small {
-    border-color: #651223;
-    background-color: #651223;
+    border-color: #ab1100;
+    background-color: #ab1100;
 }
 
 .x-btn-focus.x-btn-default-small {
-    border-color: #651223;
-    background-color: #651223;
+    border-color: #0d5117;
+    background-color: #0d5117;
 }
 
 .x-btn-focus.x-btn-default-small,
@@ -295,8 +295,8 @@ body > .x-mask {
 }
 
 .x-btn-over.x-btn-default-small {
-    border-color: #651223;
-    background-color: #651223;
+    border-color: #0d5117;
+    background-color: #0d5117;
 }
 
 .x-btn.x-btn-pressed.x-btn-default-small {
@@ -336,7 +336,7 @@ span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small:before,
 /******************************************************************************/
 /* Checkbox */
 .x-form-checkbox-focus.x-form-checkbox-default {
-    color: #651223;
+    color: #ab1100;
 }
 
 .x-form-checkbox-default:before,
@@ -352,8 +352,8 @@ span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small:before,
 }
 
 .x-boundlist-selected {
-    background: #651223;
-    border-color: #651223;
+    background: #ab1100;
+    border-color: #ab1100;
 }
 
 /******************************************************************************/
@@ -388,5 +388,5 @@ div.x-title-icon.x-title-icon-default:before,
 
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: #651223;
+    background-color: #ab1100;
 }
