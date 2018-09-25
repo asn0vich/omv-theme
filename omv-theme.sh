@@ -104,15 +104,7 @@ exec omv-theme
 }
 
 do_update_omv_theme() {
-  rm -r /root/omv-theme/ &&
-  git clone https://github.com/virgil-av/omv-theme.git &&
-  cd /root/omv-theme &&
-  chmod +x omv-theme.sh &&
-  cd /usr/bin/ &&
-  rm -r /usr/bin/omv-theme &&
-  cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme &&
-  cd &&
-  exec omv-theme
+  exec /root/omv-theme/update-theme.sh
 }
 
 
