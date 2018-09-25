@@ -1,308 +1,384 @@
 @charset "UTF-8";
-#theme-vigil {
-    /******************************************************************************/
-    /* Miscellaneous */
-    /******************************************************************************/
-    /* Body */
-    /******************************************************************************/
-    /* Form fieldset */
-    /******************************************************************************/
-    /* Trigger field */
-    /******************************************************************************/
-    /* Spinner field */
-    /******************************************************************************/
-    /* Panel */
-    /******************************************************************************/
-    /* Tree */
-    /******************************************************************************/
-    /* Grid */
-    /******************************************************************************/
-    /* Workspace node tree */
-    /******************************************************************************/
-    /* Workscape dashboard */
-    /******************************************************************************/
-    /* Workspace navigation toolbar */
-    /******************************************************************************/
-    /* Tabs */
-    /******************************************************************************/
-    /* Windows */
-    /******************************************************************************/
-    /* Buttons */
-    /******************************************************************************/
-    /* Checkbox */
-    /******************************************************************************/
-    /* Combobox */
-    /******************************************************************************/
-    /* Menu */
-    /******************************************************************************/
-    /* Other */
+#header {
+    background: #000000 !important;
 }
-#theme-vigil #header {
-    background: #803d4d !important;
-}
-#theme-vigil .x-body,
-#theme-vigil .x-form-item-label-default,
-#theme-vigil .x-form-cb-label-default,
-#theme-vigil .x-form-text-default,
-#theme-vigil .x-grid-item,
-#theme-vigil .x-menu-item-text-default,
-#theme-vigil .x-panel-body-default,
-#theme-vigil .x-panel-header-title-default,
-#theme-vigil .x-toolbar-text-default,
-#theme-vigil .x-tree-node-text,
-#theme-vigil .x-window-body-default {
+
+/******************************************************************************/
+/* Miscellaneous */
+.x-body,
+.x-form-item-label-default,
+.x-form-cb-label-default,
+.x-form-text-default,
+.x-grid-item,
+.x-menu-item-text-default,
+.x-panel-body-default,
+.x-panel-header-title-default,
+.x-toolbar-text-default,
+.x-tree-node-text,
+.x-window-body-default {
     font-weight: 600;
     font-size: 16px;
     color: #000000;
 }
-#theme-vigil body > .x-mask {
+
+/******************************************************************************/
+/* Body */
+body > .x-mask {
     background-color: rgba(17, 45, 101, 0.5);
 }
-#theme-vigil .x-fieldset-header-default > .x-fieldset-header-text {
+
+/******************************************************************************/
+/* Form fieldset */
+.x-fieldset-header-default > .x-fieldset-header-text {
     color: #4E6E68;
 }
-#theme-vigil .x-form-password-trigger:before {
+
+/******************************************************************************/
+/* Trigger field */
+.x-form-password-trigger:before {
     content: "";
 }
-#theme-vigil .x-form-add-trigger:before {
+
+.x-form-add-trigger:before {
     content: "";
 }
-#theme-vigil .x-form-folder-trigger:before {
+
+.x-form-folder-trigger:before {
     content: "";
 }
-#theme-vigil .x-form-copy-trigger:before {
+
+.x-form-copy-trigger:before {
     content: "";
 }
-#theme-vigil .x-form-trigger-default.x-form-trigger-over {
+
+.x-form-trigger-default.x-form-trigger-over {
     border-color: #dbdbdb;
     background-image: none;
     background-color: #dbdbdb;
 }
-#theme-vigil .x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
-    border-color: #803d4d;
+
+.x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
+    border-color: #000000;
 }
-#theme-vigil .x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
+
+.x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
     border-color: #cc3300;
 }
-#theme-vigil .x-form-spinner-default.x-form-spinner-over {
+
+/******************************************************************************/
+/* Spinner field */
+.x-form-spinner-default.x-form-spinner-over {
     border-color: #4140db;
     background-color: #9fbce9;
 }
-#theme-vigil .x-panel-default {
-    border-color: #803d4d;
+
+/******************************************************************************/
+/* Panel */
+.x-panel-default {
+    border-color: #000000;
 }
-#theme-vigil .x-panel-default-outer-border-l {
-    border-left-color: #803d4d !important;
+
+.x-panel-default-outer-border-l {
+    border-left-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-b {
-    border-bottom-color: #803d4d !important;
+
+.x-panel-default-outer-border-b {
+    border-bottom-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-trbl {
-    border-color: #803d4d !important;
+
+.x-panel-default-outer-border-trbl {
+    border-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-bl {
-    border-bottom-color: #803d4d !important;
-    border-left-color: #803d4d !important;
+
+.x-panel-default-outer-border-bl {
+    border-bottom-color: #000000 !important;
+    border-left-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-r {
-    border-right-color: #803d4d !important;
+
+.x-panel-default-outer-border-r {
+    border-right-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-rl {
-    border-right-color: #803d4d !important;
-    border-left-color: #803d4d !important;
+
+.x-panel-default-outer-border-rl {
+    border-right-color: #000000 !important;
+    border-left-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-rb {
-    border-right-color: #803d4d !important;
-    border-bottom-color: #803d4d !important;
+
+.x-panel-default-outer-border-rb {
+    border-right-color: #000000 !important;
+    border-bottom-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-trl {
-    border-top-color: #803d4d !important;
-    border-right-color: #803d4d !important;
-    border-left-color: #803d4d !important;
+
+.x-panel-default-outer-border-trl {
+    border-top-color: #000000 !important;
+    border-right-color: #000000 !important;
+    border-left-color: #000000 !important;
 }
-#theme-vigil .x-panel-default-outer-border-rbl {
-    border-right-color: #803d4d !important;
-    border-bottom-color: #803d4d !important;
-    border-left-color: #803d4d !important;
+
+.x-panel-default-outer-border-rbl {
+    border-right-color: #000000 !important;
+    border-bottom-color: #000000 !important;
+    border-left-color: #000000 !important;
 }
-#theme-vigil .x-panel-header-default-vertical {
-    background-color: #803d4d;
+
+.x-panel-header-default-vertical {
+    background-color: #000000;
 }
-#theme-vigil .x-panel-header-default .x-tool-tool-el {
-    background-color: #803d4d;
+
+.x-panel-header-default .x-tool-tool-el {
+    background-color: #000000;
 }
-#theme-vigil .x-panel-header-default {
-    border: 1px solid #803d4d;
-    background-color: #803d4d;
+
+.x-panel-header-default {
+    border: 1px solid #000000;
+    background-color: #000000;
 }
-#theme-vigil .x-panel-body-default {
+
+.x-panel-body-default {
     background: #fff;
 }
-#theme-vigil .x-tree-icon-custom {
+
+/******************************************************************************/
+/* Tree */
+.x-tree-icon-custom {
     background-size: 16px 16px;
 }
-#theme-vigil .x-tree-elbow-plus,
-#theme-vigil .x-tree-elbow-end-plus,
-#theme-vigil .x-tree-icon,
-#theme-vigil .x-tree-icon-parent,
-#theme-vigil .x-tree-icon-parent-expanded,
-#theme-vigil .x-tree-icon-leaf,
-#theme-vigil .x-grid-tree-node-expanded .x-tree-elbow-plus,
-#theme-vigil .x-grid-tree-node-expanded .x-tree-elbow-end-plus {
+
+.x-tree-elbow-plus,
+.x-tree-elbow-end-plus,
+.x-tree-icon,
+.x-tree-icon-parent,
+.x-tree-icon-parent-expanded,
+.x-tree-icon-leaf,
+.x-grid-tree-node-expanded .x-tree-elbow-plus,
+.x-grid-tree-node-expanded .x-tree-elbow-end-plus {
     color: #000000;
 }
-#theme-vigil .x-grid-cell-inner-treecolumn {
+
+.x-grid-cell-inner-treecolumn {
     padding-top: 5px;
     padding-bottom: 4px;
 }
-#theme-vigil .x-grid-item-focused .x-grid-cell-inner:before {
-    border-color: #803d4d;
+
+/******************************************************************************/
+/* Grid */
+.x-grid-item-focused .x-grid-cell-inner:before {
+    border-color: #000000;
 }
-#theme-vigil .x-grid-group-hd-collapsed .x-grid-group-title:before,
-#theme-vigil .x-grid-group-hd-collapsible .x-grid-group-title:before {
+
+.x-grid-group-hd-collapsed .x-grid-group-title:before,
+.x-grid-group-hd-collapsible .x-grid-group-title:before {
     color: #000000;
 }
-#theme-vigil .x-workspace-node-tree .x-panel-header-default {
+
+/******************************************************************************/
+/* Workspace node tree */
+.x-workspace-node-tree .x-panel-header-default {
     border: 0px;
-    background-color: #d0b6bc;
+    background-color: #ffffff;
     /* gray */
 }
-#theme-vigil .x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
-    background-color: #d0b6bc;
+
+.x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
+    background-color: #ffffff;
     /* gray */
 }
-#theme-vigil .x-workspace-node-tree .x-tool-collapse-left:before {
-    color: #ffffff;
+
+.x-workspace-node-tree .x-tool-collapse-left:before {
+    color: #000000;
 }
-#theme-vigil .x-workspace-node-tree .x-grid-row-over .x-grid-td {
+
+.x-workspace-node-tree .x-grid-row-over .x-grid-td {
     cursor: pointer;
 }
-#theme-vigil .x-workspace-node-tree .x-tree-icon-parent,
-#theme-vigil .x-workspace-node-tree .x-tree-icon-parent-expanded {
+
+.x-workspace-node-tree .x-tree-icon-parent,
+.x-workspace-node-tree .x-tree-icon-parent-expanded {
     width: 0px;
     visibility: hidden;
 }
-#theme-vigil .x-workspace-node-tree.x-tree-lines .x-tree-elbow-line {
+
+.x-workspace-node-tree.x-tree-lines .x-tree-elbow-line {
     visibility: hidden;
 }
-#theme-vigil .x-workspace-node-tree .x-tree-elbow,
-#theme-vigil .x-workspace-node-tree .x-tree-elbow-end {
+
+.x-workspace-node-tree .x-tree-elbow,
+.x-workspace-node-tree .x-tree-elbow-end {
     width: 0px;
     visibility: hidden;
 }
-#theme-vigil .x-collapse-el, #theme-vigil .x-splitter-vertical {
-    background-color: #d0b6bc;
+
+.x-collapse-el, .x-splitter-vertical {
+    background-color: #ffffff;
 }
-#theme-vigil .x-layout-split-left:before {
-    color: #ffffff;
+
+.x-layout-split-left:before {
+    color: #000000;
 }
-#theme-vigil .x-workspace-navigation-toolbar.x-toolbar-default {
-    background-color: #d0b6bc;
+
+/******************************************************************************/
+/* Workscape dashboard */
+/******************************************************************************/
+/* Workspace navigation toolbar */
+.x-workspace-navigation-toolbar.x-toolbar-default {
+    background-color: #ffffff;
     /* gray */
 }
-#theme-vigil .x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
-    color: #803d4d;
+
+/******************************************************************************/
+/* Tabs */
+.x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
+    color: #000000;
 }
-#theme-vigil .x-tab-focus.x-tab-default {
-    outline: 1px solid #803d4d;
+
+.x-tab-focus.x-tab-default {
+    outline: 1px solid #000000;
 }
-#theme-vigil .x-tab-invalid {
+
+.x-tab-invalid {
     background-color: #cc3300;
 }
-#theme-vigil .x-box-scroller-tab-bar-default {
-    background-color: #79BAB6;
+
+.x-box-scroller-tab-bar-default {
+    background-color: #651223;
 }
-#theme-vigil .x-tab-bar-default {
-    background-color: #803d4d !important;
+
+.x-tab-bar-default {
+    background-color: #000000 !important;
 }
-#theme-vigil .x-window-default {
+
+/******************************************************************************/
+/* Windows */
+.x-window-default {
     border-color: #4E6E68;
     border-width: 1px;
 }
-#theme-vigil .x-window-body-default {
-    border-color: #79BAB6 !important;
+
+.x-window-body-default {
+    border-color: #651223 !important;
 }
-#theme-vigil .x-window-header-default {
-    border-color: #79BAB6;
-    background-color: #79BAB6;
+
+.x-window-header-default {
+    border-color: #651223;
+    background-color: #651223;
 }
-#theme-vigil .x-window-header-default .x-tool-img {
-    background-color: #79BAB6;
+
+.x-window-header-default .x-tool-img {
+    background-color: #651223;
 }
-#theme-vigil .x-btn-default-small,
-#theme-vigil .x-btn-default-toolbar-small {
+
+/******************************************************************************/
+/* Buttons */
+.x-btn-default-small,
+.x-btn-default-toolbar-small {
     border-radius: 3px;
 }
-#theme-vigil .x-btn-default-small {
-    border-color: #803d4d;
-    background-color: #803d4d;
+
+.x-btn-default-small {
+    border-color: #000000;
+    background-color: #000000;
 }
-#theme-vigil .x-btn-focus.x-btn-default-small {
-    border-color: #79BAB6;
-    background-color: #79BAB6;
+
+.x-btn-focus.x-btn-default-small {
+    border-color: #651223;
+    background-color: #651223;
 }
-#theme-vigil .x-btn-focus.x-btn-default-small,
-#theme-vigil .x-btn-focus.x-btn-over.x-btn-default-small,
-#theme-vigil .x-btn-focus.x-btn-pressed.x-btn-default-small {
+
+.x-btn-focus.x-btn-default-small,
+.x-btn-focus.x-btn-over.x-btn-default-small,
+.x-btn-focus.x-btn-pressed.x-btn-default-small {
     box-shadow: none;
 }
-#theme-vigil .x-btn-over.x-btn-default-small {
-    border-color: #79BAB6;
-    background-color: #79BAB6;
+
+.x-btn-over.x-btn-default-small {
+    border-color: #651223;
+    background-color: #651223;
 }
-#theme-vigil .x-btn.x-btn-pressed.x-btn-default-small {
+
+.x-btn.x-btn-pressed.x-btn-default-small {
     border-color: #4E6E68;
     background-color: #4E6E68;
 }
-#theme-vigil .x-btn.x-btn-disabled.x-btn-default-small {
+
+.x-btn.x-btn-disabled.x-btn-default-small {
     border-color: #E0B694;
     background-color: #E0B694;
 }
-#theme-vigil .x-form-checkbox-focus.x-form-checkbox-default {
-    color: #803d4d;
+
+.x-btn {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background-image: linear-gradient(#ffffff, #f2f2f2);
 }
-#theme-vigil .x-form-checkbox-default:before,
-#theme-vigil .x-form-cb-checked .x-form-checkbox-default:before {
+
+.x-btn:hover {
+    background: linear-gradient(#f2f2f2, #e6e6e6);
+}
+
+/******************************************************************************/
+/* Checkbox */
+.x-form-checkbox-focus.x-form-checkbox-default {
+    color: #000000;
+}
+
+.x-form-checkbox-default:before,
+.x-form-cb-checked .x-form-checkbox-default:before {
     content: none;
 }
-#theme-vigil .x-boundlist-item-over {
+
+/******************************************************************************/
+/* Combobox */
+.x-boundlist-item-over {
     background: #E0B694;
     border-color: #E0B694;
 }
-#theme-vigil .x-boundlist-selected {
-    background: #803d4d;
-    border-color: #803d4d;
+
+.x-boundlist-selected {
+    background: #000000;
+    border-color: #000000;
 }
-#theme-vigil .x-menu-item-default.x-menu-item-focus,
-#theme-vigil .x-menu-item-default.x-menu-item-active {
+
+/******************************************************************************/
+/* Menu */
+.x-menu-item-default.x-menu-item-focus,
+.x-menu-item-default.x-menu-item-active {
     background-color: #E0B694;
 }
-#theme-vigil .x-menu-item-default-menubar.x-menu-item-focus,
-#theme-vigil .x-menu-item-default-menubar.x-menu-item-active {
+
+.x-menu-item-default-menubar.x-menu-item-focus,
+.x-menu-item-default-menubar.x-menu-item-active {
     background-color: #E0B694;
 }
-#theme-vigil .x-btn-default-toolbar-small {
-    border-color: #a8ff62;
-    background-color: #bce5b6;
-    border-radius: 5px !important;
+
+/******************************************************************************/
+/* Other */
+span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small:before,
+.x-btn-arrow-right:after,
+.x-btn-split-right:after,
+.x-btn-inner-default-toolbar-small {
+    color: #000000 !important;
 }
-#theme-vigil .x-btn-over.x-btn-default-toolbar-small {
-    border-color: #72dfff;
-    background-color: #25e539;
-    border-radius: 5px !important;
-    color: #ff2e2c;
+
+div.x-title-icon.x-title-icon-default:before,
+.x-tool-expand-bottom:before,
+.x-tool-collapse-top:before,
+.x-tool-close:before,
+.x-title-text.x-title-text-default.x-title-item {
+    color: #fff;
 }
-#theme-vigil a + span + span + span::before {
-    color: red;
-}
-#theme-vigil ::-webkit-scrollbar {
+
+::-webkit-scrollbar {
     -webkit-appearance: none;
     height: 7px;
     width: 5px;
     background: rgba(79, 81, 78, 0.26);
     border-radius: 0;
 }
-#theme-vigil ::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: #803d4d;
+    background-color: #000000;
 }
