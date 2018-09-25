@@ -18,7 +18,7 @@ $body-mask: rgba(17, 45, 101, 0.5);
 $node-tree-arrow-bg: #FFFFFF;
 
 //buttons
-$btn-background-color: #5bc0de;
+$btn-background-color: #9c0316;
 $button-color: #fff; //affects text and icons on buttons
 
 //icons
@@ -355,7 +355,6 @@ body > .x-mask {
   border: none;
   border-radius: 3px;
   border-color: darken($btncolor,15%);
-  border-bottom: 1px solid #d9d9d9;
   background-image: linear-gradient($btncolor, darken($btncolor,5%));
   color: $button-color;
   &:hover {

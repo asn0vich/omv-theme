@@ -315,7 +315,6 @@ body > .x-mask {
     border: none;
     border-radius: 3px;
     border-color: #d9d9d9;
-    border-bottom: 1px solid #d9d9d9;
     background-image: linear-gradient(#ffffff, #f2f2f2);
     color: #000000;
 }

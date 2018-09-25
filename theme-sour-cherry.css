@@ -314,17 +314,16 @@ body > .x-mask {
     -moz-osx-font-smoothing: grayscale;
     border: none;
     border-radius: 3px;
-    border-color: #28a1c5;
-    border-bottom: 1px solid #d9d9d9;
-    background-image: linear-gradient(#5bc0de, #46b8da);
+    border-color: #51020b;
+    background-image: linear-gradient(#9c0316, #830312);
     color: #fff;
 }
 .x-btn:hover {
-    background: linear-gradient(#46b8da, #31b0d5);
+    background: linear-gradient(#830312, #6a020f);
 }
 
 .x-btn-pressed, .x-btn-focus {
-    background: #5bc0de !important;
+    background: #9c0316 !important;
 }
 
 .x-btn-inner-default-small {
