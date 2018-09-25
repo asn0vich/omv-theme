@@ -85,31 +85,21 @@ do_finish() {
 
 do_omv_triton() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-rm -r /var/www/openmediavault/css/theme-black.css
-rm -r /var/www/openmediavault/css/theme-random.css
-exec omv-theme
-}
-
-do_omv_gray() {
-echo 'OMV_WEBUI_THEME=gray' >> /etc/default/openmediavault
-cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
-rm -r /var/www/openmediavault/css/theme-black.css
-rm -r /var/www/openmediavault/css/theme-random.css
+rm -r /var/www/openmediavault/css/theme-custom.css
 exec omv-theme
 }
 
 do_omv_black() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/
+rm -r /var/www/openmediavault/css/theme-custom.css
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/theme-custom.css
 exec omv-theme
 }
 
 do_omv_random() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-cp /root/omv-theme/theme-random.css /var/www/openmediavault/css/
+rm -r /var/www/openmediavault/css/theme-custom.css
+cp /root/omv-theme/theme-random.css /var/www/openmediavault/css/theme-custom.css
 exec omv-theme
 }
 
@@ -132,24 +122,22 @@ do_update_omv_theme() {
 calc_wt_size
 while true; do
   FUN=$(whiptail --title "OMV GUI-Theme config" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Finish --ok-button Select \
-    "1 Gray" "" \
-    "2 Triton" "" \
-    "3 Black" "" \
-    "4 Random" "" \
-	"5 About" ""\
-	"6 Update" ""\
+    "1 Default" "" \
+    "2 Black" "" \
+    "3 Random" "" \
+	"4 About" ""\
+	"5 Update" ""\
     3>&1 1>&2 2>&3)
   RET=$?
   if [ $RET -eq 1 ]; then
     do_finish
   elif [ $RET -eq 0 ]; then
     case "$FUN" in
-      1\ *) do_omv_gray ;;
-      2\ *) do_omv_triton ;;
-      3\ *) do_omv_black ;;
-      4\ *) do_omv_random ;;
-	  5\ *) do_about ;;
-	  6\ *) do_update_omv_theme ;;
+      1\ *) do_omv_triton ;;
+      2\ *) do_omv_black ;;
+      3\ *) do_omv_random ;;
+	  4\ *) do_about ;;
+	  5\ *) do_update_omv_theme ;;
       *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
     esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
   else
