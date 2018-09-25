@@ -104,6 +104,7 @@ exec omv-theme
 }
 
 do_update_omv_theme() {
+  cd ~
   exec omv-theme-update
 }
 
