@@ -16,8 +16,8 @@
 .x-toolbar-text-default,
 .x-tree-node-text,
 .x-window-body-default {
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 12px;
     color: #000000;
 }
 
@@ -30,7 +30,7 @@ body > .x-mask {
 /******************************************************************************/
 /* Form fieldset */
 .x-fieldset-header-default > .x-fieldset-header-text {
-    color: #4E6E68;
+    color: #2c406e;
 }
 
 /******************************************************************************/
@@ -62,14 +62,14 @@ body > .x-mask {
 }
 
 .x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
-    border-color: #cc3300;
+    border-color: #cc0a00;
 }
 
 /******************************************************************************/
 /* Spinner field */
 .x-form-spinner-default.x-form-spinner-over {
-    border-color: #4140db;
-    background-color: #9fbce9;
+    border-color: #000000;
+    background-color: #d2e981;
 }
 
 /******************************************************************************/
@@ -171,6 +171,10 @@ body > .x-mask {
     color: #000000;
 }
 
+.x-grid-body {
+    border-top-color: #000000;
+}
+
 /******************************************************************************/
 /* Workspace node tree */
 .x-workspace-node-tree .x-panel-header-default {
@@ -236,7 +240,7 @@ body > .x-mask {
 }
 
 .x-tab-invalid {
-    background-color: #cc3300;
+    background-color: #cc0a00;
 }
 
 .x-box-scroller-tab-bar-default {
@@ -250,7 +254,7 @@ body > .x-mask {
 /******************************************************************************/
 /* Windows */
 .x-window-default {
-    border-color: #4E6E68;
+    border-color: #2c406e;
     border-width: 1px;
 }
 
@@ -296,13 +300,13 @@ body > .x-mask {
 }
 
 .x-btn.x-btn-pressed.x-btn-default-small {
-    border-color: #4E6E68;
-    background-color: #4E6E68;
+    border-color: #2c406e;
+    background-color: #2c406e;
 }
 
 .x-btn.x-btn-disabled.x-btn-default-small {
-    border-color: #E0B694;
-    background-color: #E0B694;
+    border-color: #a81739;
+    background-color: #a81739;
 }
 
 .x-btn {
@@ -316,6 +320,17 @@ body > .x-mask {
 
 .x-btn:hover {
     background: linear-gradient(#f2f2f2, #e6e6e6);
+}
+
+.x-btn-inner-default-small {
+    color: #000000;
+}
+
+span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small:before,
+.x-btn-arrow-right:after,
+.x-btn-split-right:after,
+.x-btn-inner-default-toolbar-small {
+    color: #000000 !important;
 }
 
 /******************************************************************************/
@@ -332,8 +347,8 @@ body > .x-mask {
 /******************************************************************************/
 /* Combobox */
 .x-boundlist-item-over {
-    background: #E0B694;
-    border-color: #E0B694;
+    background: #a81739;
+    border-color: #a81739;
 }
 
 .x-boundlist-selected {
@@ -345,23 +360,16 @@ body > .x-mask {
 /* Menu */
 .x-menu-item-default.x-menu-item-focus,
 .x-menu-item-default.x-menu-item-active {
-    background-color: #E0B694;
+    background-color: #a81739;
 }
 
 .x-menu-item-default-menubar.x-menu-item-focus,
 .x-menu-item-default-menubar.x-menu-item-active {
-    background-color: #E0B694;
+    background-color: #a81739;
 }
 
 /******************************************************************************/
 /* Other */
-span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small:before,
-.x-btn-arrow-right:after,
-.x-btn-split-right:after,
-.x-btn-inner-default-toolbar-small {
-    color: #000000 !important;
-}
-
 div.x-title-icon.x-title-icon-default:before,
 .x-tool-expand-bottom:before,
 .x-tool-collapse-top:before,
