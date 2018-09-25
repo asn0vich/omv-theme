@@ -104,7 +104,13 @@ exec omv-theme
 }
 
 do_update_omv_theme() {
-  exec /root/omv-theme/update-theme.sh
+  exec omv-theme-update
+}
+
+do_uninstall() {
+  rm -rf /root/omv-theme
+  rm -r /usr/bin/omv-theme
+  rm -r /usr/bin/omv-theme-update
 }
 
 
@@ -119,6 +125,7 @@ while true; do
     "3 Random" "" \
 	"4 About" ""\
 	"5 Update" ""\
+	"6 Uninstall" ""\
     3>&1 1>&2 2>&3)
   RET=$?
   if [ $RET -eq 1 ]; then
@@ -130,6 +137,7 @@ while true; do
       3\ *) do_omv_random ;;
 	  4\ *) do_about ;;
 	  5\ *) do_update_omv_theme ;;
+	  6\ *) do_uninstall ;;
       *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
     esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
   else
