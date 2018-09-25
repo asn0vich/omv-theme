@@ -350,7 +350,12 @@ body > .x-mask {
 }
 
 @mixin btn($btncolor){
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: none;
+  border-radius: 3px;
   border-color: darken($btncolor,15%);
+  border-bottom: 1px solid #d9d9d9;
   background-image: linear-gradient($btncolor, darken($btncolor,5%));
   color: $button-color;
   &:hover {
