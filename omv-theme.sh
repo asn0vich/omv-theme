@@ -93,7 +93,8 @@ do_omv_black() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
 rm -r /var/www/openmediavault/css/theme-custom.*.css
 cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/theme-custom.black.css
-sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+#sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+sed -i -e 's/theme-custom*.css/theme-custom.black.css/g' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 exec omv-theme
 }
 
@@ -101,7 +102,8 @@ do_omv_cherry() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
 rm -r /var/www/openmediavault/css/theme-custom.*.css
 cp /root/omv-theme/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.sour-cherry.css
-sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+#sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+sed -i -e 's/theme-custom*.css/theme-custom.sour-cherry.css/g' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 exec omv-theme
 }
 
