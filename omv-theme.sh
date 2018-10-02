@@ -115,6 +115,14 @@ sed -i '126s/.*/$fileName = "css\/theme-custom.green-peace.css";/' /usr/share/ph
 exec omv-theme
 }
 
+do_omv_old_gold() {
+echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+rm -r /var/www/openmediavault/css/theme-custom.*.css
+cp /root/omv-theme/theme-old-gold.css /var/www/openmediavault/css/theme-custom.old-gold.css
+sed -i '126s/.*/$fileName = "css\/theme-custom.old-gold.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+exec omv-theme
+}
+
 do_update_omv_theme() {
   cd ~
   exec omv-theme-update
@@ -142,6 +150,7 @@ while true; do
     "5 Theme Blackish" "" \
     "6 Theme Sour Cherry" "" \
     "7 Theme Green Peace" "" \
+    "8 Theme Old Gold" "" \
      \
     3>&1 1>&2 2>&3)
   RET=$?
@@ -156,6 +165,7 @@ while true; do
       5\ *) do_omv_black ;;
       6\ *) do_omv_cherry ;;
       7\ *) do_omv_green ;;
+      8\ *) do_omv_old_gold ;;
       *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
     esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
   else
