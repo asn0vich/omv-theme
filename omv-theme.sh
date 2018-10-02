@@ -25,9 +25,10 @@ calc_wt_size() {
 do_about() {
   whiptail --msgbox "\
 Project forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
-Removed original black theme and replaced with my own attempt.
-If you want to add more themes, see the github page https://github.com/virgil-av/omv-theme.git
-guide on how to make a new one (use the sass file and also compile it to css more on github)
+Check https://github.com/virgil-av/omv-theme.git for updates and how to guide.
+
+Project maintained by Virgil Avram @ 2018
+Plugin is meant vor OpenMediaVault v4.x
 " 20 70 1
 }
 
@@ -86,6 +87,7 @@ do_finish() {
 do_omv_triton() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
 rm -r /var/www/openmediavault/css/theme-custom.*.css
+sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 exec omv-theme
 }
 
@@ -119,6 +121,8 @@ do_update_omv_theme() {
 }
 
 do_uninstall() {
+  rm -r /var/www/openmediavault/css/theme-custom.*.css
+  sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
   rm -rf /root/omv-theme
   rm -r /usr/bin/omv-theme
   rm -r /usr/bin/omv-theme-update
@@ -130,7 +134,7 @@ do_uninstall() {
 #
 calc_wt_size
 while true; do
-  FUN=$(whiptail --title "OMV GUI-Theme config" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Finish --ok-button Select \
+  FUN=$(whiptail --title "OMV GUI-Theme config" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Exit --ok-button Select \
     "1 About" "" \
     "2 Update" "" \
     "3 Uninstall" ""\

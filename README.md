@@ -10,12 +10,18 @@ Use the the uninstall option
 
 or
 
-`rm -rf /root/omv-theme  &&
-  rm -r /usr/bin/omv-theme &&
-  rm -r /usr/bin/omv-theme-update`
+`  rm -r /var/www/openmediavault/css/theme-custom.*.css
+   sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+   rm -rf /root/omv-theme
+   rm -r /usr/bin/omv-theme
+   rm -r /usr/bin/omv-theme-update`
 
 ### To Start:                                       
 `omv-theme`
+
+### To Update:                                       
+`omv-theme`
+Select the Update option
 
 ### Check the theme
 - always remember to clear the UI cache you can do that in the browser or from `omv-firstaid`
@@ -45,12 +51,14 @@ or
 ```bash
 do_omv_custom_theme() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-    rm -r /var/www/openmediavault/css/theme-custom.css
-    cp /root/omv-theme/theme-your-theme-name.css /var/www/openmediavault/css/theme-custom.css
+    rm -r /var/www/openmediavault/css/theme-custom.*.css
+    cp /root/omv-theme/theme-your-theme-name.css /var/www/openmediavault/css/theme-custom.theme-your-theme-name.css
+    sed -i '126s/.*/$fileName = "css\/theme-custom.theme-your-theme-name.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
     exec omv-theme
 }
 ```
-- change this cp /root/omv-theme/`theme-your-theme-name.css` /var/www/openmediavault/css/theme-custom.css to your theme name and leave the rest
+- /var/www/openmediavault/css/theme-custom.`theme-your-theme-name`.css keep the naming convention
+- sed -i '126s/.*/$fileName = "css\/`theme-custom.theme-your-theme-name.css`" the highlighted part needs to mach the file name you did in the previous line
 - add the theme to the menu 
 ```bash
 ...
