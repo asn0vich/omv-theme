@@ -85,28 +85,31 @@ do_finish() {
 
 do_omv_triton() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-rm -r /var/www/openmediavault/css/theme-custom.css
+rm -r /var/www/openmediavault/css/theme-custom.*.css
 exec omv-theme
 }
 
 do_omv_black() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-rm -r /var/www/openmediavault/css/theme-custom.css
-cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/theme-custom.css
+rm -r /var/www/openmediavault/css/theme-custom.*.css
+cp /root/omv-theme/theme-black.css /var/www/openmediavault/css/theme-custom.black.css
+sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 exec omv-theme
 }
 
 do_omv_cherry() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-rm -r /var/www/openmediavault/css/theme-custom.css
-cp /root/omv-theme/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.css
+rm -r /var/www/openmediavault/css/theme-custom.*.css
+cp /root/omv-theme/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.sour-cherry.css
+sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 exec omv-theme
 }
 
 do_omv_green() {
 echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-rm -r /var/www/openmediavault/css/theme-custom.css
-cp /root/omv-theme/theme-green-peace.css /var/www/openmediavault/css/theme-custom.css
+rm -r /var/www/openmediavault/css/theme-custom.*.css
+cp /root/omv-theme/theme-green-peace.css /var/www/openmediavault/css/theme-custom.green-peace.css
+sed -i '126s/.*/$fileName = "css\/theme-custom.green-peace.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 exec omv-theme
 }
 
@@ -155,5 +158,3 @@ while true; do
     exit 1
   fi
 done
-
-
