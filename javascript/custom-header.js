@@ -20,7 +20,7 @@ buildHeader: function() {
     head.appendChild(style);
     // end of custom css
 
-    var domain = 'MYDOMAIN';
+    var customDomainTitle = 'MYDOMAIN';
 
     var me = this;
     return Ext.create("Ext.Component", {
@@ -29,7 +29,7 @@ buildHeader: function() {
         autoEl: {
             tag: "div",
             html: "<div id='header'>" +
-                "<div class='header-domain'>" + domain + "</div>" +
+                "<div class='header-domain'>" + customDomainTitle + "</div>" +
                 "<a title='" + OMV.PRODUCT_NAME +
                 "' href='" + OMV.PRODUCT_URL + "' target='_blank'>" +
                 "<div id='headerlogo'></div></a><div id='headerrlogo'>" +
