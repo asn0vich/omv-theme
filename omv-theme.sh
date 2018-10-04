@@ -138,8 +138,12 @@ do_uninstall() {
 
 do_header_domain() {
   cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
-  sed -e '91,104d' /var/www/openmediavault/js/omv/workspace/Workspace.js
-  sed -i "91r /root/omv-theme/javascript.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+  sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
+  sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+}
+
+do_remove_header_domain() {
+  cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 }
 
 #
@@ -157,6 +161,7 @@ while true; do
     "7 Theme Green Peace" "" \
     "8 Theme Old Gold" "" \
     "9 Test Header" "" \
+    "10 Test remove Header" "" \
      \
     3>&1 1>&2 2>&3)
   RET=$?
@@ -173,6 +178,7 @@ while true; do
       7\ *) do_omv_green ;;
       8\ *) do_omv_old_gold ;;
       9\ *) do_header_domain;;
+      10\ *) do_remove_header_domain;;
       *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
     esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
   else
