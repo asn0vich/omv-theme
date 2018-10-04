@@ -277,8 +277,8 @@ open_ui_menu() {
         case "$FUN" in
           1\ *) open_main_menu ;;
           2\ *)
-          open_custom_header_menu
-          do_header_backup ;;
+          do_header_backup
+          open_custom_header_menu ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
