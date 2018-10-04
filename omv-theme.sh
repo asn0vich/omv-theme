@@ -171,7 +171,9 @@ echo "(Exit status was $exitstatus)"
 }
 
 do_header_backup() {
-  cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
+if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
+fi
 }
 
 do_header_domain() {
