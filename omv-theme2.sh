@@ -161,7 +161,7 @@ DOMAIN_NAME=$(whiptail --inputbox "What is your favorite Color?" 8 78 Blue --tit
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $DOMAIN_NAME
-    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/javascript/custom-header.js
+    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/omv-theme/javascript/custom-header.js
 else
     echo "User selected Cancel."
 fi
@@ -197,7 +197,7 @@ open_custom_header_menu() {
         "1 <<<<< Back" "" \
         "2 Set domain title" "" \
         "3 Apply custom header" "" \
-        "4 Revert all changes" "" \
+        "4 Revert changes" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -263,7 +263,7 @@ open_ui_menu() {
     while true; do
       FUN=$(whiptail --title "OMV UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Custom header title" "" \
+        "2 Custom header config" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
