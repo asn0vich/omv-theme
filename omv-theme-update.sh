@@ -10,5 +10,6 @@ chmod +x omv-theme2.sh
 
 rm -rf /usr/bin/omv-theme
 cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme
+cp /root/omv-theme/update-theme.sh /usr/bin/update-theme
 cp /root/omv-theme/omv-theme2.sh /usr/bin/omv-theme2
 exec omv-theme
