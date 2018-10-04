@@ -177,6 +177,9 @@ fi
 }
 
 do_header_domain() {
+if [ -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
+fi
   sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
   sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
 }
