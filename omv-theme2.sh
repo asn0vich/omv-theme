@@ -1,6 +1,92 @@
 #!/bin/sh
 
 
+
+
+################################################################
+# theme functions
+
+do_omv_triton() {
+    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+    rm -r /var/www/openmediavault/css/theme-custom.*.css
+    sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    exec omv-theme
+}
+
+do_omv_black() {
+    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+    rm -r /var/www/openmediavault/css/theme-custom.*.css
+    cp /root/omv-theme/themes/theme-black.css /var/www/openmediavault/css/theme-custom.black.css
+    sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    exec omv-theme
+}
+
+do_omv_cherry() {
+    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+    rm -r /var/www/openmediavault/css/theme-custom.*.css
+    cp /root/omv-theme/themes/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.sour-cherry.css
+    sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    exec omv-theme
+}
+
+do_omv_green() {
+    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+    rm -r /var/www/openmediavault/css/theme-custom.*.css
+    cp /root/omv-theme/themes/theme-green-peace.css /var/www/openmediavault/css/theme-custom.green-peace.css
+    sed -i '126s/.*/$fileName = "css\/theme-custom.green-peace.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    exec omv-theme
+}
+
+do_omv_old_gold() {
+    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+    rm -r /var/www/openmediavault/css/theme-custom.*.css
+    cp /root/omv-theme/themes/theme-old-gold.css /var/www/openmediavault/css/theme-custom.old-gold.css
+    sed -i '126s/.*/$fileName = "css\/theme-custom.old-gold.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    exec omv-theme
+}
+
+################################################################
+# UI plugins
+
+#
+# Custom header
+#
+
+do_custom_header_title() {
+DOMAIN_NAME=$(whiptail --inputbox "What is your favorite Color?" 8 78 Blue --title "Example Dialog" 3>&1 1>&2 2>&3)
+
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    echo "User selected Ok and entered " $DOMAIN_NAME
+    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/omv-theme/javascript/custom-header.js
+else
+    echo "User selected Cancel."
+fi
+
+echo "(Exit status was $exitstatus)"
+}
+
+do_header_backup() {
+if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
+fi
+}
+
+do_header_domain() {
+if [ -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
+fi
+  sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
+  sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+}
+
+do_remove_header_domain() {
+if [ -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
+fi
+}
+
+
 ################################################################
 # Menu stuff I am not familiar with
 
@@ -93,99 +179,24 @@ do_about() {
 }
 
 do_update_omv_theme() {
+  # revert plugins before update
+  do_remove_header_domain
+  # do update
   cd ~
   exec omv-theme-update
 }
 
 do_uninstall() {
+  # revert plugins before update
+  do_remove_header_domain
+  # do uninstall
+
   rm -r /var/www/openmediavault/css/theme-custom.*.css
   sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
   rm -rf /root/omv-theme
   rm -r /usr/bin/omv-theme
   rm -r /usr/bin/omv-theme2
   rm -r /usr/bin/omv-theme-update
-}
-
-
-################################################################
-# theme functions
-
-do_omv_triton() {
-    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-    rm -r /var/www/openmediavault/css/theme-custom.*.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
-}
-
-do_omv_black() {
-    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-    rm -r /var/www/openmediavault/css/theme-custom.*.css
-    cp /root/omv-theme/themes/theme-black.css /var/www/openmediavault/css/theme-custom.black.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
-}
-
-do_omv_cherry() {
-    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-    rm -r /var/www/openmediavault/css/theme-custom.*.css
-    cp /root/omv-theme/themes/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.sour-cherry.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
-}
-
-do_omv_green() {
-    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-    rm -r /var/www/openmediavault/css/theme-custom.*.css
-    cp /root/omv-theme/themes/theme-green-peace.css /var/www/openmediavault/css/theme-custom.green-peace.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.green-peace.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
-}
-
-do_omv_old_gold() {
-    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
-    rm -r /var/www/openmediavault/css/theme-custom.*.css
-    cp /root/omv-theme/themes/theme-old-gold.css /var/www/openmediavault/css/theme-custom.old-gold.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.old-gold.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
-}
-
-################################################################
-# UI plugins
-
-#
-# Custom header
-#
-
-do_custom_header_title() {
-DOMAIN_NAME=$(whiptail --inputbox "What is your favorite Color?" 8 78 Blue --title "Example Dialog" 3>&1 1>&2 2>&3)
-
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
-    echo "User selected Ok and entered " $DOMAIN_NAME
-    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/omv-theme/javascript/custom-header.js
-else
-    echo "User selected Cancel."
-fi
-
-echo "(Exit status was $exitstatus)"
-}
-
-do_header_backup() {
-if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
-    cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
-fi
-}
-
-do_header_domain() {
-if [ -f /root/omv-theme/backup/Workspace.js ]; then
-    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
-fi
-  sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
-  sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
-}
-
-do_remove_header_domain() {
-  cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 }
 
 
