@@ -170,8 +170,11 @@ fi
 echo "(Exit status was $exitstatus)"
 }
 
-do_header_domain() {
+do_header_backup() {
   cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
+}
+
+do_header_domain() {
   sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
   sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
 }
@@ -273,7 +276,7 @@ open_ui_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_main_menu ;;
-          2\ *) open_custom_header_menu ;;
+          2\ *) open_custom_header_menu && do_header_backup ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
