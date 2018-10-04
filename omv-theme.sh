@@ -276,7 +276,9 @@ open_ui_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_main_menu ;;
-          2\ *) open_custom_header_menu && do_header_backup ;;
+          2\ *)
+          open_custom_header_menu
+          do_header_backup ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
