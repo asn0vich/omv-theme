@@ -102,6 +102,7 @@ do_uninstall() {
   sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
   rm -rf /root/omv-theme
   rm -r /usr/bin/omv-theme
+  rm -r /usr/bin/omv-theme2
   rm -r /usr/bin/omv-theme-update
 }
 
@@ -169,8 +170,16 @@ fi
 echo "(Exit status was $exitstatus)"
 }
 
+do_header_backup() {
+if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
+fi
+}
+
 do_header_domain() {
-  cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
+if [ -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
+fi
   sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
   sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
 }
@@ -193,7 +202,7 @@ do_remove_header_domain() {
 open_custom_header_menu() {
     calc_wt_size
     while true; do
-      FUN=$(whiptail --title "OMV CSS THEMES" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+      FUN=$(whiptail --title "OMV CUSTOM HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
         "2 Set domain title" "" \
         "3 Apply custom header" "" \
@@ -272,7 +281,9 @@ open_ui_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_main_menu ;;
-          2\ *) open_custom_header_menu ;;
+          2\ *)
+          do_header_backup
+          open_custom_header_menu ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else

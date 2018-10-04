@@ -202,7 +202,7 @@ do_remove_header_domain() {
 open_custom_header_menu() {
     calc_wt_size
     while true; do
-      FUN=$(whiptail --title "OMV CSS THEMES" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+      FUN=$(whiptail --title "OMV CUSTOM HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
         "2 Set domain title" "" \
         "3 Apply custom header" "" \
