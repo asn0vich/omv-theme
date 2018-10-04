@@ -102,6 +102,7 @@ do_uninstall() {
   sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
   rm -rf /root/omv-theme
   rm -r /usr/bin/omv-theme
+  rm -r /usr/bin/omv-theme2
   rm -r /usr/bin/omv-theme-update
 }
 
