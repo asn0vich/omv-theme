@@ -136,6 +136,11 @@ do_uninstall() {
   rm -r /usr/bin/omv-theme-update
 }
 
+do_header_domain() {
+  cp /var/www/openmediavault/js/omv/workspace/Workspace.js /root/omv-theme/backup/Workspace.js
+  sed -e '91,104d' /var/www/openmediavault/js/omv/workspace/Workspace.js
+  sed -i "91r /root/omv-theme/javascript.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+}
 
 #
 # Interactive use loop
@@ -151,6 +156,7 @@ while true; do
     "6 Theme Sour Cherry" "" \
     "7 Theme Green Peace" "" \
     "8 Theme Old Gold" "" \
+    "9 Test Header" "" \
      \
     3>&1 1>&2 2>&3)
   RET=$?
@@ -166,6 +172,7 @@ while true; do
       6\ *) do_omv_cherry ;;
       7\ *) do_omv_green ;;
       8\ *) do_omv_old_gold ;;
+      9\ *) do_header_domain;;
       *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
     esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
   else
