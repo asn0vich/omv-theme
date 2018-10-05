@@ -23,11 +23,18 @@ or
 `omv-theme`
 Select the Update option
 
-### Check the theme
-- always remember to clear the UI cache you can do that in the browser or from `omv-firstaid`
-- clearing browser cache F12 and then right click on the refresh button and select clear cache
 
-### To start a new theme:
+![alt text](https://preview.ibb.co/ivZXKK/Selection_001.png "")
+![alt text](ttps://preview.ibb.co/mQkTte/Selection_002.png "")
+![alt text](https://preview.ibb.co/fJFiRz/Selection_003.png "")
+![alt text](https://preview.ibb.co/bxfHmz/Selection_010.png "")
+![alt text](https://preview.ibb.co/kbygDe/Selection_008.png "")
+![alt text](https://preview.ibb.co/eqaHmz/Selection_011.png "")
+
+
+## How to
+
+### Create a new CSS theme
 
 - create a new `theme-your-theme-name.scss`
 - you can copy one of the previous themes or start from base `theme-triton.scss`
@@ -59,35 +66,80 @@ do_omv_custom_theme() {
 ```
 - /var/www/openmediavault/css/theme-custom.`theme-your-theme-name`.css keep the naming convention
 - sed -i '126s/.*/$fileName = "css\/`theme-custom.theme-your-theme-name.css`" the highlighted part needs to mach the file name you did in the previous line
-- add the theme to the menu 
+- add the theme to the theme menu, edit below code 
 ```bash
-...
-    "1 About" "" \
-    "2 Update" "" \
-    "3 Uninstall" ""\
-    "4 Theme Default" "" \
-    "5 Theme Blackish" "" \
-    "6 Theme Sour Cherry" "" \
-    "7 Theme Green Peace" "" \
-    "8 My theme" "" \
-...
-      1\ *) do_about ;;
-      2\ *) do_update_omv_theme ;;
-      3\ *) do_uninstall ;;
-      4\ *) do_omv_triton ;;
-      5\ *) do_omv_black ;;
-      6\ *) do_omv_cherry ;;
-      7\ *) do_omv_green ;;
-      8\ *) do_omv_custom_theme ;;
-...      
+open_theme_menu() {
+    calc_wt_size
+    while true; do
+      FUN=$(whiptail --title "OMV CSS THEMES" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+        "1 <<<<< Back" "" \
+        "2 Theme Default" "" \
+        "3 Theme Blackish" "" \
+        "4 Theme Sour Cherry" "" \
+        "5 Theme Green Peace" "" \
+        "6 Theme Old Gold" "" \
+         \
+        3>&1 1>&2 2>&3)
+      RET=$?
+      if [ $RET -eq 1 ]; then
+        open_main_menu
+      elif [ $RET -eq 0 ]; then
+        case "$FUN" in
+          1\ *) open_main_menu ;;
+          2\ *) do_omv_triton ;;
+          3\ *) do_omv_black ;;
+          4\ *) do_omv_cherry ;;
+          5\ *) do_omv_green ;;
+          6\ *) do_omv_old_gold ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
+      else
+        exit 1
+      fi
+    done
+}
+```
+- to this
+```bash
+open_theme_menu() {
+    calc_wt_size
+    while true; do
+      FUN=$(whiptail --title "OMV CSS THEMES" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+        "1 <<<<< Back" "" \
+        "2 Theme Default" "" \
+        "3 Theme Blackish" "" \
+        "4 Theme Sour Cherry" "" \
+        "5 Theme Green Peace" "" \
+        "6 Theme Old Gold" "" \
+        "7 Theme Your Custom Theme Name" "" \
+         \
+        3>&1 1>&2 2>&3)
+      RET=$?
+      if [ $RET -eq 1 ]; then
+        open_main_menu
+      elif [ $RET -eq 0 ]; then
+        case "$FUN" in
+          1\ *) open_main_menu ;;
+          2\ *) do_omv_triton ;;
+          3\ *) do_omv_black ;;
+          4\ *) do_omv_cherry ;;
+          5\ *) do_omv_green ;;
+          6\ *) do_omv_old_gold ;;
+          7\ *) do_omv_custom_theme ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
+      else
+        exit 1
+      fi
+    done
+}
 ```
 
-### Submit a theme
-- Pull Request on github would be really nice and clean
-- If not familiar with previous just open a issue and paste the scss files and I will do the rest
 
-
-
-This is a fork from `github/Wolf2000Pi/omv-theme`, I am a total noob at bash, thank you for creating this.                                       
+### Or Submit the theme
+- Please send the sass file, I ok with the CSS too but I prefer SASS
+- On the forum http://forum.openmediavault.org/index.php/Thread/24286-New-omv-theme-changer-based-on-Wolf2000Pi-omv-theme/
+- On github
+                                    
 
 
