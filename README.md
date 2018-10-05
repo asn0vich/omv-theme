@@ -25,7 +25,7 @@ Select the Update option
 
 
 ![alt text](https://preview.ibb.co/ivZXKK/Selection_001.png "")
-![alt text](ttps://preview.ibb.co/mQkTte/Selection_002.png "")
+![alt text](https://preview.ibb.co/mQkTte/Selection_002.png "")
 ![alt text](https://preview.ibb.co/fJFiRz/Selection_003.png "")
 ![alt text](https://preview.ibb.co/bxfHmz/Selection_010.png "")
 ![alt text](https://preview.ibb.co/kbygDe/Selection_008.png "")
