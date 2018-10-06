@@ -1,8 +1,6 @@
 #!/bin/sh
 
 
-
-
 ################################################################
 # theme functions
 
@@ -174,13 +172,17 @@ do_finish() {
 do_about() {
   whiptail --msgbox "\
 
+  OMV THEME v.1.2.1
+
   Check https://github.com/virgil-av/omv-theme.git for updates and how to guide.
-  Project maintained by Virgil Avram @ 2018
+  Project maintained by Virgil A. @ 2018
   App is meant vor OpenMediaVault v4.x
 
   I take no responsibility if this breaks your OMV UI, use this tool at your own risk.
-  Will try my best to give users the option to always revert back but bugs my exist.
-  Project forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
+  Most customizations have a revert option  which should should fix any problems related to omv-theme
+  When reverting always remember to clear your browser cache.
+
+  Project was forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
 " 20 70 1
 }
 
