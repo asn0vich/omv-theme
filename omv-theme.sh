@@ -6,10 +6,16 @@
 ################################################################
 # theme functions
 
+do_css_backup() {
+if [ ! -f /root/omv-theme/backup/controlpanelabstract.inc ]; then
+    cp /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc /root/omv-theme/backup/controlpanelabstract.inc
+fi
+}
+
 do_omv_triton() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    cp /root/omv-theme/backup/controlpanelabstract.inc /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
     exec omv-theme
 }
 
@@ -249,7 +255,7 @@ open_theme_menu() {
     while true; do
       FUN=$(whiptail --title "OMV CSS THEMES" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Theme Default" "" \
+        "2 Restore Default" "" \
         "3 Theme Blackish" "" \
         "4 Theme Sour Cherry" "" \
         "5 Theme Green Peace" "" \
@@ -322,7 +328,10 @@ open_main_menu() {
         do_finish
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
-          1\ *) open_theme_menu ;;
+          1\ *)
+          do_css_backup
+          open_theme_menu
+          ;;
           2\ *) open_ui_menu ;;
           3\ *) do_about ;;
           4\ *) do_update_omv_theme ;;
