@@ -10,10 +10,6 @@ if [ ! -f /root/omv-theme/backup/controlpanelabstract.inc ]; then
 fi
 }
 
-add_theme(){
-  sed -i '126s/.*/$fileName = "css\/theme-custom.${1}.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-}
-
 do_omv_triton() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
@@ -24,30 +20,28 @@ do_omv_black() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-black.css /var/www/openmediavault/css/theme-custom.black.css
-#    sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.black.css' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.black.css"' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_cherry() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.sour-cherry.css
-#    sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.sour-cherry.css' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.sour-cherry.css"' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_green() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-green-peace.css /var/www/openmediavault/css/theme-custom.green-peace.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.green-peace.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.green-peace.css"' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_old_gold() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-old-gold.css /var/www/openmediavault/css/theme-custom.old-gold.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.old-gold.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.old-gold.css"' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 ################################################################
@@ -205,6 +199,7 @@ do_about() {
 do_update_omv_theme() {
   # revert plugins before update
   do_remove_header_domain
+  do_omv_triton
   # do update
   cd ~
   exec omv-theme-update
@@ -213,6 +208,7 @@ do_update_omv_theme() {
 do_uninstall() {
   # revert plugins before update
   do_remove_header_domain
+  do_omv_triton
   # do uninstall
 
   rm -r /var/www/openmediavault/css/theme-custom.*.css
