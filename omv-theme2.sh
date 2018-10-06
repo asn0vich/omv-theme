@@ -53,18 +53,34 @@ do_omv_old_gold() {
 #
 
 do_custom_header_title() {
-DOMAIN_NAME=$(whiptail --inputbox "What is your favorite Color?" 8 78 Blue --title "Example Dialog" 3>&1 1>&2 2>&3)
+DOMAIN_NAME=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set text title" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $DOMAIN_NAME
-    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/omv-theme/javascript/custom-header.js
+    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/omv-theme/javascript/header-text.js
 else
     echo "User selected Cancel."
 fi
 
 echo "(Exit status was $exitstatus)"
 }
+
+
+do_custom_header_logo() {
+LOGO_URL=$(whiptail --inputbox "Insert logo url" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
+
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    echo "User selected Ok and entered " $LOGO_URL
+    sed -i "23s/.*/var customLogoUrl = '$LOGO_URL';/" /root/omv-theme/javascript/header-logo.js
+else
+    echo "User selected Cancel."
+fi
+
+echo "(Exit status was $exitstatus)"
+}
+
 
 do_header_backup() {
 if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
@@ -77,7 +93,7 @@ if [ -f /root/omv-theme/backup/Workspace.js ]; then
     cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
   sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
-  sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+  sed -i "91r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
 }
 
 do_remove_header_domain() {
@@ -215,9 +231,12 @@ open_custom_header_menu() {
     while true; do
       FUN=$(whiptail --title "OMV CUSTOM HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Set domain title" "" \
-        "3 Apply custom header" "" \
-        "4 Revert changes" "" \
+        "2 Set header text" "" \
+        "3 Apply header text to UI" "" \
+        "4 Set logo url" "" \
+        "5 Apply logo to UI" "" \
+        "6 Remove OMV logo" "" \
+        "7 Revert changes" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -228,7 +247,10 @@ open_custom_header_menu() {
           1\ *) open_ui_menu ;;
           2\ *) do_custom_header_title ;;
           3\ *) do_header_domain ;;
-          4\ *) do_remove_header_domain ;;
+          4\ *) do_custom_header_logo ;;
+          5\ *) do_header_domain ;;
+          6\ *) do_header_domain ;;
+          7\ *) do_remove_header_domain ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
