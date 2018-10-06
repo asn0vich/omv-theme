@@ -1,32 +1,39 @@
 #!/bin/sh
 
 
-
-
 ################################################################
 # theme functions
+
+do_css_backup() {
+if [ ! -f /root/omv-theme/backup/controlpanelabstract.inc ]; then
+    cp /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc /root/omv-theme/backup/controlpanelabstract.inc
+fi
+}
+
+add_theme(){
+  sed -i '126s/.*/$fileName = "css\/theme-custom.${1}.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+}
 
 do_omv_triton() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
+    cp /root/omv-theme/backup/controlpanelabstract.inc /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_black() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-black.css /var/www/openmediavault/css/theme-custom.black.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
+#    sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.black.css' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_cherry() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.sour-cherry.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
+#    sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.sour-cherry.css' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_green() {
@@ -34,7 +41,6 @@ do_omv_green() {
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-green-peace.css /var/www/openmediavault/css/theme-custom.green-peace.css
     sed -i '126s/.*/$fileName = "css\/theme-custom.green-peace.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
 }
 
 do_omv_old_gold() {
@@ -42,7 +48,6 @@ do_omv_old_gold() {
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-old-gold.css /var/www/openmediavault/css/theme-custom.old-gold.css
     sed -i '126s/.*/$fileName = "css\/theme-custom.old-gold.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
 }
 
 ################################################################
@@ -80,7 +85,6 @@ fi
 
 echo "(Exit status was $exitstatus)"
 }
-
 
 do_header_backup() {
 if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
@@ -184,13 +188,17 @@ do_finish() {
 do_about() {
   whiptail --msgbox "\
 
+  OMV THEME v.1.2.1
+
   Check https://github.com/virgil-av/omv-theme.git for updates and how to guide.
-  Project maintained by Virgil Avram @ 2018
+  Project maintained by Virgil A. @ 2018
   App is meant vor OpenMediaVault v4.x
 
   I take no responsibility if this breaks your OMV UI, use this tool at your own risk.
-  Will try my best to give users the option to always revert back but bugs my exist.
-  Project forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
+  Most customizations have a revert option  which should should fix any problems related to omv-theme
+  When reverting always remember to clear your browser cache.
+
+  Project was forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
 " 20 70 1
 }
 
@@ -213,6 +221,7 @@ do_uninstall() {
   rm -r /usr/bin/omv-theme
   rm -r /usr/bin/omv-theme2
   rm -r /usr/bin/omv-theme-update
+  exit 1
 }
 
 
@@ -271,7 +280,7 @@ open_theme_menu() {
     while true; do
       FUN=$(whiptail --title "OMV CSS THEMES" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Theme Default" "" \
+        "2 Restore Default" "" \
         "3 Theme Blackish" "" \
         "4 Theme Sour Cherry" "" \
         "5 Theme Green Peace" "" \
@@ -331,7 +340,7 @@ open_ui_menu() {
 open_main_menu() {
     calc_wt_size
     while true; do
-      FUN=$(whiptail --title "OMV GUI-Theme config" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Exit --ok-button Select \
+      FUN=$(whiptail --title "OMV THEME v1.2.1" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Exit --ok-button Select \
         "1 Themes (CSS)" "" \
         "2 UI plugins (JS)" "" \
         "3 About" ""\
@@ -344,7 +353,10 @@ open_main_menu() {
         do_finish
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
-          1\ *) open_theme_menu ;;
+          1\ *)
+          do_css_backup
+          open_theme_menu
+          ;;
           2\ *) open_ui_menu ;;
           3\ *) do_about ;;
           4\ *) do_update_omv_theme ;;
