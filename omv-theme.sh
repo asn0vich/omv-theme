@@ -205,6 +205,7 @@ do_uninstall() {
   rm -r /usr/bin/omv-theme
   rm -r /usr/bin/omv-theme2
   rm -r /usr/bin/omv-theme-update
+  exit
 }
 
 
