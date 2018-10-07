@@ -57,7 +57,7 @@ DOMAIN_NAME=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set t
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $DOMAIN_NAME
-    sed -i "/customHeaderText/c\var customHeaderText = '$DOMAIN_NAME';" /root/omv-theme/javascript/header-text.js
+    sed -i "/var customHeaderText/c\var customHeaderText = '$DOMAIN_NAME';" /root/omv-theme/javascript/header-text.js
 else
     echo "User selected Cancel."
 fi
@@ -72,7 +72,7 @@ LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $LOGO_URL
-    sed -i "/customLogoUrl/c\var customLogoUrl = '$LOGO_URL';" /root/omv-theme/javascript/header-logo.js
+    sed -i "/var customLogoUrl/c\var customLogoUrl = '$LOGO_URL';" /root/omv-theme/javascript/header-logo.js
 else
     echo "User selected Cancel."
 fi
