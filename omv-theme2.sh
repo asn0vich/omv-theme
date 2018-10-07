@@ -51,13 +51,13 @@ do_omv_old_gold() {
 # Custom header
 #
 
-do_custom_header_title() {
+set_header_text() {
 DOMAIN_NAME=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set text title" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $DOMAIN_NAME
-    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/omv-theme/javascript/header-text.js
+    sed -i "/customHeaderText/c\var customHeaderText = '$DOMAIN_NAME';" /root/omv-theme/javascript/header-text.js
 else
     echo "User selected Cancel."
 fi
@@ -66,13 +66,13 @@ echo "(Exit status was $exitstatus)"
 }
 
 
-do_custom_header_logo() {
+set_header_logo_url() {
 LOGO_URL=$(whiptail --inputbox "Insert logo url" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $LOGO_URL
-    sed -i "23s/.*/var customLogoUrl = '$LOGO_URL';/" /root/omv-theme/javascript/header-logo.js
+    sed -i "/customLogoUrl/c\var customLogoUrl = '$LOGO_URL';" /root/omv-theme/javascript/header-logo.js
 else
     echo "User selected Cancel."
 fi
@@ -86,12 +86,14 @@ if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
 fi
 }
 
-do_header_domain() {
+do_header_text() {
 if [ -f /root/omv-theme/backup/Workspace.js ]; then
     cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
-  sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
-  sed -i "91r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
+sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+
+
 }
 
 do_remove_header_domain() {
@@ -212,7 +214,6 @@ do_uninstall() {
   # do uninstall
 
   rm -r /var/www/openmediavault/css/theme-custom.*.css
-  sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
   rm -rf /root/omv-theme
   rm -r /usr/bin/omv-theme
   rm -r /usr/bin/omv-theme2
@@ -250,11 +251,11 @@ open_custom_header_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_ui_menu ;;
-          2\ *) do_custom_header_title ;;
-          3\ *) do_header_domain ;;
-          4\ *) do_custom_header_logo ;;
-          5\ *) do_header_domain ;;
-          6\ *) do_header_domain ;;
+          2\ *) set_header_text ;;
+          3\ *) do_header_text ;;
+          4\ *) set_header_logo_url ;;
+          5\ *) do_header_text ;;
+          6\ *) do_header_text ;;
           7\ *) do_remove_header_domain ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
