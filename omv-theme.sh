@@ -193,7 +193,7 @@ do_finish() {
 do_about() {
   whiptail --msgbox "\
 
-  OMV THEME v.1.2.1
+  OMV THEME v.1.3.0
 
   Check https://github.com/virgil-av/omv-theme.git for updates and how to guide.
   Project maintained by Virgil A. @ 2018
@@ -375,7 +375,7 @@ open_ui_menu() {
 open_main_menu() {
     calc_wt_size
     while true; do
-      FUN=$(whiptail --title "OMV THEME v1.2.1" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Exit --ok-button Select \
+      FUN=$(whiptail --title "OMV THEME v1.3.0" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Exit --ok-button Select \
         "1 Themes (CSS)" "" \
         "2 UI plugins (JS)" "" \
         "3 About" ""\
