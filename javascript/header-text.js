@@ -28,7 +28,7 @@ var css = `
         autoEl: {
             tag: "div",
             html: "<div id='header'>" +
-                "<div class='header-domain'>" + customDomainTitle + "</div>" +
+                "<div class='header-domain'>" + customHeaderText + "</div>" +
                 "<a title='" + OMV.PRODUCT_NAME +
                 "' href='" + OMV.PRODUCT_URL + "' target='_blank'>" +
                 "<div id='headerlogo'></div></a><div id='headerrlogo'>" +
