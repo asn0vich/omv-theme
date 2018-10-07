@@ -67,7 +67,7 @@ echo "(Exit status was $exitstatus)"
 
 
 set_header_logo_url() {
-LOGO_URL=$(whiptail --inputbox "Insert logo url" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
+LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
@@ -92,11 +92,17 @@ if [ -f /root/omv-theme/backup/Workspace.js ]; then
 fi
 sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
 sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
-
-
 }
 
-do_remove_header_domain() {
+do_header_logo() {
+if [ -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
+fi
+sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
+sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-logo.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+}
+
+do_revert_header() {
 if [ -f /root/omv-theme/backup/Workspace.js ]; then
     cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
@@ -200,7 +206,7 @@ do_about() {
 
 do_update_omv_theme() {
   # revert plugins before update
-  do_remove_header_domain
+  do_revert_header
   do_omv_triton
   # do update
   cd ~
@@ -209,7 +215,7 @@ do_update_omv_theme() {
 
 do_uninstall() {
   # revert plugins before update
-  do_remove_header_domain
+  do_revert_header
   do_omv_triton
   # do uninstall
 
@@ -229,20 +235,17 @@ do_uninstall() {
 # Special menus for some ui plugins
 
 #
-# Custom header menu
+# Custom text header menu
 #
 
-open_custom_header_menu() {
+open_custom_header_text_menu() {
     calc_wt_size
     while true; do
-      FUN=$(whiptail --title "OMV CUSTOM HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+      FUN=$(whiptail --title "OMV CUSTOM TEXT HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
         "2 Set header text" "" \
-        "3 Apply header text to UI" "" \
-        "4 Set logo url" "" \
-        "5 Apply logo to UI" "" \
-        "6 Remove OMV logo" "" \
-        "7 Revert changes" "" \
+        "3 Apply to UI" "" \
+        "4 Revert changes" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -253,10 +256,38 @@ open_custom_header_menu() {
           1\ *) open_ui_menu ;;
           2\ *) set_header_text ;;
           3\ *) do_header_text ;;
-          4\ *) set_header_logo_url ;;
-          5\ *) do_header_text ;;
-          6\ *) do_header_text ;;
-          7\ *) do_remove_header_domain ;;
+          4\ *) do_revert_header ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
+      else
+        exit 1
+      fi
+    done
+}
+
+#
+# Custom logo header menu
+#
+
+open_custom_header_logo_menu() {
+    calc_wt_size
+    while true; do
+      FUN=$(whiptail --title "OMV CUSTOM LOGO HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+        "1 <<<<< Back" "" \
+        "2 Set logo url" "" \
+        "3 Apply to UI" "" \
+        "4 Revert changes" "" \
+         \
+        3>&1 1>&2 2>&3)
+      RET=$?
+      if [ $RET -eq 1 ]; then
+        open_ui_menu
+      elif [ $RET -eq 0 ]; then
+        case "$FUN" in
+          1\ *) open_ui_menu ;;
+          2\ *) set_header_logo_url ;;
+          3\ *) do_header_logo ;;
+          4\ *) do_revert_header ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
@@ -311,7 +342,8 @@ open_ui_menu() {
     while true; do
       FUN=$(whiptail --title "OMV UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Custom header config" "" \
+        "2 Custom text header config" "" \
+        "3 Custom logo header config" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -322,7 +354,10 @@ open_ui_menu() {
           1\ *) open_main_menu ;;
           2\ *)
           do_header_backup
-          open_custom_header_menu ;;
+          open_custom_header_text_menu ;;
+          3\ *)
+          do_header_backup
+          open_custom_header_logo_menu ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
