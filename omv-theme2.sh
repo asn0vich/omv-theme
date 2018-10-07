@@ -107,6 +107,8 @@ do_revert_header() {
 if [ -f /root/omv-theme/backup/Workspace.js ]; then
     cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
+
+rm /var/www/openmediavault/images/custom-logo.png
 }
 
 

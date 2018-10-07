@@ -3,10 +3,9 @@
     var css = `
 		.header-logo {
 		  float: left;
-    	  margin: 30px 25px;
-          color: white;
+          height: 70px;
           width: auto;
-          height: 40px;
+          margin: 5px 20px;
 		}
 		div#headerlogo {
 		  float: right !important;
