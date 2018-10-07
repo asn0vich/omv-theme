@@ -14,39 +14,34 @@ do_omv_triton() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/backup/controlpanelabstract.inc /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
 }
 
 do_omv_black() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-black.css /var/www/openmediavault/css/theme-custom.black.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.black.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.black.css";' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_cherry() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-sour-cherry.css /var/www/openmediavault/css/theme-custom.sour-cherry.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.sour-cherry.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.sour-cherry.css";' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_green() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-green-peace.css /var/www/openmediavault/css/theme-custom.green-peace.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.green-peace.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.green-peace.css";' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 do_omv_old_gold() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/themes/theme-old-gold.css /var/www/openmediavault/css/theme-custom.old-gold.css
-    sed -i '126s/.*/$fileName = "css\/theme-custom.old-gold.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
-    exec omv-theme
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.old-gold.css";' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
 
 ################################################################
@@ -56,13 +51,29 @@ do_omv_old_gold() {
 # Custom header
 #
 
-do_custom_header_title() {
+set_header_text() {
 DOMAIN_NAME=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set text title" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $DOMAIN_NAME
-    sed -i "23s/.*/var customDomainTitle = '$DOMAIN_NAME';/" /root/omv-theme/javascript/custom-header.js
+    sed -i "/var customHeaderText/c\var customHeaderText = '$DOMAIN_NAME';" /root/omv-theme/javascript/header-text.js
+else
+    echo "User selected Cancel."
+fi
+
+echo "(Exit status was $exitstatus)"
+}
+
+
+set_header_logo_url() {
+LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
+
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    echo "User selected Ok and entered " $LOGO_URL
+    wget $LOGO_URL -O /root/omv-theme/images/custom-logo.png
+    cp /root/omv-theme/images/custom-logo.png /var/www/openmediavault/images/custom-logo.png
 else
     echo "User selected Cancel."
 fi
@@ -76,18 +87,28 @@ if [ ! -f /root/omv-theme/backup/Workspace.js ]; then
 fi
 }
 
-do_header_domain() {
+do_header_text() {
 if [ -f /root/omv-theme/backup/Workspace.js ]; then
     cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
-  sed -i 91,104d /var/www/openmediavault/js/omv/workspace/Workspace.js
-  sed -i "91r /root/omv-theme/javascript/custom-header.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
+sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
 }
 
-do_remove_header_domain() {
+do_header_logo() {
 if [ -f /root/omv-theme/backup/Workspace.js ]; then
     cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
+sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
+sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-logo.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+}
+
+do_revert_header() {
+if [ -f /root/omv-theme/backup/Workspace.js ]; then
+    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
+fi
+
+rm /var/www/openmediavault/images/custom-logo.png
 }
 
 
@@ -188,7 +209,8 @@ do_about() {
 
 do_update_omv_theme() {
   # revert plugins before update
-  do_remove_header_domain
+  do_revert_header
+  do_omv_triton
   # do update
   cd ~
   exec omv-theme-update
@@ -196,11 +218,11 @@ do_update_omv_theme() {
 
 do_uninstall() {
   # revert plugins before update
-  do_remove_header_domain
+  do_revert_header
+  do_omv_triton
   # do uninstall
 
   rm -r /var/www/openmediavault/css/theme-custom.*.css
-  sed -i '126s/.*/$fileName = "css\/theme-custom.css";/' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
   rm -rf /root/omv-theme
   rm -r /usr/bin/omv-theme
   rm -r /usr/bin/omv-theme2
@@ -216,16 +238,16 @@ do_uninstall() {
 # Special menus for some ui plugins
 
 #
-# Custom header menu
+# Custom text header menu
 #
 
-open_custom_header_menu() {
+open_custom_header_text_menu() {
     calc_wt_size
     while true; do
-      FUN=$(whiptail --title "OMV CUSTOM HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+      FUN=$(whiptail --title "OMV CUSTOM TEXT HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Set domain title" "" \
-        "3 Apply custom header" "" \
+        "2 Set header text" "" \
+        "3 Apply to UI" "" \
         "4 Revert changes" "" \
          \
         3>&1 1>&2 2>&3)
@@ -235,9 +257,40 @@ open_custom_header_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_ui_menu ;;
-          2\ *) do_custom_header_title ;;
-          3\ *) do_header_domain ;;
-          4\ *) do_remove_header_domain ;;
+          2\ *) set_header_text ;;
+          3\ *) do_header_text ;;
+          4\ *) do_revert_header ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
+      else
+        exit 1
+      fi
+    done
+}
+
+#
+# Custom logo header menu
+#
+
+open_custom_header_logo_menu() {
+    calc_wt_size
+    while true; do
+      FUN=$(whiptail --title "OMV CUSTOM LOGO HEADER" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+        "1 <<<<< Back" "" \
+        "2 Set logo url" "" \
+        "3 Apply to UI" "" \
+        "4 Revert changes" "" \
+         \
+        3>&1 1>&2 2>&3)
+      RET=$?
+      if [ $RET -eq 1 ]; then
+        open_ui_menu
+      elif [ $RET -eq 0 ]; then
+        case "$FUN" in
+          1\ *) open_ui_menu ;;
+          2\ *) set_header_logo_url ;;
+          3\ *) do_header_logo ;;
+          4\ *) do_revert_header ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
@@ -292,7 +345,8 @@ open_ui_menu() {
     while true; do
       FUN=$(whiptail --title "OMV UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Custom header config" "" \
+        "2 Custom text header config" "" \
+        "3 Custom logo header config" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -303,7 +357,10 @@ open_ui_menu() {
           1\ *) open_main_menu ;;
           2\ *)
           do_header_backup
-          open_custom_header_menu ;;
+          open_custom_header_text_menu ;;
+          3\ *)
+          do_header_backup
+          open_custom_header_logo_menu ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
