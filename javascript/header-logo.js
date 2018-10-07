@@ -21,7 +21,7 @@
     head.appendChild(style);
     // end of custom css
 
-    var customLogoUrl = 'http://';
+    var customLogoUrl = '../images/custom-logo.png';
 
     var me = this;
     return Ext.create("Ext.Component", {

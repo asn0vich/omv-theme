@@ -72,7 +72,8 @@ LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $LOGO_URL
-    sed -i "/var customLogoUrl/c\var customLogoUrl = '$LOGO_URL';" /root/omv-theme/javascript/header-logo.js
+    wget $LOGO_URL -O /root/omv-theme/images/custom-logo.png
+    cp /root/omv-theme/images/custom-logo.png /var/www/openmediavault/images/custom-logo.png
 else
     echo "User selected Cancel."
 fi
