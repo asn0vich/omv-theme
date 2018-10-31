@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /root/omv-theme/
-/bin/bash omv-theme.sh
+/bin/bash /root/omv-theme/app/omv-main.sh
