@@ -36,16 +36,16 @@ do_update_omv_theme() {
   chmod +x omv-theme2.sh
 
   # clean scripts from /usr/bin
-  rm -r /usr/bin/omv-theme
-  rm -r /usr/bin/omv-theme2
+  rm -rf /usr/bin/omv-theme
+  rm -rf /usr/bin/omv-theme2
 
   # copy and create scripts for execution
   cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme
 
   echo "#!/bin/bash" >> /usr/bin/omv-theme2
-  chmod +x /usr/bin/omv-theme2
   echo "cd /root/omv-theme/" >> /usr/bin/omv-theme2
   echo "/bin/bash omv-theme2.sh" >> /usr/bin/omv-theme2
+  chmod +x /usr/bin/omv-theme2
 
   exec omv-theme
 }
