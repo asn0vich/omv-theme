@@ -1,6 +1,6 @@
 # OMV Theme Changer
 
-With this tool, you can easily switch between the GUI theme
+With this tool, you can easily switch between the GUI themes and so much more than that
 
 ### To install:         
 `apt-get install git -y; cd ~ ; git clone https://github.com/virgil-av/omv-theme.git && cd omv-theme && chmod +x install-omv-theme.sh && ./install-omv-theme.sh`
