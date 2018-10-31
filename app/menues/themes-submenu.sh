@@ -13,6 +13,7 @@ open_theme_menu() {
         "4 Theme Sour Cherry" "" \
         "5 Theme Green Peace" "" \
         "6 Theme Old Gold" "" \
+        "7 Theme Condensed Black" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -26,6 +27,7 @@ open_theme_menu() {
           4\ *) do_omv_cherry ;;
           5\ *) do_omv_green ;;
           6\ *) do_omv_old_gold ;;
+          7\ *) do_omv_condensed_black ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else

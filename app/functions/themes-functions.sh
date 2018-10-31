@@ -42,3 +42,10 @@ do_omv_old_gold() {
     cp /root/omv-theme/themes/theme-old-gold.css /var/www/openmediavault/css/theme-custom.old-gold.css
     sed -i '/theme-custom/c\$fileName = "css\/theme-custom.old-gold.css";' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
 }
+
+do_omv_condensed_black() {
+    echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
+    rm -r /var/www/openmediavault/css/theme-custom.*.css
+    cp /root/omv-theme/themes/theme-condensed-black.css /var/www/openmediavault/css/theme-custom.condensed-black.css
+    sed -i '/theme-custom/c\$fileName = "css\/theme-custom.condensed-black.css";' /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
+}
