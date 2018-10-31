@@ -26,7 +26,34 @@ echo "(Exit status was $exitstatus)"
 
 
 revert_header_background_color() {
-   # cp /root/omv-theme/backup/header-bg-color.bak /var/www/openmediavault/css/theme-triton.min.css
-   # rm -rf /root/omv-theme/backup/header-bg-color.bak
     sed -i -e '/div#header{background:/,\/*custom-background-color*\/},/c\ ' /var/www/openmediavault/css/theme-triton.min.css
 }
+
+
+
+#
+# Remove header
+#
+
+set_remove_header() {
+    style="div#header{display: none !important;}
+div[id^="workspace-node-tree-"].x-panel.x-workspace-node-tree,
+div[id^="ext-comp-"][id$="-center"],
+div[id^="workspace-node-tree-"][id$="-splitter"]{
+	top: 0 !important;
+	height: 100vh !important;
+}
+
+div[id^="workspace-node-tree-"][id$="-body"],
+div[id^="ext-comp-"][id$="-body"]{
+	height: 100vh !important;
+}"
+    sed -i "$ a \\\n $style" /var/www/openmediavault/css/theme-triton.min.css
+}
+
+
+revert_remove_header() {
+    sed -i -e '/div#header{background:/,\/*custom-background-color*\/},/c\ ' /var/www/openmediavault/css/theme-triton.min.css
+}
+
+
