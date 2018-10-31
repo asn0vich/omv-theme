@@ -25,6 +25,7 @@ echo "(Exit status was $exitstatus)"
 
 
 revert_header_background_color() {
-    cp /root/omv-theme/backup/header-bg-color.bak /var/www/openmediavault/css/theme-triton.min.css
-    rm -rf /root/omv-theme/backup/header-bg-color.bak
+   # cp /root/omv-theme/backup/header-bg-color.bak /var/www/openmediavault/css/theme-triton.min.css
+   # rm -rf /root/omv-theme/backup/header-bg-color.bak
+    sed -i -e '/div#header{background:/,/*custom-background-color*/},/c\ ' /var/www/openmediavault/css/theme-triton.min.css
 }
