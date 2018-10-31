@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # remove old code and pull the new one
 rm -rf /root/omv-theme
@@ -19,7 +19,7 @@ rm -r /usr/bin/update-theme
 cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme
 cp /root/omv-theme/update-theme.sh /usr/bin/update-theme
 
-echo "#!/bin/sh" >> /usr/bin/omv-theme2
+echo "#!/bin/bash" >> /usr/bin/omv-theme2
 echo "/bin/bash /root/omv-theme/omv-theme2" >> /usr/bin/omv-theme2
 
 exec omv-theme
