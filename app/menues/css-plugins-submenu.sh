@@ -16,7 +16,7 @@ open_header_background_color_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
-          2\ *) set_header_background_color ;;
+          2\ *) ;;
           3\ *) ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
@@ -47,9 +47,8 @@ open_css_ui_menu() {
         case "$FUN" in
           1\ *) open_main_menu ;;
           2\ *) open_header_background_color_menu ;;
-          3\ *)
-          do_header_backup
-          open_custom_header_logo_menu ;;
+          3\ *) ;;
+          4\ *) ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
