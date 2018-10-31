@@ -1,0 +1,15 @@
+div#header {
+    display: none !important;
+}
+
+div[id^="workspace-node-tree-"].x-panel.x-workspace-node-tree,
+div[id^="ext-comp-"][id$="-center"],
+div[id^="workspace-node-tree-"][id$="-splitter"] {
+    top: 0 !important;
+    height: 100vh !important;
+}
+
+div[id^="workspace-node-tree-"][id$="-body"],
+div[id^="ext-comp-"][id$="-body"] {
+    height: 100vh !important;
+}
