@@ -15,7 +15,8 @@ if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $COLOR_CODE
     style="\n\n div#header{background: $COLOR_CODE !important; /*custom-background-color*/}"
     cp /var/www/openmediavault/css/theme-triton.min.css /root/omv-theme/backup/header-bg-color.bak
-    echo $style >> /var/www/openmediavault/css/theme-triton.min.css
+    # echo $style >> /var/www/openmediavault/css/theme-triton.min.css
+    sed -i "\n\n $style" /var/www/openmediavault/css/theme-triton.min.css
 else
     echo "User selected Cancel."
 fi
