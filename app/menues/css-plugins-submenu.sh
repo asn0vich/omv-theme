@@ -6,7 +6,7 @@ open_header_background_color_menu() {
     while true; do
       FUN=$(whiptail --title "OMV CSS UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
-        "2 Set and apply background color" "" \
+        "2 Set and apply color" "" \
         "3 Revert to default" "" \
          \
         3>&1 1>&2 2>&3)
@@ -16,8 +16,8 @@ open_header_background_color_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
-          2\ *) ;;
-          3\ *) ;;
+          2\ *) set_header_background_color ;;
+          3\ *) revert_header_background_color ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
@@ -36,8 +36,6 @@ open_css_ui_menu() {
       FUN=$(whiptail --title "OMV CSS UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
         "1 <<<<< Back" "" \
         "2 Header background color" "" \
-        "3 Header background image" "" \
-        "4 Header background image y axis" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -47,8 +45,6 @@ open_css_ui_menu() {
         case "$FUN" in
           1\ *) open_main_menu ;;
           2\ *) open_header_background_color_menu ;;
-          3\ *) ;;
-          4\ *) ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
