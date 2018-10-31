@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # function imports
 source components/menu-configs.sh
