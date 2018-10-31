@@ -3,7 +3,7 @@
 With this tool, you can easily switch between the GUI theme
 
 ### To install:         
-`git clone https://github.com/virgil-av/omv-theme.git && cd omv-theme && chmod +x install-omv-theme.sh && ./install-omv-theme.sh && cd`
+`apt-get install git -y; cd ~ ; git clone https://github.com/virgil-av/omv-theme.git && cd omv-theme && chmod +x install-omv-theme.sh && ./install-omv-theme.sh`
 
 ### To uninstall:       
 Use the the uninstall option 
