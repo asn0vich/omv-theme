@@ -36,7 +36,22 @@ revert_header_background_color() {
 #
 
 set_remove_header() {
-    style="div#header{display: none !important;} \n div[id^=\"workspace-node-tree-\"].x-panel.x-workspace-node-tree, \n div[id^=\"ext-comp-\"][id$=\"-center\"], \n div[id^=\"workspace-node-tree-\"][id$=\"-splitter\"]{ \n top: 0 !important; \n height: 100vh !important; \n }\n\n div[id^=\"workspace-node-tree-\"][id$=\"-body\"], \n div[id^=\"ext-comp-\"][id$=\"-body\"]{ \n height: 100vh !important; \n }"
+    style=$(cat <<-END
+div#header{display: none !important;} \n
+div[id^=\"workspace-node-tree-\"].x-panel.x-workspace-node-tree, \n
+div[id^=\"ext-comp-\"][id$=\"-center\"], \n
+div[id^=\"workspace-node-tree-\"][id$=\"-splitter\"]{ \n
+    top: 0 !important; \n
+    height: 100vh !important; \n
+}\n
+\n
+div[id^=\"workspace-node-tree-\"][id$=\"-body\"], \n
+div[id^=\"ext-comp-\"][id$=\"-body\"]{ \n
+    height: 100vh !important; \n
+}
+END
+)
+
     sed -i "$ a \\\n $style" /var/www/openmediavault/css/theme-triton.min.css
 }
 
