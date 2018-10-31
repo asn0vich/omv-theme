@@ -2,6 +2,7 @@
 
 # function imports
 source app/functions/menu-configs.sh
+source app/functions/menu-functions.sh
 source app/functions/themes-functions.sh
 source app/functions/ui-js-functions.sh
 source app/functions/ui-css-functions.sh
