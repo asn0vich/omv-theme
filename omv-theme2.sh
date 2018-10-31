@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # function imports
-source components/menu-configs.sh
-source components/themes-functions.sh
-source components/ui-js-functions.sh
-source components/ui-css-functions.sh
+source app/functions/menu-configs.sh
+source app/functions/themes-functions.sh
+source app/functions/ui-js-functions.sh
+source app/functions/ui-css-functions.sh
 
 # menu imports
-source menues/themes-submenu.sh
-source menues/js-plugins-submenu.sh
-source menues/css-plugins-submenu.sh
-source menues/main-menu.sh
+source app/menues/themes-submenu.sh
+source app/menues/js-plugins-submenu.sh
+source app/menues/css-plugins-submenu.sh
+source app/menues/main-menu.sh
 
 open_main_menu
 
