@@ -28,24 +28,17 @@ do_update_omv_theme() {
   cd ~
   # remove old code and pull the new one
   rm -rf /root/omv-theme
-  git clone https://github.com/virgil-av/omv-theme.git
+  git clone -b develop https://github.com/virgil-av/omv-theme.git
   cd /root/omv-theme
 
   # make main scripts executable
   chmod +x omv-theme.sh
-  chmod +x omv-theme2.sh
 
   # clean scripts from /usr/bin
   rm -rf /usr/bin/omv-theme
-  rm -rf /usr/bin/omv-theme2
 
   # copy and create scripts for execution
   cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme
-
-  echo "#!/bin/bash" >> /usr/bin/omv-theme2
-  echo "cd /root/omv-theme/" >> /usr/bin/omv-theme2
-  echo "/bin/bash omv-theme2.sh" >> /usr/bin/omv-theme2
-  chmod +x /usr/bin/omv-theme2
 
   exec omv-theme
 }
@@ -55,11 +48,8 @@ do_uninstall() {
   do_revert_header
   do_omv_triton
   # do uninstall
-
   rm -r /var/www/openmediavault/css/theme-custom.*.css
   rm -rf /root/omv-theme
   rm -r /usr/bin/omv-theme
-  rm -r /usr/bin/omv-theme2
-  rm -r /usr/bin/omv-theme-update
   exit 1
 }
