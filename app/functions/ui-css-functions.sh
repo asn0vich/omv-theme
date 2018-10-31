@@ -37,15 +37,15 @@ revert_header_background_color() {
 
 set_remove_header() {
     style="div#header{display: none !important;}
-div[id^="workspace-node-tree-"].x-panel.x-workspace-node-tree,
-div[id^="ext-comp-"][id$="-center"],
-div[id^="workspace-node-tree-"][id$="-splitter"]{
+div[id^=\"workspace-node-tree-\"].x-panel.x-workspace-node-tree,
+div[id^=\"ext-comp-\"][id$=\"-center\"],
+div[id^=\"workspace-node-tree-\"][id$=\"-splitter\"]{
 	top: 0 !important;
 	height: 100vh !important;
 }
 
-div[id^="workspace-node-tree-"][id$="-body"],
-div[id^="ext-comp-"][id$="-body"]{
+div[id^=\"workspace-node-tree-\"][id$=\"-body\"],
+div[id^=\"ext-comp-\"][id$=\"-body\"]{
 	height: 100vh !important;
 }"
     sed -i "$ a \\\n $style" /var/www/openmediavault/css/theme-triton.min.css
