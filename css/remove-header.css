@@ -14,4 +14,12 @@ div[id^="workspace-node-tree-"][id$="-body"],
 div[id^="ext-comp-"][id$="-body"] {
     height: 100vh !important;
 }
+
+div[id^="workspace-node-tree-"][id$="_header-title-textEl"] {
+    background: url(../images/header_logo.svg),none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center left;
+}
 /*remove-header-end*/
