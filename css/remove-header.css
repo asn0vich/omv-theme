@@ -1,3 +1,4 @@
+/*remove-header-start*/
 div#header {
     display: none !important;
 }
@@ -13,3 +14,4 @@ div[id^="workspace-node-tree-"][id$="-body"],
 div[id^="ext-comp-"][id$="-body"] {
     height: 100vh !important;
 }
+/*remove-header-end*\
