@@ -42,7 +42,7 @@ set_remove_header() {
 
 
 revert_remove_header() {
-    sed -i -e "/remove-header-start/,remove-header-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
+    sed -i -e "/remove-header-start,remove-header-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
 }
 
 
