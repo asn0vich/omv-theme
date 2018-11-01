@@ -6,7 +6,7 @@
 do_about() {
   whiptail --msgbox "\
 
-  OMV THEME v.1.2.1
+  OMV THEME CHANGER AND UI PLUGINS
 
   Check https://github.com/virgil-av/omv-theme.git for updates and how to guide.
   Project maintained by Virgil A. @ 2018
