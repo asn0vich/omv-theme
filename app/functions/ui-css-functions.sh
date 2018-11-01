@@ -37,7 +37,7 @@ revert_header_background_color() {
 
 set_remove_header() {
     sed -i "$ a \\\n" /var/www/openmediavault/css/theme-triton.min.css
-    sed -i -e "/$/r /root/omv-theme/css/remove-header.css" /var/www/openmediavault/css/theme-triton.min.css
+    sed -i -e "/ /r /root/omv-theme/css/remove-header.css" /var/www/openmediavault/css/theme-triton.min.css
 }
 
 
