@@ -14,4 +14,4 @@ div[id^="workspace-node-tree-"][id$="-body"],
 div[id^="ext-comp-"][id$="-body"] {
     height: 100vh !important;
 }
-/*remove-header-end*\
+/*remove-header-end*/
