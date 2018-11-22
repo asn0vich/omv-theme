@@ -1,0 +1,10 @@
+/*custom-background-image-start*/
+div#header{
+    background-image: url();
+    background-position: center center;
+    background-size: cover;
+    height: 80px;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+/*custom-background-image-end*/
