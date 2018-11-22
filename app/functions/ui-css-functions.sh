@@ -55,7 +55,6 @@ if [ $exitstatus = 0 ]; then
     wget $BGIMG_URL -O /root/omv-theme/images/custom-background.png
     cp /root/omv-theme/images/custom-background.png /var/www/openmediavault/images/custom-background.png
 
-    sed -i "/background-image:/c\background-image: url(../images/custom-background.png);" /root/omv-theme/css/background-image.css
     sed -i "$ a \\\n\n\n" /var/www/openmediavault/css/theme-triton.min.css
     sed -i -e "/ /r /root/omv-theme/css/background-image.css" /var/www/openmediavault/css/theme-triton.min.css
 else
@@ -65,4 +64,8 @@ fi
 echo "(Exit status was $exitstatus)"
 }
 
+
+revert_header_bgimg_url() {
+    sed -i -e "/custom-background-image-start/,/custom-background-image-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
+}
 
