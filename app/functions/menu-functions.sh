@@ -10,7 +10,7 @@ do_about() {
 
   Check https://github.com/virgil-av/omv-theme.git for updates and how to guide.
   Project maintained by Virgil A. @ 2018
-  App is meant vor OpenMediaVault v4.x
+  App is meant vor OpenMediaVault v4.x but may be compatible with lower versions
 
   I take no responsibility if this breaks your OMV UI, use this tool at your own risk.
   Most customizations have a revert option  which should should fix any problems related to omv-theme
@@ -28,7 +28,7 @@ do_update_omv_theme() {
   cd ~
   # remove old code and pull the new one
   rm -rf /root/omv-theme
-  git clone -b develop https://github.com/virgil-av/omv-theme.git
+  git clone https://github.com/virgil-av/omv-theme.git
   cd /root/omv-theme
 
   # make main scripts executable
