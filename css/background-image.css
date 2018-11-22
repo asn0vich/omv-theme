@@ -1,10 +1,10 @@
 /*custom-background-image-start*/
 div#header{
     background-image: url(../images/custom-background.png) !important;
-    background-position: center center;
-    background-size: cover;
+    background-position: center center !important;
+    background-size: cover !important;
     height: 80px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     width: 100%;
 }
 /*custom-background-image-end*/
