@@ -24,11 +24,11 @@ open_theme_menu() {
         case "$FUN" in
           1\ *) open_main_menu ;;
           2\ *) do_omv_triton ;;
-          3\ *) do_omv_black ;;
-          4\ *) do_omv_cherry ;;
-          5\ *) do_omv_green ;;
-          6\ *) do_omv_old_gold ;;
-          7\ *) do_omv_condensed_black ;;
+          3\ *) apply_theme "theme-blackish" ;;
+          4\ *) apply_theme "theme-sour-cherry" ;;
+          5\ *) apply_theme "theme-green-peace" ;;
+          6\ *) apply_theme "theme-old-gold" ;;
+          7\ *) apply_theme "theme-condensed-black" ;;
           8\ *) apply_theme "theme-black-and-white" ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
