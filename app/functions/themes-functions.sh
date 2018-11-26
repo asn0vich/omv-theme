@@ -16,7 +16,7 @@ do_omv_triton() {
 }
 
 apply_theme(){
-echo $themeName
+    themeName=$1
 
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
