@@ -16,7 +16,9 @@ open_header_background_color_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
-          2\ *) set_header_background_color ;;
+          2\ *)
+          revert_header_background_color
+          set_header_background_color ;;
           3\ *) revert_header_background_color ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
