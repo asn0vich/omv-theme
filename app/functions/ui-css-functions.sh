@@ -45,8 +45,14 @@ revert_remove_header() {
     sed -i -e "/remove-header-start/,/remove-header-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
 }
 
+revert_header_bgimg_url() {
+    sed -i -e "/custom-background-image-start/,/custom-background-image-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
+}
 
 set_header_bgimg_url() {
+
+revert_header_bgimg_url
+
 BGIMG_URL=$(whiptail --inputbox "Insert background image url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -54,8 +60,6 @@ if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $BGIMG_URL
     wget $BGIMG_URL -O /root/omv-theme/images/custom-background.png
     cp /root/omv-theme/images/custom-background.png /var/www/openmediavault/images/custom-background.png
-
-    revert_header_bgimg_url
     sed -i "$ a \\\n\n\n" /var/www/openmediavault/css/theme-triton.min.css
     sed -i -e "/ /r /root/omv-theme/css/background-image.css" /var/www/openmediavault/css/theme-triton.min.css
 else
@@ -66,7 +70,5 @@ echo "(Exit status was $exitstatus)"
 }
 
 
-revert_header_bgimg_url() {
-    sed -i -e "/custom-background-image-start/,/custom-background-image-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
-}
+
 
