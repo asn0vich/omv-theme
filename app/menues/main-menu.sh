@@ -6,7 +6,7 @@
 open_main_menu() {
     calc_wt_size
     while true; do
-      FUN=$(whiptail --title "OMV THEME v1.7.0" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Exit --ok-button Select \
+      FUN=$(whiptail --title "OMV THEME v1.7.1" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Exit --ok-button Select \
         "1 Themes" "" \
         "2 JS plugins " "" \
         "3 CSS plugins " "" \
