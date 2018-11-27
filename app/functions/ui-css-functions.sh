@@ -57,7 +57,6 @@ if [ $exitstatus = 0 ]; then
     echo "User selected Ok and entered " $BGIMG_URL
     wget $BGIMG_URL -O /root/omv-theme/images/custom-background.png
     cp /root/omv-theme/images/custom-background.png /var/www/openmediavault/images/custom-background.png
-#    sed -i "$ a \\\n" /var/www/openmediavault/css/theme-triton.min.css
     sed -i -e "/$a/r /root/omv-theme/css/background-image.css" /var/www/openmediavault/css/theme-triton.min.css
 else
     echo "User selected Cancel."
