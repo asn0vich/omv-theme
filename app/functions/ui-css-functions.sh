@@ -58,7 +58,7 @@ if [ $exitstatus = 0 ]; then
     wget $BGIMG_URL -O /root/omv-theme/images/custom-background.png
     cp /root/omv-theme/images/custom-background.png /var/www/openmediavault/images/custom-background.png
     sed -i -e "/custom-background-image-start/,/custom-background-image-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
-    sed -i "$ a \\\n" /var/www/openmediavault/css/theme-triton.min.css
+#    sed -i "$ a \\\n" /var/www/openmediavault/css/theme-triton.min.css
     sed -i -e "//r /root/omv-theme/css/background-image.css" /var/www/openmediavault/css/theme-triton.min.css
 else
     echo "User selected Cancel."
