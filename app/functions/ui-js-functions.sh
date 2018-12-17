@@ -66,3 +66,11 @@ fi
 
 rm /var/www/openmediavault/images/custom-logo.png
 }
+
+do_snow() {
+cp /root/omv-theme/javascript/let-it-snow.js /var/www/openmediavault/js/omv/let-it-snow.js
+}
+
+do_revert_snow() {
+rm -rf /var/www/openmediavault/js/omv/let-it-snow.js
+}
