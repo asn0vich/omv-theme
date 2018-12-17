@@ -216,7 +216,7 @@ body > .x-mask {
 }
 
 .x-splitter-vertical {
-  background: linear-gradient(to top, #378b29 96.6%, #ff0000 3.4%);
+  background: linear-gradient(to top, #000000 96.6%, #ff0000 3.4%);
 }
 
 .x-layout-split-left:before {
