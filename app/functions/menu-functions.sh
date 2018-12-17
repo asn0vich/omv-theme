@@ -13,7 +13,7 @@ do_about() {
   App is meant vor OpenMediaVault v4.x but may be compatible with lower versions
 
   I take no responsibility if this breaks your OMV UI, use this tool at your own risk.
-  Most customizations have a revert option  which should should fix any problems related to omv-theme
+  Most customizations have a revert option  which should fix any problems related to omv-theme
   When reverting always remember to clear your browser cache.
 
   Project was forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
