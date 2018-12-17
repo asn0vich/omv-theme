@@ -245,8 +245,12 @@ body > .x-mask {
   visibility: hidden;
 }
 
-.x-collapse-el, .x-splitter-vertical {
-  background-color: $dashboard-toolbar-bg;
+.x-collapse-el {
+  background-color: $omv-color-default;
+}
+
+.x-splitter-vertical {
+  background: linear-gradient(to top, $omv-color-default 96.6%,$dashboard-toolbar-bg 3.4%);
 }
 
 .x-layout-split-left:before {

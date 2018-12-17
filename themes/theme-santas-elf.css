@@ -211,8 +211,12 @@ body > .x-mask {
   visibility: hidden;
 }
 
-.x-collapse-el, .x-splitter-vertical {
-  background-color: #ff0000;
+.x-collapse-el {
+  background-color: #378b29;
+}
+
+.x-splitter-vertical {
+  background: linear-gradient(to top, #378b29 96.6%, #ff0000 3.4%);
 }
 
 .x-layout-split-left:before {
