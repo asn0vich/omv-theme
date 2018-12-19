@@ -85,7 +85,6 @@ fi
 }
 
 revert_font_size_and_weight() {
-    sed -i "/^$/d" /var/www/openmediavault/css/theme-triton.min.css
     sed -i -e "/custom-font-preset-start/,/custom-font-preset-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
 }
 
