@@ -96,8 +96,10 @@ font_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
-          2\ *) set_font_size_and_weight ;;
-          3\ *)  ;;
+          2\ *)
+          revert_font_size_and_weight
+          set_font_size_and_weight ;;
+          3\ *) revert_font_size_and_weight ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
