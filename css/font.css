@@ -11,7 +11,7 @@
 .x-tree-node-text,
 .x-window-body-default,
 .x-btn-inner-default-toolbar-small {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 12px !important;
+    font-weight: 700 !important;
 }
 /*custom-font-preset-end*/
