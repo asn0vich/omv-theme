@@ -1,0 +1,17 @@
+/*custom-font-preset-start*/
+.x-body,
+.x-form-item-label-default,
+.x-form-cb-label-default,
+.x-form-text-default,
+.x-grid-item,
+.x-menu-item-text-default,
+.x-panel-body-default,
+.x-panel-header-title-default,
+.x-toolbar-text-default,
+.x-tree-node-text,
+.x-window-body-default,
+.x-btn-inner-default-toolbar-small {
+    font-size: 12px;
+    font-weight: 700;
+}
+/*custom-font-preset-end*/

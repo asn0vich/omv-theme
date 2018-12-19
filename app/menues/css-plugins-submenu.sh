@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-open_header_background_color_menu() {
+header_bg_color_menu() {
     calc_wt_size
     while true; do
       FUN=$(whiptail --title "OMV CSS UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
@@ -28,7 +27,7 @@ open_header_background_color_menu() {
     done
 }
 
-open_header_background_image_menu() {
+header_bg_image_menu() {
     calc_wt_size
     while true; do
       FUN=$(whiptail --title "OMV CSS UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
@@ -55,7 +54,7 @@ open_header_background_image_menu() {
     done
 }
 
-open_remove_header() {
+remove_header_menu() {
     calc_wt_size
     while true; do
       FUN=$(whiptail --title "OMV CSS UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
@@ -82,6 +81,32 @@ open_remove_header() {
     done
 }
 
+font_menu() {
+    calc_wt_size
+    while true; do
+      FUN=$(whiptail --title "OMV CSS UI PLUGINS" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Back --ok-button Select \
+        "1 <<<<< Back" "" \
+        "2 Set font size and weight" "" \
+        "3 Revert to default" "" \
+         \
+        3>&1 1>&2 2>&3)
+      RET=$?
+      if [ $RET -eq 1 ]; then
+        open_main_menu
+      elif [ $RET -eq 0 ]; then
+        case "$FUN" in
+          1\ *) open_css_ui_menu ;;
+          2\ *) set_font_size_and_weight ;;
+          3\ *)  ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
+      else
+        exit 1
+      fi
+    done
+}
+
+
 
 #
 # Main CSS UI plugins menu
@@ -94,6 +119,7 @@ open_css_ui_menu() {
         "2 Header background color" "" \
         "3 Header background image" "" \
         "4 Remove header" "" \
+        "5 Font weight and size" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -102,9 +128,10 @@ open_css_ui_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_main_menu ;;
-          2\ *) open_header_background_color_menu ;;
-          3\ *) open_header_background_image_menu ;;
-          4\ *) open_remove_header ;;
+          2\ *) header_bg_color_menu ;;
+          3\ *) header_bg_image_menu ;;
+          4\ *) remove_header_menu ;;
+          4\ *) font_menu ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else

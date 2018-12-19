@@ -30,7 +30,6 @@ revert_header_background_color() {
 }
 
 
-
 #
 # Remove header
 #
@@ -58,6 +57,27 @@ if [ $exitstatus = 0 ]; then
     wget $BGIMG_URL -O /root/omv-theme/images/custom-background.png
     cp /root/omv-theme/images/custom-background.png /var/www/openmediavault/images/custom-background.png
     cat /root/omv-theme/css/background-image.css >> /var/www/openmediavault/css/theme-triton.min.css
+else
+    echo "User selected Cancel."
+fi
+
+echo "(Exit status was $exitstatus)"
+}
+
+
+#
+# Play with fonts
+#
+
+set_font_size_and_weight() {
+FONT_SIZE=$(whiptail --inputbox "It should be a number" 8 78 "12" --title "Font size" 3>&1 1>&2 2>&3)
+FONT_WEIGHT=$(whiptail --inputbox "Can be a number (100-900) or text normal, bold, bolder, lighter, google font-weight property values" 8 78 "bold" --title "Set logo url" 3>&1 1>&2 2>&3)
+
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    echo "User selected font-size " $FONT_SIZE "and font-weight" $FONT_WEIGHT
+
+
 else
     echo "User selected Cancel."
 fi
