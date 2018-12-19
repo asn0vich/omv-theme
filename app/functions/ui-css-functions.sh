@@ -76,7 +76,7 @@ FONT_WEIGHT=$(whiptail --inputbox "Can be a number (100-900) or text normal, bol
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo $FONT_SIZE $FONT_WEIGHT
-    sed -i -e "/font-size:/,/;/c\ font-size:"$FONT_SIZE"px !important;\n font-weight:$FONT_WEIGHT !important;" /root/omv-theme/css/font.css
+    sed -i -e "/font-size:/,/;/c\ font-size:$FONT_SIZE px !important;\n font-weight:$FONT_WEIGHT !important;" /root/omv-theme/css/font.css
     cat /root/omv-theme/css/font.css >> /var/www/openmediavault/css/theme-triton.min.css
 
 else
