@@ -76,8 +76,8 @@ FONT_WEIGHT=$(whiptail --inputbox "Can be a number (100-900) or text normal, bol
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo $FONT_SIZE $FONT_WEIGHT
-    sed -i -e "/font-size:/,/;/c\ font-size:$FONT_SIZE;" /root/omv-theme/css/font.css
-    sed -i -e "/font-weight:/,/;/c\ font-weight:$FONT_WEIGHT;" /root/omv-theme/css/font.css
+    sed -i -e "/font-size:*;$/c\ font-size:$FONT_SIZE;" /root/omv-theme/css/font.css
+    sed -i -e "/font-weight:*;$/c\ font-weight:$FONT_WEIGHT;" /root/omv-theme/css/font.css
 
 else
     echo "User selected Cancel."
