@@ -77,7 +77,6 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo $FONT_SIZE $FONT_WEIGHT
     sed -i -e "/font-size:/,/;/c\ font-size:$FONT_SIZE;\n font-weight:$FONT_WEIGHT;" /root/omv-theme/css/font.css
-    sed '/^$/d' /var/www/openmediavault/css/theme-triton.min.css
     cat /root/omv-theme/css/font.css >> /var/www/openmediavault/css/theme-triton.min.css
 
 else
@@ -86,6 +85,7 @@ fi
 }
 
 revert_font_size_and_weight() {
+    sed -i "/^$/d" /var/www/openmediavault/css/theme-triton.min.css
     sed -i -e "/custom-font-preset-start/,/custom-font-preset-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
 }
 
