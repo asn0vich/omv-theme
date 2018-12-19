@@ -71,6 +71,7 @@ echo "(Exit status was $exitstatus)"
 
 set_font_size_and_weight() {
 FONT_SIZE=$(whiptail --inputbox "It should be a number" 8 78 "12" --title "Font size" 3>&1 1>&2 2>&3)
+sleep 2
 FONT_WEIGHT=$(whiptail --inputbox "Can be a number (100-900) or text normal, bold, bolder, lighter, google font-weight property values" 8 78 "bold" --title "Set logo url" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
