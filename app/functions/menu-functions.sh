@@ -28,7 +28,7 @@ do_update_omv_theme() {
   cd ~
   # remove old code and pull the new one
   rm -rf /root/omv-theme
-  git clone https://github.com/virgil-av/omv-theme.git
+  git clone -b develop https://github.com/virgil-av/omv-theme.git
   cd /root/omv-theme
 
   # make main scripts executable
