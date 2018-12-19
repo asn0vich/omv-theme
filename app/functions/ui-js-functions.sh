@@ -69,6 +69,8 @@ rm /var/www/openmediavault/images/custom-logo.png
 
 do_snow() {
 cp /root/omv-theme/javascript/let-it-snow.js /var/www/openmediavault/js/omv/module/public/let-it-snow.js
+. /usr/share/openmediavault/scripts/helper-functions
+omv_purge_internal_cache
 }
 
 do_revert_snow() {
