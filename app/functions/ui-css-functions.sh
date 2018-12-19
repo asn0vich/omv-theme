@@ -77,7 +77,7 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo $FONT_SIZE $FONT_WEIGHT
     sed -i -e "s/font-size:*;/font-size:$FONT_SIZE;/" /root/omv-theme/css/font.css
-    sed -i -e "s/font-weight:*;/font-weight:$FONT_WEIGHT;" /root/omv-theme/css/font.css
+    sed -i -e "s/font-weight:*;/font-weight:$FONT_WEIGHT;/" /root/omv-theme/css/font.css
 
 else
     echo "User selected Cancel."
