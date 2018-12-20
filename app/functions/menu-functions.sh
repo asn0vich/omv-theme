@@ -42,11 +42,17 @@ do_update_omv_theme() {
 }
 
 do_uninstall() {
-  # revert plugins before update
+  # remove custom theme
   remove_custom_theme
+  # remove custom js
   remove_snow_plugin
   remove_header_text_or_logo
   remove_workspace_js_backup
+  # remove custom css
+  remove_header_background_color
+  remove_hide_header
+  remove_header_bg_img
+  remove_font_size_and_weight
 
   # do uninstall
   rm -r /var/www/openmediavault/css/theme-custom.*.css

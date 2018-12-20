@@ -16,9 +16,9 @@ header_bg_color_menu() {
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
           2\ *)
-          revert_header_background_color
+          remove_header_background_color
           set_header_background_color ;;
-          3\ *) revert_header_background_color ;;
+          3\ *) remove_header_background_color ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
@@ -43,9 +43,9 @@ header_bg_image_menu() {
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
           2\ *)
-          revert_header_bgimg_url
-          set_header_bgimg_url ;;
-          3\ *) revert_header_bgimg_url ;;
+          remove_header_bg_img
+          set_header_bg_img ;;
+          3\ *) remove_header_bg_img ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
@@ -70,9 +70,9 @@ remove_header_menu() {
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
           2\ *)
-          revert_remove_header
-          set_remove_header ;;
-          3\ *) revert_remove_header ;;
+          remove_hide_header
+          set_hide_header ;;
+          3\ *) remove_hide_header ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
@@ -97,9 +97,9 @@ font_menu() {
         case "$FUN" in
           1\ *) open_css_ui_menu ;;
           2\ *)
-          revert_font_size_and_weight
+          remove_font_size_and_weight
           set_font_size_and_weight ;;
-          3\ *) revert_font_size_and_weight ;;
+          3\ *) remove_font_size_and_weight ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
