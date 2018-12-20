@@ -23,7 +23,9 @@ if [ -f /var/www/openmediavault/js/omv/workspace/Workspace.js.bak ]; then
     cp /var/www/openmediavault/js/omv/workspace/Workspace.js.bak /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
 
-rm /var/www/openmediavault/images/custom-logo.png
+if [ -f /var/www/openmediavault/images/custom-logo.png ]; then
+    rm /var/www/openmediavault/images/custom-logo.png
+fi
 }
 
 # set an apply header text
