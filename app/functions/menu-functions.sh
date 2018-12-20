@@ -31,10 +31,8 @@ do_update_omv_theme() {
 
   # make main scripts executable
   chmod +x omv-theme.sh
-
   # clean scripts from /usr/bin
   rm -rf /usr/bin/omv-theme
-
   # copy and create scripts for execution
   cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme
 
@@ -55,8 +53,8 @@ do_uninstall() {
   remove_font_size_and_weight
 
   # do uninstall
-  rm -r /var/www/openmediavault/css/theme-custom.*.css
+  rm -rf /var/www/openmediavault/css/theme-custom.*.css
   rm -rf /root/omv-theme
-  rm -r /usr/bin/omv-theme
+  rm -rf /usr/bin/omv-theme
   exit 1
 }
