@@ -18,12 +18,17 @@ remove_workspace_js_backup() {
     rm -rf /var/www/openmediavault/js/omv/workspace/Workspace.js.bak
 }
 
-# set an apply header text
-set_header_text() {
-
+remove_header_text_or_logo() {
 if [ -f /var/www/openmediavault/js/omv/workspace/Workspace.js.bak ]; then
     cp /var/www/openmediavault/js/omv/workspace/Workspace.js.bak /var/www/openmediavault/js/omv/workspace/Workspace.js
 fi
+
+rm /var/www/openmediavault/images/custom-logo.png
+}
+
+# set an apply header text
+set_header_text() {
+remove_header_text_or_logo
 
 DOMAIN_NAME=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set text title" 3>&1 1>&2 2>&3)
 
@@ -42,9 +47,7 @@ echo "(Exit status was $exitstatus)"
 
 
 set_header_logo() {
-if [ -f /var/www/openmediavault/js/omv/workspace/Workspace.js.bak ]; then
-    cp /var/www/openmediavault/js/omv/workspace/Workspace.js.bak /var/www/openmediavault/js/omv/workspace/Workspace.js
-fi
+remove_header_text_or_logo
 
 LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
 
@@ -62,14 +65,6 @@ fi
 echo "(Exit status was $exitstatus)"
 }
 
-
-remove_header_text_or_logo() {
-if [ -f /root/omv-theme/backup/Workspace.js ]; then
-    cp /root/omv-theme/backup/Workspace.js /var/www/openmediavault/js/omv/workspace/Workspace.js
-fi
-
-rm /var/www/openmediavault/images/custom-logo.png
-}
 
 
 # End of custom header block
