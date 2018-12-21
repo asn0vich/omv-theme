@@ -5,25 +5,23 @@
 
 do_about() {
   whiptail --msgbox "\
+  OMV THEME CHANGER
 
-  OMV THEME CHANGER AND UI PLUGINS
+  A simple tool that allows you to switch omv themes, apply custom css and functionality.
+  Project is hosted on https://github.com/virgil-av/omv-theme.git
 
-  Check https://github.com/virgil-av/omv-theme.git for updates and how to guide.
-  Project maintained by Virgil A. @ 2018
-  App is meant vor OpenMediaVault v4.x but may be compatible with lower versions
+  Project maintained by Virgil A. JavaScript Frontend developer.
 
-  I take no responsibility if this breaks your OMV UI, use this tool at your own risk.
-  Most customizations have a revert option  which should fix any problems related to omv-theme
-  When reverting always remember to clear your browser cache.
+  Theme is compatible with OMV v4.x (possible compatibility with v3.x and v2.x)
 
-  Project was forked from https://github.com/Wolf2000Pi/omv-theme Version 1.0.2 by Wolf2000.
+  Use this tool at your own risk, I take no responsibility if this tool damages your server in any way.
+
+  If you encounter any problems check the omv forum: https://forum.openmediavault.org/index.php/Thread/24286
+
 " 20 70 1
 }
 
 do_update_omv_theme() {
-  # revert plugins before update
-  do_revert_header
-  do_omv_triton
   # do update
   cd ~
   # remove old code and pull the new one
@@ -33,10 +31,8 @@ do_update_omv_theme() {
 
   # make main scripts executable
   chmod +x omv-theme.sh
-
   # clean scripts from /usr/bin
   rm -rf /usr/bin/omv-theme
-
   # copy and create scripts for execution
   cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme
 
@@ -44,12 +40,21 @@ do_update_omv_theme() {
 }
 
 do_uninstall() {
-  # revert plugins before update
-  do_revert_header
-  do_omv_triton
+  # remove custom theme
+  remove_custom_theme
+  # remove custom js
+  remove_snow_plugin
+  remove_header_text_or_logo
+  remove_workspace_js_backup
+  # remove custom css
+  remove_header_background_color
+  remove_hide_header
+  remove_header_bg_img
+  remove_font_size_and_weight
+
   # do uninstall
-  rm -r /var/www/openmediavault/css/theme-custom.*.css
+  rm -rf /var/www/openmediavault/css/theme-custom.*.css
   rm -rf /root/omv-theme
-  rm -r /usr/bin/omv-theme
+  rm -rf /usr/bin/omv-theme
   exit 1
 }

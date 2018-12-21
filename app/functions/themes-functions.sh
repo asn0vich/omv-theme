@@ -9,7 +9,7 @@ if [ ! -f /root/omv-theme/backup/controlpanelabstract.inc ]; then
 fi
 }
 
-do_omv_triton() {
+remove_custom_theme() {
     echo 'OMV_WEBUI_THEME=triton' >> /etc/default/openmediavault
     rm -r /var/www/openmediavault/css/theme-custom.*.css
     cp /root/omv-theme/backup/controlpanelabstract.inc /usr/share/php/openmediavault/controlpanel/controlpanelabstract.inc
