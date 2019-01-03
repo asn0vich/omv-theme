@@ -107,3 +107,11 @@ remove_font_size_and_weight() {
 #######################################
 
 
+#######################################
+# fix triton css
+
+fix_default_css(){
+wget https://raw.githubusercontent.com/openmediavault/openmediavault/master/deb/openmediavault/var/www/openmediavault/css/theme-triton.min.css -O /var/www/openmediavault/css/theme-triton.min.css
+}
+# end fix triton css
+#######################################
