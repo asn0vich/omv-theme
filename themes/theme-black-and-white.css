@@ -334,7 +334,8 @@ span.x-btn-icon-el.x-btn-icon-el-default-toolbar-small:before,
 .x-btn-arrow-right:after,
 .x-btn-split-right:after,
 .x-btn-inner-default-toolbar-small {
-  color: #ffffff !important;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
 }
 
 /******************************************************************************/
@@ -546,9 +547,4 @@ img.thumb-icon, img.x-tree-icon {
 .x-grid-cell-booleaniconcolumn-switch-true, .x-grid-cell-booleaniconcolumn-switch-false, .x-form-checkbox-default {
   -webkit-filter: invert(1) hue-rotate(195deg);
   filter: invert(1) hue-rotate(195deg);
-}
-
-.x-btn-text.x-btn-icon-left > .x-btn-icon-el-default-toolbar-small {
-  filter: invert(100%);
-  -webkit-filter: invert(100%);
 }
