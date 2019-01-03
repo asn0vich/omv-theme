@@ -18,6 +18,7 @@ header_bg_color_menu() {
           2\ *)
           remove_header_background_color
           remove_header_bg_img
+          remove_hide_header
           set_header_background_color ;;
           3\ *) remove_header_background_color ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
@@ -46,6 +47,7 @@ header_bg_image_menu() {
           2\ *)
           remove_header_background_color
           remove_header_bg_img
+          remove_hide_header
           set_header_bg_img ;;
           3\ *) remove_header_bg_img ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
@@ -73,6 +75,8 @@ remove_header_menu() {
           1\ *) open_css_ui_menu ;;
           2\ *)
           remove_hide_header
+          remove_header_background_color
+          remove_header_bg_img
           set_hide_header ;;
           3\ *) remove_hide_header ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
