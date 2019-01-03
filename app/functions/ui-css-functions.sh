@@ -40,8 +40,7 @@ remove_header_background_color() {
 # hide header
 
 set_hide_header() {
-    sed -i "$ a \\\n\n\n" /var/www/openmediavault/css/theme-triton.min.css
-    sed -i -e "/ /r /root/omv-theme/css/remove-header.css" /var/www/openmediavault/css/theme-triton.min.css
+    cat /root/omv-theme/css/remove-header.css >> /var/www/openmediavault/css/theme-triton.min.css
 }
 
 remove_hide_header() {
@@ -107,3 +106,11 @@ remove_font_size_and_weight() {
 #######################################
 
 
+#######################################
+# fix triton css
+
+fix_default_css(){
+wget https://raw.githubusercontent.com/openmediavault/openmediavault/master/deb/openmediavault/var/www/openmediavault/css/theme-triton.min.css -O /var/www/openmediavault/css/theme-triton.min.css
+}
+# end fix triton css
+#######################################

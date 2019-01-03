@@ -23,6 +23,10 @@ With this tool, you can easily switch between the GUI themes and change part of 
 
 ![alt text](https://i.ibb.co/GT8dJpk/Selection-048.png "Uninstall screen")
 
+### OMV discussion board: 
+
+https://forum.openmediavault.org/index.php/Thread/24286
+
 ### Themes screenshots: 
 
 ![alt text](https://i.ibb.co/ZBbNTNc/Selection-059.png "Themes list screen")
@@ -44,9 +48,8 @@ With this tool, you can easily switch between the GUI themes and change part of 
 [<img src="https://i.ibb.co/2KVcN9Y/Selection-060.png">](https://ibb.co/2KVcN9Y)
 [<img src="https://i.ibb.co/9yT2fQp/Selection-062.png">](https://ibb.co/9yT2fQp)
 
-
-[<img src="">]()
-[<img src="">]()
-[<img src="">]()
-
-
+![alt text](https://i.ibb.co/ZBbNTNc/Selection-059.png "CSS Plugins screen")
+[<img src="https://i.ibb.co/Y8mStkp/Selection-064.png">](https://ibb.co/Y8mStkp)
+[<img src="https://i.ibb.co/DCQhdzw/Selection-065.png">](https://ibb.co/DCQhdzw)
+[<img src="https://i.ibb.co/QM2SbQz/Selection-066.png">](https://ibb.co/QM2SbQz)
+[<img src="https://i.ibb.co/DDKCrhz/Selection-068.png">](https://ibb.co/DDKCrhz)
