@@ -18,7 +18,7 @@ calc_wt_size() {
     WT_WIDTH=25
   fi
   if [ "$WT_WIDTH" ]; then
-    WT_WIDTH=35
+    WT_WIDTH=45
   fi
   WT_MENU_HEIGHT=$(($WT_HEIGHT-7))
 }
