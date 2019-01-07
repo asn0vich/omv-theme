@@ -83,4 +83,6 @@ omv_purge_internal_cache
 
 remove_snow_plugin() {
 rm -rf /var/www/openmediavault/js/omv/module/public/let-it-snow.js
+. /usr/share/openmediavault/scripts/helper-functions
+omv_purge_internal_cache
 }
