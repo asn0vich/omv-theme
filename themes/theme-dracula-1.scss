@@ -103,6 +103,19 @@ $yellow: rgb(241,250,140);
   background-color: $foreground;
 }
 
+.x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 7px;
+  width: 5px;
+  background: $background;
+  border-radius: 0;
+}
+
+.x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller::-webkit-scrollbar-thumb {
+  background-color: $selection;
+  border-radius: 0;
+}
+
 // end custom scroll bars
 
 //////////////////////////////////////////////////////
@@ -115,6 +128,10 @@ div[id^="workspace-node-tree-"][id$="-placeholder"],
   border-color: $selection;
 }
 
+
+div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-"][id$="-body"] {
+  background-color: $selection;
+}
 
 .x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller,
 .x-panel-default-outer-border-rbl{

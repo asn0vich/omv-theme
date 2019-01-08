@@ -67,10 +67,27 @@
     background-color: #f8f8f2;
 }
 
+.x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 7px;
+    width: 5px;
+    background: #282a36;
+    border-radius: 0;
+}
+
+.x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller::-webkit-scrollbar-thumb {
+    background-color: #44475a;
+    border-radius: 0;
+}
+
 div[id^=workspace-node-tree-][id$=-placeholder],
 .x-tool-tool-el.x-tool-img.x-tool-expand-right {
     background-color: #44475a;
     border-color: #44475a;
+}
+
+div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$=-body] {
+    background-color: #44475a;
 }
 
 .x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller,

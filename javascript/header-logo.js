@@ -7,6 +7,18 @@
           width: auto;
           margin: 5px 20px;
 		}
+		
+		.x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller{
+		  height: calc(100% - 50px) !important;
+		}
+		
+		div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-"][id$="-body"] {
+        background-image:url("../images/header_logo.svg");
+        background-repeat:no-repeat;
+        background-position:center 99%;
+        background-size: auto 30px;
+        }
+		
 		`,
         head = document.head || document.getElementsByTagName('head')[0],
         style = document.createElement('style');
