@@ -7,11 +7,6 @@
           width: auto;
           margin: 5px 20px;
 		}
-		div#headerlogo {
-		  float: right !important;
-		  margin-left: unset !important;
-          margin-right: 20px;
-		}
 		`,
         head = document.head || document.getElementsByTagName('head')[0],
         style = document.createElement('style');
@@ -29,11 +24,7 @@
         autoEl: {
             tag: "div",
             html: "<div id='header'>" +
-                "<img src='" + customLogoUrl + "' class='header-logo' />" +
-                "<a title='" + OMV.PRODUCT_NAME +
-                "' href='" + OMV.PRODUCT_URL + "' target='_blank'>" +
-                "<div id='headerlogo'></div></a><div id='headerrlogo'>" +
-                "</div></div>"
+                "<img src='" + customLogoUrl + "' class='header-logo' /></div>"
         }
     });
 
