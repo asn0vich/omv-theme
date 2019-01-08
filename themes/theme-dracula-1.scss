@@ -14,6 +14,25 @@ $red: rgb(255,85,85);
 $yellow: rgb(241,250,140);
 
 
+
+// fonts by default
+
+.x-body,
+.x-form-item-label-default,
+.x-form-cb-label-default,
+.x-form-text-default,
+.x-grid-item,
+.x-menu-item-text-default,
+.x-panel-body-default,
+.x-panel-header-title-default,
+.x-toolbar-text-default,
+.x-tree-node-text,
+.x-window-body-default,
+.x-btn-inner-default-toolbar-small {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 //background for header and main parts
 #header,
 .x-panel-bodyWrap,
@@ -130,6 +149,10 @@ div[id^="workspace-node-tree-"][id$="-placeholder"],
   color: $cyan;
 }
 
+.x-grid-item-focused{
+  color: $foreground;
+}
+
 .x-grid-cell-inner.x-grid-cell-inner-treecolumn:hover{
   background-color: $background;
   color: $cyan;
@@ -196,14 +219,194 @@ div[id^="workspace-node-tree-"][id$="-placeholder"],
 }
 
 .x-tab.x-tab-active.x-tab-default .x-tab-inner-default{
-  color: $foreground;
+  color: $background;
 }
 
 .x-toolbar-default {
   background-color: $foreground;
 }
 
-
-
-
 //end page tabs
+
+
+//////////////////////////////////////////////////////
+
+// start field sets
+
+.x-component.x-fieldset-header-text.x-component-default{
+  color: $foreground;
+}
+
+.x-fieldset.x-fieldset-with-title{
+  background-color: $background;
+}
+
+.x-form-item-label-text, .x-form-cb-label{
+  color: $foreground;
+}
+
+.x-form-fieldinfo{
+  color: rgba($foreground, 0.6);
+}
+
+// end field sets
+
+
+//////////////////////////////////////////////////////
+
+// start tables
+
+.x-grid-group-hd{
+  background-color: $comment;
+}
+
+.x-grid-group-hd > *  {
+  color: $foreground;
+}
+
+.x-grid-header-ct .x-box-inner .x-box-target > * {
+  background-color: $background;
+  color: $foreground;
+  font-weight: bold;
+}
+
+.x-grid-header-ct .x-box-inner .x-box-target .x-column-header-over {
+  background-color: $selection
+}
+
+
+.x-grid-header-ct .x-box-inner {
+  background-color: $background;
+}
+
+.x-grid-header-ct .x-box-inner .x-box-target .x-column-header-trigger{
+  background: $orange;
+  border: unset;
+}
+
+.x-grid-header-ct .x-box-inner .x-box-target .x-column-header-trigger:before{
+  color: $foreground;
+}
+
+.x-grid-header-ct .x-box-inner .x-box-target .x-column-header-open{
+  background-color: $selection;
+}
+
+.x-grid-group-hd-collapsed .x-grid-group-title:before, .x-grid-group-hd-collapsible .x-grid-group-title:before {
+  color: $foreground;
+}
+
+.x-column-header.x-column-header-focus .x-column-header-inner:after{
+  border: unset;
+}
+
+.x-grid-with-col-lines .x-grid-cell,
+.x-panel-body-default{
+  background-color: rgba($comment,0.5);
+}
+
+// end tables
+
+
+//////////////////////////////////////////////////////
+
+
+// start bullets and bars
+
+.x-color-green, .x-color-boolean-true, .x-color-good{
+  color: $green;
+}
+
+.x-color-red, .x-color-error {
+  color: $red
+}
+
+// end bullets and bars
+
+//////////////////////////////////////////////////////
+
+// start buttons
+
+.x-btn-default-small {
+  border-color: $background;
+  background-color: $background;
+  border-radius: 0;
+}
+
+.x-btn-default-small .x-btn-inner-default-small {
+  font-weight: bold;
+  color: $foreground;
+}
+
+.x-btn-default-small.x-btn-over{
+  background-color: $current-line;
+  border-color: $current-line;
+}
+//end buttons
+
+//////////////////////////////////////////////////////
+
+// start popup box
+
+.x-window-header-default{
+  background-color: $comment;
+  border: 1px solid $comment;
+}
+
+.x-window-header-default .x-tool-img{
+  background-color: $comment;
+
+  .x-boundlist-selected{
+    background: $comment;
+    border-color: $comment;
+  }
+
+  .x-boundlist-item.x-boundlist-item-over{
+    background-color: $purple;
+  }
+}
+
+// end popup box
+
+
+//////////////////////////////////////////////////////
+
+
+// start dashboard boxes
+
+.x-panel-header-default {
+  background-color: $comment;
+}
+.x-panel-default-outer-border-trbl{
+  border: 2px solid $comment !important;
+}
+
+.x-panel-header-default .x-tool-tool-el{
+  background-color: $comment;
+}
+
+.x-autocontainer-innerCt{
+  color: $foreground;
+}
+
+.x-container.x-container-default.x-box-layout-ct > * > * .x-btn-icon-el{
+  -webkit-filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.x-title-text.x-title-text-default.x-title-item{
+  font-weight: bold;
+}
+
+
+// end dashboard boxes
+
+
+
+// start error message
+
+#ext-form-error-tip-body .x-autocontainer-innerCt {
+  background-color: unset !important;
+}
+
+// end error message
