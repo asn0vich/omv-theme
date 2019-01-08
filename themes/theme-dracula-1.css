@@ -168,7 +168,7 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 }
 
 .x-tab-bar-default {
-    background-color: #bd93f9;
+    background-color: #282a36;
 }
 
 .x-tab-focus.x-tab-default {
