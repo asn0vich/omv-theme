@@ -422,7 +422,7 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
 
 // end dashboard boxes
 
-
+//////////////////////////////////////////////////////
 
 // start error message
 
@@ -431,3 +431,27 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
 }
 
 // end error message
+
+//////////////////////////////////////////////////////
+
+// start pop menu
+
+.x-menu-item-link{
+  background-color: $selection;
+}
+
+.x-menu-item-link > * {
+  color: $foreground;
+  font-weight: bold !important;
+}
+
+.x-menu-item-link:hover{
+  background-color: $background;
+}
+
+.x-menu-item-link:hover > * {
+  color: $cyan;
+  font-weight: bold !important;
+}
+
+// end pop menu

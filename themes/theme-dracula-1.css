@@ -323,3 +323,21 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 #ext-form-error-tip-body .x-autocontainer-innerCt {
     background-color: unset !important;
 }
+
+.x-menu-item-link {
+    background-color: #44475a;
+}
+
+.x-menu-item-link > * {
+    color: #f8f8f2;
+    font-weight: bold !important;
+}
+
+.x-menu-item-link:hover {
+    background-color: #282a36;
+}
+
+.x-menu-item-link:hover > * {
+    color: #8be9fd;
+    font-weight: bold !important;
+}
