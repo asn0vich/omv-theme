@@ -16,6 +16,7 @@ open_theme_menu() {
         "7 Theme Condensed Black" "" \
         "8 Theme Black and White" "" \
         "9 Theme Santa's Elf" "" \
+        "10 Theme Dracula v1" "" \
          \
         3>&1 1>&2 2>&3)
       RET=$?
@@ -32,6 +33,7 @@ open_theme_menu() {
           7\ *) apply_theme "theme-condensed-black" ;;
           8\ *) apply_theme "theme-black-and-white" ;;
           9\ *) apply_theme "theme-santas-elf" ;;
+          10\ *) apply_theme "theme-dracula-1" ;;
           *) whiptail --msgbox "Programmer error: unrecognized option" 20 40 1 ;;
         esac || whiptail --msgbox "There was an error running option $FUN" 20 40 1
       else
