@@ -1,0 +1,548 @@
+@charset "UTF-8";
+#header {
+  background: #000000 !important;
+}
+
+/******************************************************************************/
+/* Miscellaneous */
+.x-body,
+.x-form-item-label-default,
+.x-form-cb-label-default,
+.x-grid-item,
+.x-menu-item-text-default,
+.x-panel-body-default,
+.x-panel-header-title-default,
+.x-toolbar-text-default,
+.x-tree-node-text,
+.x-window-body-default {
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+}
+
+/******************************************************************************/
+/* Body */
+body > .x-mask {
+  background-color: rgba(17, 45, 101, 0.5);
+}
+
+/******************************************************************************/
+/* Form fieldset */
+.x-fieldset-header-default > .x-fieldset-header-text {
+  color: #000000;
+}
+
+/******************************************************************************/
+/* Trigger field */
+.x-form-password-trigger:before {
+  content: "";
+}
+
+.x-form-add-trigger:before {
+  content: "";
+}
+
+.x-form-folder-trigger:before {
+  content: "";
+}
+
+.x-form-copy-trigger:before {
+  content: "";
+}
+
+.x-form-trigger-default.x-form-trigger-over {
+  border-color: #dbdbdb;
+  background-image: none;
+  background-color: #dbdbdb;
+}
+
+.x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
+  border-color: #fff;
+}
+
+.x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
+  border-color: #000000;
+}
+
+/******************************************************************************/
+/* Spinner field */
+.x-form-spinner-default.x-form-spinner-over {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+/******************************************************************************/
+/* Panel */
+.x-panel-default {
+  border-color: #000000;
+}
+
+.x-panel-default-outer-border-l {
+  border-left-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-b {
+  border-bottom-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-trbl {
+  border-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-bl {
+  border-bottom-color: #000000 !important;
+  border-left-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-r {
+  border-right-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-rl {
+  border-right-color: #000000 !important;
+  border-left-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-rb {
+  border-right-color: #000000 !important;
+  border-bottom-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-trl {
+  border-top-color: #000000 !important;
+  border-right-color: #000000 !important;
+  border-left-color: #000000 !important;
+}
+
+.x-panel-default-outer-border-rbl {
+  border-right-color: #000000 !important;
+  border-bottom-color: #000000 !important;
+  border-left-color: #000000 !important;
+}
+
+.x-panel-header-default-vertical {
+  background-color: #000000;
+}
+
+.x-panel-header-default .x-tool-tool-el {
+  background-color: #000000;
+}
+
+.x-panel-header-default {
+  border: 1px solid #000000;
+  background-color: #000000;
+}
+
+.x-panel-body-default {
+  background: #fff;
+}
+
+/******************************************************************************/
+/* Tree */
+.x-tree-icon-custom {
+  background-size: 16px 16px;
+}
+
+.x-tree-elbow-plus,
+.x-tree-elbow-end-plus,
+.x-tree-icon,
+.x-tree-icon-parent,
+.x-tree-icon-parent-expanded,
+.x-tree-icon-leaf,
+.x-grid-tree-node-expanded .x-tree-elbow-plus,
+.x-grid-tree-node-expanded .x-tree-elbow-end-plus {
+  color: #fff;
+}
+
+.x-grid-cell-inner-treecolumn {
+  padding-top: 5px;
+  padding-bottom: 4px;
+}
+
+/******************************************************************************/
+/* Grid */
+.x-grid-item-focused .x-grid-cell-inner:before {
+  border-color: #000000;
+}
+
+.x-grid-group-hd-collapsed .x-grid-group-title:before,
+.x-grid-group-hd-collapsible .x-grid-group-title:before {
+  color: #000000;
+}
+
+.x-grid-body {
+  border-top-color: #000000;
+}
+
+/******************************************************************************/
+/* Workspace node tree */
+.x-workspace-node-tree .x-panel-header-default {
+  border: 0px;
+  background-color: #000000;
+  /* gray */
+}
+
+.x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
+  background-color: #000000;
+  /* gray */
+}
+
+.x-workspace-node-tree .x-tool-collapse-left:before {
+  color: #fffff;
+}
+
+.x-workspace-node-tree .x-grid-row-over .x-grid-td {
+  cursor: pointer;
+}
+
+.x-workspace-node-tree .x-tree-icon-parent,
+.x-workspace-node-tree .x-tree-icon-parent-expanded {
+  width: 0px;
+  visibility: hidden;
+}
+
+.x-workspace-node-tree.x-tree-lines .x-tree-elbow-line {
+  visibility: hidden;
+}
+
+.x-workspace-node-tree .x-tree-elbow,
+.x-workspace-node-tree .x-tree-elbow-end {
+  width: 0px;
+  visibility: hidden;
+}
+
+.x-collapse-el, .x-splitter-vertical {
+  background-color: #000000;
+}
+
+.x-layout-split-left:before {
+  color: #fffff;
+}
+
+/******************************************************************************/
+/* Workscape dashboard */
+/******************************************************************************/
+/* Workspace navigation toolbar */
+.x-workspace-navigation-toolbar.x-toolbar-default {
+  background-color: #000000;
+  /* gray */
+}
+
+/******************************************************************************/
+/* Tabs */
+.x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
+  color: #000000;
+}
+
+.x-tab-focus.x-tab-default {
+  outline: 1px solid #000000;
+}
+
+.x-tab-invalid {
+  background-color: #000000;
+}
+
+.x-box-scroller-tab-bar-default {
+  background-color: #000000;
+}
+
+.x-tab-bar-default {
+  background-color: #000000 !important;
+}
+
+/******************************************************************************/
+/* Windows */
+.x-window-default {
+  border-color: #000000;
+  border-width: 1px;
+}
+
+.x-window-body-default {
+  border-color: #000000 !important;
+}
+
+.x-window-header-default {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.x-window-header-default .x-tool-img {
+  background-color: #000000;
+}
+
+/******************************************************************************/
+/* Buttons */
+.x-btn-default-small,
+.x-btn-default-toolbar-small {
+  border-radius: 3px;
+}
+
+.x-btn-default-small {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.x-btn-focus.x-btn-default-small {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.x-btn-focus.x-btn-default-small,
+.x-btn-focus.x-btn-over.x-btn-default-small,
+.x-btn-focus.x-btn-pressed.x-btn-default-small {
+  box-shadow: none;
+}
+
+.x-btn-over.x-btn-default-small {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.x-btn.x-btn-pressed.x-btn-default-small {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.x-btn.x-btn-disabled.x-btn-default-small {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.x-btn {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: none;
+  border-radius: 3px;
+  border-color: black;
+  background-image: linear-gradient(#000000, black);
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px #fff;
+}
+.x-btn:hover {
+  background: linear-gradient(#292929, black);
+}
+
+.x-btn-pressed, .x-btn-focus {
+  background: #000000 !important;
+}
+
+.x-btn-inner-default-small {
+  color: #ffffff;
+}
+
+.x-btn-arrow-right:after,
+.x-btn-split-right:after,
+.x-btn-inner-default-toolbar-small {
+  color: #ffffff !important;
+}
+
+/******************************************************************************/
+/* Checkbox */
+.x-form-checkbox-focus.x-form-checkbox-default {
+  color: #000000;
+}
+
+.x-form-checkbox-default:before,
+.x-form-cb-checked .x-form-checkbox-default:before {
+  content: none;
+}
+
+/******************************************************************************/
+/* Combobox */
+.x-boundlist-item-over {
+  background: #000000;
+  border-color: #000000;
+}
+
+.x-boundlist-selected {
+  background: #000000;
+  border-color: #000000;
+}
+
+/******************************************************************************/
+/* Menu */
+.x-menu-item-default.x-menu-item-focus,
+.x-menu-item-default.x-menu-item-active {
+  background-color: #000000;
+}
+
+.x-menu-item-default-menubar.x-menu-item-focus,
+.x-menu-item-default-menubar.x-menu-item-active {
+  background-color: #000000;
+}
+
+/******************************************************************************/
+/* Other */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 7px;
+  width: 5px;
+  background: #000;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.x-autocontainer-innerCt {
+  background: #000;
+}
+
+.x-toolbar-default {
+  background-color: #000;
+}
+
+.x-panel-body-default {
+  background-color: #000;
+}
+
+.x-grid-item {
+  background-color: #000;
+  color: #fff;
+}
+
+.x-tree-node-text {
+  color: #fff;
+}
+
+.x-tree-icon-custom, .x-tree-icon {
+  color: #fff;
+}
+
+.x-panel-default {
+  border: 1px solid #fff;
+}
+
+.thumb > div,
+.thumb-wrap > span {
+  color: #fff;
+}
+
+.x-workspace-node-view-category-items .x-item-over,
+.x-workspace-node-view-category-header .thumb-wrap,
+.x-grid-item-over,
+.x-grid-item-alt.x-grid-item-over {
+  background-color: #434348 !important;
+}
+
+.x-workspace-node-view-category-header .thumb-wrap {
+  border-top: 1px solid #fff;
+  color: white;
+}
+
+.x-fieldset {
+  background: #000;
+}
+
+.x-fieldset-header-default > .x-fieldset-header-text {
+  color: #fff;
+}
+
+.x-form-fieldinfo {
+  color: #adadad;
+}
+
+.x-tab-focus.x-tab-default {
+  outline: unset;
+}
+
+.x-tab-inner-default {
+  font-weight: bold;
+}
+
+.x-grid-tree-node-expanded {
+  color: #fff;
+}
+
+.x-menu-body-default {
+  background: #000;
+}
+
+.x-fa {
+  color: #fff;
+}
+
+.x-form-display-field-default {
+  color: #fff;
+}
+
+.x-toolbar-footer {
+  background-color: #000;
+}
+
+.x-tip-body-form-invalid {
+  color: unset;
+}
+
+.x-tree-elbow-plus {
+  color: #ffffff;
+}
+
+.x-grid-item-alt {
+  background-color: #111113;
+}
+
+.x-grid-item-focused {
+  color: #DFDFDF;
+}
+
+.x-grid-group-hd {
+  background: #000;
+  border: 1px solid #fff;
+}
+
+.x-grid-group-title {
+  color: #fff;
+  font-weight: bold;
+}
+
+.x-column-header {
+  background: #383838;
+  color: #fff;
+}
+
+.x-column-header-over {
+  background: #3c3c3c;
+}
+
+.x-grid-header-ct {
+  background-color: #171717;
+}
+
+.x-message-box .x-window-body {
+  background-color: #000;
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.login-page {
+  background: #232323;
+}
+
+.x-btn-disabled {
+  background: #6d6d6d !important;
+}
+
+.x-form-text-default {
+  color: #ffffff;
+  background-color: #000;
+}
+
+.x-grid-cell-booleaniconcolumn-switch-true, .x-grid-cell-booleaniconcolumn-switch-false, .x-form-checkbox-default,
+.x-btn-icon-left > .x-btn-icon-el-default-small {
+  -webkit-filter: invert(1) hue-rotate(195deg);
+  filter: invert(1) hue-rotate(195deg);
+}
+
+.x-tree-icon-custom, .x-tree-icon, .mdi,
+.x-btn-text.x-btn-icon-left > .x-btn-icon-el-default-toolbar-small {
+  color: #000 !important;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+img.thumb-icon, img.x-tree-icon {
+  -webkit-filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg);
+}

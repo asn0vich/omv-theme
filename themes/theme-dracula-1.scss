@@ -1,0 +1,209 @@
+// Dracula theme colors  https://github.com/dracula/dracula-theme/
+
+$background: rgb(40,42,54);
+$current-line: rgb(68,71,90);
+$selection: rgb(68,71,90);
+$foreground: rgb(248,248,242);
+$comment: rgb(98,114,164);
+$cyan: rgb(139,233,253);
+$green: rgb(80,250,123);
+$orange: rgb(255,184,108);
+$pink: rgb(255,121,198);
+$purple: rgb(189,147,249);
+$red: rgb(255,85,85);
+$yellow: rgb(241,250,140);
+
+
+//background for header and main parts
+#header,
+.x-panel-bodyWrap,
+.x-autocontainer-innerCt {
+  background-color: $background !important;
+}
+
+
+//////////////////////////////////////////////////////
+
+// start splitter element
+
+.x-splitter-vertical {
+  background: linear-gradient(to bottom, $comment 44px, $selection 44px);
+}
+
+.x-splitter-focus:after{
+  border: unset;
+}
+
+.x-splitter-collapsed {
+  background: $selection !important;
+}
+
+.x-collapse-el.x-layout-split-left{
+  background: $comment;
+  color: $foreground;
+}
+
+// end splitter element
+
+//////////////////////////////////////////////////////
+
+
+// start bg color navigation bar, bg color, icon bg color and icon color
+
+.x-workspace-navigation-toolbar.x-toolbar-default{
+  width: 100%;
+  background-color: $comment;
+}
+
+.x-workspace-node-tree .x-panel-header-default{
+  background-color: $comment;
+}
+
+.x-workspace-node-tree .x-panel-header-default .x-tool-tool-el {
+  display: none;
+}
+.x-tool-collapse-left:before {
+  color: $foreground !important;
+}
+// end bg color navigation bar
+
+//////////////////////////////////////////////////////
+
+// start custom scroll bars
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 7px;
+  width: 5px;
+  background: $background;
+  border-radius: 0
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: $foreground;
+}
+
+// end custom scroll bars
+
+//////////////////////////////////////////////////////
+
+
+// start left panel, menu
+div[id^="workspace-node-tree-"][id$="-placeholder"],
+.x-tool-tool-el.x-tool-img.x-tool-expand-right {
+  background-color: $selection;
+  border-color: $selection;
+}
+
+
+.x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller,
+.x-panel-default-outer-border-rbl{
+  background-color: $selection;
+  border: unset;
+}
+
+.x-tree-view.x-fit-item.x-tree-view-default.x-unselectable.x-scroller{
+  border-top: 1px solid $comment;
+}
+
+.x-grid-cell-inner-treecolumn{
+  background-color: $selection;
+  color: $foreground;
+  height: 40px;
+}
+
+.x-tree-icon,
+.x-tree-elbow-plus,
+.x-tree-elbow-end-plus{
+  color: $foreground !important;
+}
+
+.x-grid-cell-inner.x-grid-cell-inner-treecolumn > img {
+  -webkit-filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.x-grid-item-focused .x-grid-cell-inner:before{
+  border-color: $background;
+  background-color: $background;
+  color: $cyan;
+}
+
+.x-grid-cell-inner.x-grid-cell-inner-treecolumn:hover{
+  background-color: $background;
+  color: $cyan;
+}
+
+.x-grid-cell-inner.x-grid-cell-inner-treecolumn:hover > .x-tree-icon,
+.x-grid-cell-inner.x-grid-cell-inner-treecolumn:hover > .x-tree-elbow-plus,
+.x-grid-cell-inner.x-grid-cell-inner-treecolumn:hover > .x-tree-elbow-end-plus {
+  color: $cyan !important;
+}
+
+.x-grid-cell-inner-treecolumn > * {
+  vertical-align: -webkit-baseline-middle;
+}
+
+// end left panel, menu
+
+
+//////////////////////////////////////////////////////
+
+// start 32x32 icons
+.x-workspace-node-view-category-items .thumb-wrap > *,
+.x-workspace-node-view-category-items .thumb-wrap > * > * {
+  color: $foreground;
+}
+
+.x-workspace-node-view-category-items .thumb-wrap > * > img {
+  -webkit-filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.thumb-wrap.x-item-over {
+  background-color: $comment;
+}
+
+.thumb-wrap {
+  height:150px !important;
+  width: calc(100% / 5 - 6px) !important;
+  background-color: $selection;
+  margin: 5px 0 0 5px;
+}
+
+.thumb {
+  margin-top: 30px;
+}
+
+// end 32x32 icons
+
+//////////////////////////////////////////////////////
+
+
+// start page tabs
+
+.x-tab-bar-default {
+  background-color: $purple;
+}
+
+.x-tab-focus.x-tab-default {
+  outline: unset;
+}
+
+.x-tab.x-tab-active.x-tab-default{
+  background-color: $foreground;
+}
+
+.x-tab.x-tab-active.x-tab-default .x-tab-inner-default{
+  color: $foreground;
+}
+
+.x-toolbar-default {
+  background-color: $foreground;
+}
+
+
+
+
+//end page tabs
