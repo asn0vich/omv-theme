@@ -205,6 +205,7 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
   background-color: $comment;
 }
 
+// tiles
 .thumb-wrap {
   height:150px !important;
   width: calc(100% / 5 - 6px) !important;
@@ -214,6 +215,25 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
 
 .thumb {
   margin-top: 30px;
+}
+
+@media only screen and (max-width: 400px) {
+  .thumb-wrap {
+    width: calc(100% / 2 - 6px) !important;
+  }
+
+  .x-workspace-node-view-category-header{
+    margin-top: 10px;
+    background-color: rgb(68,71,90);
+  }
+
+  .x-workspace-node-view-category-header .thumb-wrap{
+    margin: 0 auto;
+    height: 30px !important;
+    width: 100% !important;
+    background-color: unset;
+  }
+
 }
 
 // end 32x32 icons
@@ -363,6 +383,12 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
   background-color: $current-line;
   border-color: $current-line;
 }
+
+.x-btn-focus.x-btn-default-small{
+  border-color: $comment;
+  background-color: $comment;
+}
+
 //end buttons
 
 //////////////////////////////////////////////////////
@@ -454,4 +480,21 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
   font-weight: bold !important;
 }
 
+
+.x-toolbar-footer{
+  background-color: rgb(68,71,90);
+}
+
+
 // end pop menu
+
+// start login shutdown pages backgrounds
+
+.login-page,
+.shutdown-page,
+.error-page {
+  background-color: $background;
+}
+
+// end login shutdown pages backgrounds
+
