@@ -309,10 +309,12 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 .x-window-header-default .x-tool-img {
     background-color: #6272a4;
 }
+
 .x-window-header-default .x-tool-img .x-boundlist-selected {
     background: #6272a4;
     border-color: #6272a4;
 }
+
 .x-window-header-default .x-tool-img .x-boundlist-item.x-boundlist-item-over {
     background-color: #bd93f9;
 }
