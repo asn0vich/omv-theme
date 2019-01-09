@@ -26,6 +26,8 @@ fi
 if [ -f /var/www/openmediavault/images/custom-logo.png ]; then
     rm /var/www/openmediavault/images/custom-logo.png
 fi
+
+sed -i -e "/custom-logo-start/,/custom-logo-end/c\ " /var/www/openmediavault/css/theme-triton.min.css
 }
 
 # set an apply header text
@@ -60,6 +62,7 @@ if [ $exitstatus = 0 ]; then
     cp /root/omv-theme/images/custom-logo.png /var/www/openmediavault/images/custom-logo.png
     sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
     sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-logo.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+    cat /root/omv-theme/css/header-logo.css >> /var/www/openmediavault/css/theme-triton.min.css
 else
     echo "User selected Cancel."
 fi

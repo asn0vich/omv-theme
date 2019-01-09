@@ -292,8 +292,8 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 }
 
 .x-btn-default-small.x-btn-over {
-    background-color: #44475a;
-    border-color: #44475a;
+    background-color: #6272a4;
+    border-color: #6272a4;
 }
 
 .x-btn-focus.x-btn-default-small {
