@@ -13,10 +13,16 @@
 		}
 		
 		div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-"][id$="-body"] {
-        background-image:url("../images/header_logo.svg");
-        background-repeat:no-repeat;
-        background-position:center 99%;
-        background-size: auto 30px;
+            background-image:url("../images/header_logo.svg");
+            background-repeat:no-repeat;
+            background-position:center 99%;
+            background-size: auto 30px;
+        }
+        
+        .login-page .product-logo, .shutdown-page .product-logo, .error-page .product-logo{
+          background-image:url("../images/custom-logo.png");
+          background-size: contain;
+          height: 150px;
         }
 		
 		`,

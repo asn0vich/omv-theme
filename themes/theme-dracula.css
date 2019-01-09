@@ -167,6 +167,23 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
     margin-top: 30px;
 }
 
+@media only screen and (max-width: 400px) {
+    .thumb-wrap {
+        width: calc(100% / 2 - 6px) !important;
+    }
+
+    .x-workspace-node-view-category-header {
+        margin-top: 10px;
+        background-color: #44475a;
+    }
+
+    .x-workspace-node-view-category-header .thumb-wrap {
+        margin: 0 auto;
+        height: 30px !important;
+        width: 100% !important;
+        background-color: unset;
+    }
+}
 .x-tab-bar-default {
     background-color: #282a36;
 }
@@ -279,6 +296,11 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
     border-color: #44475a;
 }
 
+.x-btn-focus.x-btn-default-small {
+    border-color: #6272a4;
+    background-color: #6272a4;
+}
+
 .x-window-header-default {
     background-color: #6272a4;
     border: 1px solid #6272a4;
@@ -340,4 +362,14 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 .x-menu-item-link:hover > * {
     color: #8be9fd;
     font-weight: bold !important;
+}
+
+.x-toolbar-footer {
+    background-color: #44475a;
+}
+
+.login-page,
+.shutdown-page,
+.error-page {
+    background-color: #282a36;
 }
