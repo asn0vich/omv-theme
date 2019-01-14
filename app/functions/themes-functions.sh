@@ -3,10 +3,6 @@
 ################################################################
 # theme functions
 
-do_css_backup() {
-exit 0
-}
-
 remove_custom_theme() {
     rm -rf /var/www/openmediavault/css/theme-custom.*
 

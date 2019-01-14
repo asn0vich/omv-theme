@@ -20,10 +20,7 @@ open_main_menu() {
         do_finish
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
-          1\ *)
-          do_css_backup
-          open_theme_menu
-          ;;
+          1\ *) open_theme_menu ;;
           2\ *) open_ui_menu ;;
           3\ *) open_css_ui_menu ;;
           4\ *) do_about ;;
