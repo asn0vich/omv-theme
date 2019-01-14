@@ -25,7 +25,7 @@ open_theme_menu() {
       elif [ $RET -eq 0 ]; then
         case "$FUN" in
           1\ *) open_main_menu ;;
-          2\ *) remove_custom_theme ;;
+          2\ *) apply_theme "default" ;;
           3\ *) apply_theme "theme-blackish" ;;
           4\ *) apply_theme "theme-sour-cherry" ;;
           5\ *) apply_theme "theme-green-peace" ;;
