@@ -55,7 +55,7 @@ remove_header_text_or_logo
 LOGO_URL=$1
 
 if [ -z "$LOGO_URL" ]; then
-    LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
+    LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in (jpg, png)]" 8 78 "https://i.ibb.co/vXk1SG2/logo.png" --title "Set logo url" 3>&1 1>&2 2>&3)
     exitstatus=$?
 fi
 
