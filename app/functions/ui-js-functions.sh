@@ -47,6 +47,7 @@ if [ $exitstatus = 0 ] || [ -n "$HEADER_TEXT" ]; then
     sed -i "/var customHeaderText/c\var customHeaderText = '$HEADER_TEXT';" /root/omv-theme/javascript/header-text.js
     sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
     sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
+    sed -i '/^$/d'  /var/www/openmediavault/css/theme-triton.min.css
     cat /root/omv-theme/css/header-text.css >> /var/www/openmediavault/css/theme-triton.min.css
 
     echo "Header text has been applied, refresh page"
