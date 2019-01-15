@@ -42,7 +42,7 @@ fi
 
 exitstatus=$?
 if [ $exitstatus = 0 ] || [ -n "$HEADER_TEXT" ]; then
-    echo "User added header text: " $HEADER_TEXT
+    echo "User added header text: " $HEADER_TEXT >> /root/omv-theme/log.txt
 
     sed -i "/var customHeaderText/c\var customHeaderText = '$HEADER_TEXT';" /root/omv-theme/javascript/header-text.js
     sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
