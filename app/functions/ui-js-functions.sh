@@ -54,12 +54,12 @@ set_header_logo() {
 remove_header_text_or_logo
 LOGO_URL=$1
 
-if [ -z "LOGO_URL" ]; then
+if [ -z "$LOGO_URL" ]; then
     LOGO_URL=$(whiptail --inputbox "Insert logo url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
 fi
 
 exitstatus=$?
-if [ $exitstatus = 0 ] || [ -n "LOGO_URL" ]; then
+if [ $exitstatus = 0 ] || [ -n "$LOGO_URL" ]; then
     echo "User selected Ok and entered " $LOGO_URL
     wget $LOGO_URL -O /root/omv-theme/images/custom-logo.png
     cp /root/omv-theme/images/custom-logo.png /var/www/openmediavault/images/custom-logo.png
