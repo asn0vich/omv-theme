@@ -35,16 +35,16 @@ set_header_text() {
 remove_header_text_or_logo
 HEADER_TEXT=$1
 
-if [ -z "$DOMAIN_NAME" ]; then
-DOMAIN_NAME=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set text title" 3>&1 1>&2 2>&3)
+if [ -z "$HEADER_TEXT" ]; then
+HEADER_TEXT=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set text title" 3>&1 1>&2 2>&3)
     exitstatus=$?
 fi
 
 exitstatus=$?
-if [ $exitstatus = 0 ] || [ -n "$DOMAIN_NAME" ]; then
-    echo "User added header text: " $DOMAIN_NAME
+if [ $exitstatus = 0 ] || [ -n "$HEADER_TEXT" ]; then
+    echo "User added header text: " $HEADER_TEXT
 
-    sed -i "/var customHeaderText/c\var customHeaderText = '$DOMAIN_NAME';" /root/omv-theme/javascript/header-text.js
+    sed -i "/var customHeaderText/c\var customHeaderText = '$HEADER_TEXT';" /root/omv-theme/javascript/header-text.js
     sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
     sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
     cat /root/omv-theme/css/header-text.css >> /var/www/openmediavault/css/theme-triton.min.css
