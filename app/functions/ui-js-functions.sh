@@ -33,20 +33,26 @@ sed -i -e "/custom-logo-start/,/custom-logo-end/c\ " /var/www/openmediavault/css
 # set an apply header text
 set_header_text() {
 remove_header_text_or_logo
+HEADER_TEXT=$1
 
+if [ -z "$DOMAIN_NAME" ]; then
 DOMAIN_NAME=$(whiptail --inputbox "Insert custom title" 8 78 Name --title "Set text title" 3>&1 1>&2 2>&3)
+    exitstatus=$?
+fi
 
 exitstatus=$?
-if [ $exitstatus = 0 ]; then
-    echo "User selected Ok and entered " $DOMAIN_NAME
+if [ $exitstatus = 0 ] || [ -n "$DOMAIN_NAME" ]; then
+    echo "User added header text: " $DOMAIN_NAME
+
     sed -i "/var customHeaderText/c\var customHeaderText = '$DOMAIN_NAME';" /root/omv-theme/javascript/header-text.js
     sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
     sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-text.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
-else
-    echo "User selected Cancel."
-fi
+    cat /root/omv-theme/css/header-text.css >> /var/www/openmediavault/css/theme-triton.min.css
 
-echo "(Exit status was $exitstatus)"
+    echo "Header text has been applied, refresh page"
+else
+    echo "User refused to add header text, exiting back to menu."
+fi
 }
 
 
@@ -61,16 +67,17 @@ fi
 
 if [ $exitstatus = 0 ] || [ -n "$LOGO_URL" ]; then
     echo "User added logo url:" $LOGO_URL
+
     wget $LOGO_URL -O /root/omv-theme/images/custom-logo.png
     cp /root/omv-theme/images/custom-logo.png /var/www/openmediavault/images/custom-logo.png
     sed -i -e '/buildHeader: function() {/,/},/c\buildHeader: function() {\n\/\/custom header\n},' /var/www/openmediavault/js/omv/workspace/Workspace.js
     sed -i -e "/\/\/custom header/r /root/omv-theme/javascript/header-logo.js" /var/www/openmediavault/js/omv/workspace/Workspace.js
     cat /root/omv-theme/css/header-logo.css >> /var/www/openmediavault/css/theme-triton.min.css
-else
-    echo "User did not want to add logo url"
-fi
 
-echo "(Set custom logo has been applied)"
+    echo "Custom logo has been applied, refresh page"
+else
+    echo "User refused to add custom logo, exiting back to menu."
+fi
 }
 
 
