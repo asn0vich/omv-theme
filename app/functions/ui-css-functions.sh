@@ -9,13 +9,19 @@
 # header bg color
 
 set_header_background_color() {
-COLOR_CODE=$(whiptail --inputbox "Insert color hex or color name, example of hex color #ff0000 or red" 8 78 "#ff0000" --title "Set background color" 3>&1 1>&2 2>&3)
+COLOR_CODE=$1
 
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [ -z "$COLOR_CODE" ]; then
+    COLOR_CODE=$(whiptail --inputbox "Insert color hex or color name, example of hex color #ff0000 or red" 8 78 "#ff0000" --title "Set background color" 3>&1 1>&2 2>&3)
+    exitstatus=$?
+fi
+
+if [ $exitstatus = 0 ] || [ -n "$COLOR_CODE" ]; then
     echo "User selected Ok and entered " $COLOR_CODE
     style="div#header{background: $COLOR_CODE !important; /*custom-background-color*/}"
-    cp /var/www/openmediavault/css/theme-triton.min.css /root/omv-theme/backup/header-bg-color.bak
+    # trim the empty lines
+    ex -s +'v/\S/d' -cwq /var/www/openmediavault/css/theme-triton.min.css
+
     sed -i "$ a \\\n" /var/www/openmediavault/css/theme-triton.min.css
     sed -i "$ a $style" /var/www/openmediavault/css/theme-triton.min.css
 else
@@ -24,7 +30,6 @@ fi
 
 echo "(Exit status was $exitstatus)"
 }
-
 
 remove_header_background_color() {
     sed -i -e "/div#header{background:/,\/*custom-background-color*\/},/c\ " /var/www/openmediavault/css/theme-triton.min.css
