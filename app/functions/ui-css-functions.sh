@@ -65,18 +65,18 @@ remove_hide_header() {
 # custom header background image
 
 set_header_bg_img() {
-BGIMG_URL=$1
+BG_IMG_URL=$1
 
-if [ -z "$BGIMG_URL" ]; then
-    BGIMG_URL=$(whiptail --inputbox "Insert background image url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
+if [ -z "$BG_IMG_URL" ]; then
+    BG_IMG_URL=$(whiptail --inputbox "Insert background image url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
     exitstatus=$?
 fi
 
-if [ $exitstatus = 0 ] || [ -n "$BGIMG_URL" ]; then
-    echo "User selected Ok and entered " $BGIMG_URL
+if [ $exitstatus = 0 ] || [ -n "$BG_IMG_URL" ]; then
+    echo "User selected Ok and entered " $BG_IMG_URL
 
     # download and copy image to omv image folders
-    wget $BGIMG_URL -O /root/omv-theme/images/custom-background.png
+    wget $BG_IMG_URL -O /root/omv-theme/images/custom-background.png
     cp /root/omv-theme/images/custom-background.png /var/www/openmediavault/images/custom-background.png
 
     # trim the empty lines
