@@ -18,10 +18,14 @@ fi
 
 if [ $exitstatus = 0 ] || [ -n "$COLOR_CODE" ]; then
     echo "User selected Ok and entered " $COLOR_CODE
+
+    # create the style
     style="div#header{background: $COLOR_CODE !important; /*custom-background-color*/}"
+
     # trim the empty lines
     ex -s +'v/\S/d' -cwq /var/www/openmediavault/css/theme-triton.min.css
 
+    # add a new line and apply the custom css
     sed -i "$ a \\\n" /var/www/openmediavault/css/theme-triton.min.css
     sed -i "$ a $style" /var/www/openmediavault/css/theme-triton.min.css
 else
@@ -61,13 +65,24 @@ remove_hide_header() {
 # custom header background image
 
 set_header_bg_img() {
-BGIMG_URL=$(whiptail --inputbox "Insert background image url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
+BGIMG_URL=$1
 
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [ -z "$COLOR_CODE" ]; then
+    BGIMG_URL=$(whiptail --inputbox "Insert background image url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
+    exitstatus=$?
+fi
+
+if [ $exitstatus = 0 ] || [ -n "$BGIMG_URL" ]; then
     echo "User selected Ok and entered " $BGIMG_URL
+
+    # download and copy image to omv image folders
     wget $BGIMG_URL -O /root/omv-theme/images/custom-background.png
     cp /root/omv-theme/images/custom-background.png /var/www/openmediavault/images/custom-background.png
+
+    # trim the empty lines
+    ex -s +'v/\S/d' -cwq /var/www/openmediavault/css/theme-triton.min.css
+
+    #add the css
     cat /root/omv-theme/css/background-image.css >> /var/www/openmediavault/css/theme-triton.min.css
 else
     echo "User selected Cancel."
