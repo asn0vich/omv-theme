@@ -287,6 +287,10 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
   color: $foreground;
 }
 
+.x-fieldset.x-fieldset-with-title.x-fieldset-with-legend.x-fieldset-default > * > * > * > a {
+  border-color: $comment;
+}
+
 // end field sets
 
 
@@ -386,6 +390,16 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
   background-color: $comment;
 }
 
+.x-btn.x-btn-disabled.x-btn-default-small {
+  border-color: $red;
+  background-color: $red;
+}
+
+.x-btn.x-btn-pressed.x-btn-default-small{
+  background-color: $selection;
+  border-color: $cyan;
+}
+
 //end buttons
 
 //////////////////////////////////////////////////////
@@ -483,6 +497,14 @@ div[id^="workspace-node-tree-"][id$="-bodyWrap"] > div[id^="workspace-node-tree-
 }
 
 .x-window-default{
+  border-color: $comment;
+}
+
+.x-form-trigger.x-form-trigger-default.x-form-trigger-cmp.x-form-trigger-cmp-default.x-form-trigger-over {
+  background-color: unset;
+}
+
+.x-autocontainer-innerCt > * .x-btn {
   border-color: $comment;
 }
 
