@@ -67,7 +67,7 @@ remove_hide_header() {
 set_header_bg_img() {
 BGIMG_URL=$1
 
-if [ -z "$COLOR_CODE" ]; then
+if [ -z "$BGIMG_URL" ]; then
     BGIMG_URL=$(whiptail --inputbox "Insert background image url [hotlink to image should end in (jpg, png)]" 8 78 http:// --title "Set logo url" 3>&1 1>&2 2>&3)
     exitstatus=$?
 fi
