@@ -104,11 +104,16 @@ remove_header_bg_img() {
 # custom font size and weight
 
 set_font_size_and_weight() {
-FONT_SIZE=$(whiptail --inputbox "It should be a number" 8 78 "12" --title "Font size" 3>&1 1>&2 2>&3)
-FONT_WEIGHT=$(whiptail --inputbox "Can be a number (100-900) or text normal, bold, bolder, lighter, google font-weight property values" 8 78 "bold" --title "Font Weight" 3>&1 1>&2 2>&3)
+FONT_SIZE="$1"
+FONT_WEIGHT="$2"
 
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
+if [ -z "$FONT_SIZE" ] && [ -z "$FONT_WEIGHT" ]; then
+    FONT_SIZE=$(whiptail --inputbox "It should be a number" 8 78 "12" --title "Font size" 3>&1 1>&2 2>&3)
+    FONT_WEIGHT=$(whiptail --inputbox "Can be a number (100-900) or text normal, bold, bolder, lighter, google font-weight property values" 8 78 "bold" --title "Font Weight" 3>&1 1>&2 2>&3)
+    exitstatus=$?
+fi
+
+if [ $exitstatus = 0 ] || [ -n "$FONT_SIZE" ] && [ -n "$FONT_WEIGHT" ]; then
     echo $FONT_SIZE $FONT_WEIGHT
     sed -i -e "/font-size:/,/;/c\ font-size:"$FONT_SIZE"px !important;\n font-weight:$FONT_WEIGHT !important;" /root/omv-theme/css/font.css
     cat /root/omv-theme/css/font.css >> /var/www/openmediavault/css/theme-triton.min.css
