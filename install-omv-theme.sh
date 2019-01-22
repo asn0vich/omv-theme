@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /root/omv-theme/
 chmod +x omv-theme.sh
