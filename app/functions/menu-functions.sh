@@ -41,7 +41,7 @@ do_update_omv_theme() {
 
 do_uninstall() {
   # remove custom theme
-  remove_custom_theme
+  apply_theme "default"
   # remove custom js
   remove_snow_plugin
   remove_header_text_or_logo
@@ -52,8 +52,7 @@ do_uninstall() {
   remove_header_bg_img
   remove_font_size_and_weight
 
-  # do uninstall
-  rm -rf /var/www/openmediavault/css/theme-custom.*.css
+  # remove app
   rm -rf /root/omv-theme
   rm -rf /usr/bin/omv-theme
   exit 1

@@ -7,6 +7,6 @@ return Ext.create("Ext.Component", {
     autoEl: {
         tag: "div",
         html: "<div id='header'>" +
-            "<img src='" + customLogoUrl + "' class='header-logo' /></div>"
+              "<img src='" + customLogoUrl + "' class='header-logo' /></div>"
     }
 });

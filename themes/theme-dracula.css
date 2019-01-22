@@ -171,19 +171,19 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
     .thumb-wrap {
         width: calc(100% / 2 - 6px) !important;
     }
-
-    .x-workspace-node-view-category-header {
-        margin-top: 10px;
-        background-color: #44475a;
-    }
-
-    .x-workspace-node-view-category-header .thumb-wrap {
-        margin: 0 auto;
-        height: 30px !important;
-        width: 100% !important;
-        background-color: unset;
-    }
 }
+.x-workspace-node-view-category-header {
+    margin: 5px 0 0 5px;
+    background-color: #44475a;
+}
+
+.x-workspace-node-view-category-header .thumb-wrap {
+    margin: 0 auto;
+    height: 30px !important;
+    width: 100% !important;
+    background-color: unset;
+}
+
 .x-tab-bar-default {
     background-color: #282a36;
 }
@@ -222,6 +222,10 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 
 .x-form-display-field.x-form-display-field-default {
     color: #f8f8f2;
+}
+
+.x-fieldset.x-fieldset-with-title.x-fieldset-with-legend.x-fieldset-default > * > * > * > a {
+    border-color: #6272a4;
 }
 
 .x-grid-group-hd {
@@ -301,6 +305,16 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
     background-color: #6272a4;
 }
 
+.x-btn.x-btn-disabled.x-btn-default-small {
+    border-color: #ff5555;
+    background-color: #ff5555;
+}
+
+.x-btn.x-btn-pressed.x-btn-default-small {
+    background-color: #44475a;
+    border-color: #8be9fd;
+}
+
 .x-window-header-default {
     background-color: #6272a4;
     border: 1px solid #6272a4;
@@ -309,12 +323,10 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 .x-window-header-default .x-tool-img {
     background-color: #6272a4;
 }
-
 .x-window-header-default .x-tool-img .x-boundlist-selected {
     background: #6272a4;
     border-color: #6272a4;
 }
-
 .x-window-header-default .x-tool-img .x-boundlist-item.x-boundlist-item-over {
     background-color: #bd93f9;
 }
@@ -368,6 +380,18 @@ div[id^=workspace-node-tree-][id$=-bodyWrap] > div[id^=workspace-node-tree-][id$
 
 .x-toolbar-footer {
     background-color: #44475a;
+}
+
+.x-window-default {
+    border-color: #6272a4;
+}
+
+.x-form-trigger.x-form-trigger-default.x-form-trigger-cmp.x-form-trigger-cmp-default.x-form-trigger-over {
+    background-color: unset;
+}
+
+.x-autocontainer-innerCt > * .x-btn {
+    border-color: #6272a4;
 }
 
 .login-page,
