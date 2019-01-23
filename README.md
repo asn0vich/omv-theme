@@ -38,7 +38,7 @@ https://forum.openmediavault.org/index.php/Thread/24286
 [<img src="https://i.ibb.co/PrPN8qd/Selection-054.png">](https://ibb.co/PrPN8qd])
 [<img src="https://i.ibb.co/98Tym9P/Selection-055.png">](https://ibb.co/98Tym9P)
 [<img src="https://i.ibb.co/7gq4112/Selection-056.png">](https://ibb.co/7gq4112)
-
+[<img src="https://i.ibb.co/JmQYt39/Selection-073.png">](https://ibb.co/JmQYt39)
 
 ### UI customisation 
 

@@ -63,5 +63,6 @@ do_uninstall() {
   # remove app
   rm -rf /root/omv-theme
   rm -rf /usr/bin/omv-theme
+  cd /
   exit 1
 }
