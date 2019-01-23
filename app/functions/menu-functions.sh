@@ -22,21 +22,29 @@ do_about() {
 }
 
 do_update_omv_theme() {
-  # do update
-  cd ~
-  # remove old code and pull the new one
-  rm -rf /root/omv-theme
-  git clone https://github.com/virgil-av/omv-theme.git
-  cd /root/omv-theme
 
-  # make main scripts executable
-  chmod +x omv-theme.sh
-  # clean scripts from /usr/bin
-  rm -rf /usr/bin/omv-theme
-  # copy and create scripts for execution
-  cp /root/omv-theme/omv-theme.sh /usr/bin/omv-theme
+    echo "Check if previous omv-theme folder exists and delete them"
+    rm -rf /root/omv-theme
+    rm -rf /usr/bin/omv-theme
 
-  exec omv-theme
+    echo "Creating omv-theme folder"
+    cd /root/
+    mkdir omv-theme
+    cd omv-theme/
+
+    echo "Pulling omv-theme from git repo..."
+    wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/develop.tar.gz
+
+    echo "extracting omv-theme to /root/omv-theme"
+
+    tar -zxvf develop.tar.gz
+    mv omv-theme-develop/* ./
+    rm -rf master.tar.gz omv-theme-develop/
+
+    echo "Creating executable omv-theme"
+    chmod u+x install-omv-theme.sh
+    ./install-omv-theme.sh
+
 }
 
 do_uninstall() {
