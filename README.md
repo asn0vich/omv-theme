@@ -5,7 +5,7 @@ With this tool, you can easily switch between the GUI themes and change part of 
 ### Install:
 - ssh into your server or server console
 - copy paste the code below  
-`apt-get install git -y; cd ~ ; git clone https://github.com/virgil-av/omv-theme.git && cd omv-theme && chmod +x install-omv-theme.sh && ./install-omv-theme.sh`
+`mkdir /root/omv-theme && cd "$_"; wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/develop.tar.gz; tar -zxvf develop.tar.gz && mv omv-theme-develop/* ./ && rm -rf master.tar.gz omv-theme-develop/; chmod u+x install-omv-theme.sh && ./install-omv-theme.sh`
 - this will install git (or skip it if already installed), clone the repo under /root/omv-theme create a shortcut in /usr/bin/ so you can run it with `omv-theme` in terminal
 
 ### Start:
