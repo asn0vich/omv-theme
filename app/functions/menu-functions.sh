@@ -33,13 +33,13 @@ do_update_omv_theme() {
     cd omv-theme/
 
     echo "Pulling omv-theme from git repo..."
-    wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/develop.tar.gz
+    wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/master.tar.gz
 
     echo "extracting omv-theme to /root/omv-theme"
 
-    tar -zxvf develop.tar.gz
-    mv omv-theme-develop/* ./
-    rm -rf master.tar.gz omv-theme-develop/
+    tar -zxvf master.tar.gz
+    mv omv-theme-master/* ./
+    rm -rf master.tar.gz omv-theme-master/
 
     echo "Creating executable omv-theme"
     chmod u+x install-omv-theme.sh
