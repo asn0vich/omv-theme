@@ -2,6 +2,9 @@
 
 With this tool, you can easily switch between the GUI themes and change part of OMV layout. 
 
+## There is an OMV theme changer plugin available now:
+https://github.com/virgil-av/openmediavault-theme
+
 ### Install:
 - ssh into your server or server console
 - copy paste the code below  
